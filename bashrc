@@ -113,21 +113,26 @@ fi
 set -o vi			#vi command line editing
 alias pkg-list='dpkg --get-selections'
 export GREP_COLOR='1;32'	#green grep result highlight
-fortune -a			#fortune cookie - including offensive ones 
+fortune -c			#fortune cookie - show file
 
 alias op=xdg-open
 
 export MYVIMRC="~/.vimrc"
 #classes
-export CAP=/home/erethar/documents/classes/cap5635
-export EEL=/home/erethar/documents/classes/eel4744
-export CEN=/home/erethar/documents/classes/cen4940
-export CNT=/home/erethar/documents/classes/cen4940
-export EGN=/home/erethar/documents/classes/egn4034
+export CLASSES=/home/erethar/documents/classes
+export CAP=$CLASSES/cap5635
+export EEL=$CLASSES/eel4744
+export CEN=$CLASSES/cen4940
+export CNT=$CLASSES/cnt4007
+export EGN=$CLASSES/egn4034
 
 #projects
 export MSH=/home/erethar/project/mideast-sidearm-hideaway
+export CAPROJ=$CAP/project
+export BRIX=$CAPROJ/code
+export CNTPROJ=$CNT/project
 
 #config files
 export MYBASHRC=~/.bashrc
 export MYVIMRC=~/.vimrc
+export KARATE=/home/erethar/documents/groups/karate
