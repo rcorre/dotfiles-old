@@ -111,11 +111,12 @@ fi
 
 #my additions
 set -o vi			#vi command line editing
-alias pkg-list='dpkg --get-selections'
 export GREP_COLOR='1;32'	#green grep result highlight
 fortune -c			#fortune cookie - show file
 
+alias pkg-list='dpkg --get-selections'
 alias op=xdg-open
+alias make=colormake
 
 export MYVIMRC="~/.vimrc"
 #classes
