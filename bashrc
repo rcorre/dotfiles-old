@@ -117,6 +117,7 @@ fortune -c			#fortune cookie - show file
 alias pkg-list='dpkg --get-selections'
 alias op=xdg-open
 alias make=colormake
+alias tsplit='gnome-terminal . 2> /dev/null'
 
 export MYVIMRC="~/.vimrc"
 #classes
