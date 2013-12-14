@@ -1,0 +1,19 @@
+export MYVIMRC="~/.vimrc"
+#classes
+export CLASSES=/home/erethar/documents/classes
+export CAP=$CLASSES/cap5635
+export EEL=$CLASSES/eel4744
+export CEN=$CLASSES/cen4940
+export CNT=$CLASSES/cnt4007
+export EGN=$CLASSES/egn4034
+
+#projects
+export MSH=/home/erethar/project/mideast-sidearm-hideaway
+export CAPROJ=$CAP/project
+export BRIX=$CAPROJ/code
+export CNTPROJ=$CNT/project
+
+#config files
+export MYBASHRC=~/.bashrc
+export MYVIMRC=~/.vimrc
+export KARATE=/home/erethar/documents/groups/karate
