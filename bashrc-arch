@@ -14,4 +14,13 @@ set -o vi 	#vi command line editing
 export GREP_COLOR='1;32'	#green grep result highlight
 
 #load directory shortcuts
-source bash-dirs
+SCRIPT_PATH="${BASH_SOURCE[0]}";
+if ([ -h "${SCRIPT_PATH}" ]) then
+    while([ -h "${SCRIPT_PATH}" ]) do SCRIPT_PATH=`readlink "${SCRIPT_PATH}"`; done
+fi
+pushd . > /dev/null
+cd `dirname ${SCRIPT_PATH}` > /dev/null
+SCRIPT_PATH=`pwd`;
+popd  > /dev/null
+echo $SCRIPT_PATH
+source "$SCRIPT_PATH/bash-dirs"
