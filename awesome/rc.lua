@@ -12,6 +12,9 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 local vicious = require("vicious")
+--Custom Widgets
+require("widget/battery")
+require("widget/thermal")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -186,16 +189,6 @@ for s = 1, screen.count() do
     mywibox[s] = awful.wibox({ position = "top", screen = s })
 
     -- Custom Widgets
-    -- Battery
-    batwidget = awful.widget.progressbar()
-    batwidget:set_width(8)
-    batwidget:set_height(10)
-    batwidget:set_vertical(true)
-    batwidget:set_background_color("#494B4F")
-    batwidget:set_border_color(nil)
-    batwidget:set_color({ type = "linear", from = {0,0}, to = {0,10}, 
-        stops = {{0, "#FF5656"}, {0.5, "#88A175"}, {1, "#AECF96"}}})
-    vicious.register(batwidget, vicious.widgets.bat, "$2", 61, "BAT0")
     -- Thermal
     tempwidget = wibox.widget.textbox()
     vicious.register(tempwidget, vicious.widgets.thermal, "TEMP: $1°C", 19, 
@@ -210,8 +203,8 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-    right_layout:add(tempwidget)
-    right_layout:add(batwidget)
+    right_layout:add(thermal_widget)
+    right_layout:add(battery_widget)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
