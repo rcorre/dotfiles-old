@@ -15,6 +15,7 @@ local vicious = require("vicious")
 --Custom Widgets
 require("widget/battery")
 require("widget/thermal")
+require("widget/date")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -117,8 +118,6 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- }}}
 
 -- {{{ Wibox
--- Create a textclock widget
-mytextclock = awful.widget.textclock()
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -188,12 +187,6 @@ for s = 1, screen.count() do
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
 
-    -- Custom Widgets
-    -- Thermal
-    tempwidget = wibox.widget.textbox()
-    vicious.register(tempwidget, vicious.widgets.thermal, "TEMP: $1°C", 19, 
-        {"coretemp.0", "core"})
-
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
     left_layout:add(mylauncher)
@@ -203,9 +196,9 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-    right_layout:add(thermal_widget)
-    right_layout:add(battery_widget)
-    right_layout:add(mytextclock)
+    right_layout:add(thermal_widget)    --custom
+    right_layout:add(battery_widget)    --custom
+    right_layout:add(date_widget)
     right_layout:add(mylayoutbox[s])
 
     -- Now bring it all together (with the tasklist in the middle)
@@ -290,7 +283,7 @@ globalkeys = awful.util.table.join(
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end),
 
-    --sound
+    --Sound
     awful.key({}, "XF86AudioRaiseVolume", function() 
         awful.util.spawn("amixer set Master 10%+")
     end),
