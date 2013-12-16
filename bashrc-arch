@@ -1,0 +1,27 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+export TERM=xterm-256color
+export EDITOR=vim
+
+alias ls='ls --color=auto'
+PS1='[\u@\h \W]\$ '
+
+set -o vi 	#vi command line editing
+export GREP_COLOR='1;32'	#green grep result highlight
+
+#load directory shortcuts
+SCRIPT_PATH="${BASH_SOURCE[0]}";
+if ([ -h "${SCRIPT_PATH}" ]) then
+    while([ -h "${SCRIPT_PATH}" ]) do SCRIPT_PATH=`readlink "${SCRIPT_PATH}"`; done
+fi
+pushd . > /dev/null
+cd `dirname ${SCRIPT_PATH}` > /dev/null
+SCRIPT_PATH=`pwd`;
+popd  > /dev/null
+echo $SCRIPT_PATH
+source "$SCRIPT_PATH/bash-dirs"
