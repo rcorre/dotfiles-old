@@ -1,0 +1,19 @@
+[include]
+    path=~/.gitconfig-local
+
+[alias]
+	st = status
+	br = branch
+	cm = "commit -m"
+	co = checkout
+	rem = "remote -v"
+	adda = "add --all"
+	cma = commit -am
+	dif = diff --name-only
+	pom = push origin master
+	diffc = diff --cached
+[color]
+	ui = auto
+[core]
+	editor = vim
+	excludesfile = ~/dotfiles/gitignore-global
