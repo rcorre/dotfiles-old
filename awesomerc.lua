@@ -197,8 +197,9 @@ for s = 1, screen.count() do
         stops = {{0, "#FF5656"}, {0.5, "#88A175"}, {1, "#AECF96"}}})
     vicious.register(batwidget, vicious.widgets.bat, "$2", 61, "BAT0")
     -- Thermal
-    tempwidget = awful.widget.textbox()
-    vicious.register(tempwidget, vicious.widgets.thermal, "$1 C", 19)
+    tempwidget = wibox.widget.textbox()
+    vicious.register(tempwidget, vicious.widgets.thermal, "TEMP: $1°C", 19, 
+        {"coretemp.0", "core"})
 
     -- Widgets that are aligned to the left
     local left_layout = wibox.layout.fixed.horizontal()
@@ -209,6 +210,7 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(tempwidget)
     right_layout:add(batwidget)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
@@ -297,10 +299,10 @@ globalkeys = awful.util.table.join(
 
     --sound
     awful.key({}, "XF86AudioRaiseVolume", function() 
-        awful.util.spawn("amixer -c 0 -- sset Master playback 6dB+")
+        awful.util.spawn("amixer set Master 10%+")
     end),
     awful.key({}, "XF86AudioLowerVolume", function() 
-        awful.util.spawn("amixer -c 0 -- sset Master playback 6dB-")
+        awful.util.spawn("amixer set Master 10%-")
     end),
     awful.key({}, "XF86AudioMute", function() 
         awful.util.spawn("amixer sset Master toggle")
