@@ -42,7 +42,7 @@ password_command = pass service/pandora
 # Misc
 #audio_quality = low
 #autostart_station = 123456
-#event_command = /home/user/.config/pianobar/eventcmd
+event_command = /home/erethar/.config/pianobar/eventcmd
 #fifo = /tmp/pianobar
 #sort = quickmix_10_name_az
 #love_icon = [+]

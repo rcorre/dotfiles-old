@@ -1,0 +1,7 @@
+#!/usr/bin/ruby
+
+# Script to process events send by pianobar (pandora player).
+# Referenced from .config/pianobar/config
+# See pianobar's manpage section EVENTCMD
+
+`notify-send "hello"`
