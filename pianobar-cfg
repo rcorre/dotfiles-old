@@ -3,10 +3,10 @@
 # See manpage for a description of the config keys
 #
 # User
-#user = your@user.name
+user = murphyslaw480@gmail.com
 #password = password
 # or
-#password_command = gpg --decrypt ~/password
+password_command = pass service/pandora
 
 # Proxy (for those who are not living in the USA)
 #control_proxy = http://127.0.0.1:9090/

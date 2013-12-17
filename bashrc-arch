@@ -14,6 +14,9 @@ PS1='[\u@\h \W]\$ '
 set -o vi 	#vi command line editing
 export GREP_COLOR='1;32'	#green grep result highlight
 
+#pass tab completion
+source /etc/bash_completion.d/password-store
+
 #load directory shortcuts
 SCRIPT_PATH="${BASH_SOURCE[0]}";
 if ([ -h "${SCRIPT_PATH}" ]) then
