@@ -4,4 +4,25 @@
 # Referenced from .config/pianobar/config
 # See pianobar's manpage section EVENTCMD
 
-`notify-send "hello"`
+#start pianobar with pianobar &>.config/pianobar/out
+#figure out how to start in background (nohup? disown?)
+#pianoctl can send commands to it somehow...?
+#read .config/pianobar/out for status
+
+PIANOBAR_OUTPUT = "~/.config/pianobar/out"
+OUT_FORMAT = /\|\>\s+(?<song>.*) by (?<artist>.*) on (?<album>.*) @ (?<station>.*)/
+COLOR_START = /\e\[0?(\d+)m/
+COLOR_END = /\e\[0?m/
+NOTIFY_TIMEOUT = 5000   #milliseconds for notification to endure
+
+case ARGV[0]    #event type
+when 'userlogin'
+    `notify-send "pianobar started"`
+when 'songstart'
+    sleep 1     #need to wait for pianobar to write new song
+    info = `tail -n 2 /home/erethar/.config/pianobar/out`
+    if (match = info.match(OUT_FORMAT))
+        msg = match[0].gsub(COLOR_START, '').gsub(COLOR_END, '')
+        `notify-send "#{msg}" -t #{NOTIFY_TIMEOUT}`
+    end
+end
