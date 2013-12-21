@@ -9,7 +9,7 @@ local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
-local naughty = require("naughty")
+naughty = require("naughty")    -- global so other scripts can send notifications
 local menubar = require("menubar")
 local vicious = require("vicious")
 --Custom Widgets
