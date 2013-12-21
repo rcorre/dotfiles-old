@@ -4,25 +4,38 @@
 # Referenced from .config/pianobar/config
 # See pianobar's manpage section EVENTCMD
 
-#start pianobar with pianobar &>.config/pianobar/out
+#start pianobar with pianobar | tee .config/pianobar/out
 #figure out how to start in background (nohup? disown?)
-#pianoctl can send commands to it somehow...?
 #read .config/pianobar/out for status
 
 PIANOBAR_OUTPUT = "~/.config/pianobar/out"
 OUT_FORMAT = /\|\>\s+(?<song>.*) by (?<artist>.*) on (?<album>.*) @ (?<station>.*)/
 COLOR_START = /\e\[0?(\d+)m/
 COLOR_END = /\e\[0?m/
-NOTIFY_TIMEOUT = 5000   #milliseconds for notification to endure
+NOTIFY_TIMEOUT = 15   #seconds for notification to endure
+
+color_map = {
+    30 => 'black',
+    31 => 'red',
+    32 => 'green',
+    33 => 'yellow',
+    34 => 'blue',
+    35 => 'magenta',
+    36 => 'cyan'
+}
+color_map.default = 'white'
 
 case ARGV[0]    #event type
 when 'userlogin'
-    `notify-send "pianobar started"`
+    `echo "pianobar started" | awesome-client`
 when 'songstart'
     sleep 1     #need to wait for pianobar to write new song
-    info = `tail -n 2 /home/erethar/.config/pianobar/out`
+    info = `tail -n 1 /home/erethar/.config/pianobar/out`
     if (match = info.match(OUT_FORMAT))
-        msg = match[0].gsub(COLOR_START, '').gsub(COLOR_END, '')
-        `notify-send "#{msg}" -t #{NOTIFY_TIMEOUT}`
+        msg = "#{match[:song]} by #{match[:artist]}"
+        msg.gsub!(COLOR_END, '</span>')
+        msg.gsub!(COLOR_START, "<span color=\\\"#{color_map['\1'.to_i]}\\\">")
+        notify = "naughty.notify({text='#{msg}', timeout=#{NOTIFY_TIMEOUT}})" 
+        `echo "#{notify}" | awesome-client`
     end
 end
