@@ -1,7 +1,7 @@
 -- link here from ~/.config/awesome/rc.lua
 -- Standard awesome library
 local gears = require("gears")
-local awful = require("awful")
+awful = require("awful")
 awful.rules = require("awful.rules")
 require("awful.autofocus")
 -- Widget and layout library
@@ -12,10 +12,12 @@ local beautiful = require("beautiful")
 naughty = require("naughty")    -- global so other scripts can send notifications
 local menubar = require("menubar")
 local vicious = require("vicious")
+require("keychains")
 --Custom Widgets
 require("widget/battery")
 require("widget/thermal")
 require("widget/date")
+require("widget/pianoctl")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -456,6 +458,12 @@ client.connect_signal("manage", function (c, startup)
         awful.titlebar(c):set_widget(layout)
     end
 end)
+
+keychains.init(globalkeys,nil)
+
+keychains.add({modkey}, "c", "Pandora Radio", nil, piano_key_map)
+
+keychains.start(5)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
