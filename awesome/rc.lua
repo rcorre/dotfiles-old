@@ -74,7 +74,7 @@ modkey = "Mod4"
     awful.layout.suit.max,
     awful.layout.suit.max.fullscreen,
     awful.layout.suit.magnifier]]
-local layouts = 
+local layouts =
 {
     awful.layout.suit.tile,
     awful.layout.suit.tile.bottom
@@ -267,9 +267,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
-    --TESTING
-    awful.key({ modkey, "Control" }, "p",     function () naughty.notify({title="testing", text = "naughty", timeout = 10}) end),
-
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
     -- Prompt
@@ -286,13 +283,13 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "p", function() menubar.show() end),
 
     --Sound
-    awful.key({}, "XF86AudioRaiseVolume", function() 
+    awful.key({}, "XF86AudioRaiseVolume", function()
         awful.util.spawn("amixer set Master 10%+")
     end),
-    awful.key({}, "XF86AudioLowerVolume", function() 
+    awful.key({}, "XF86AudioLowerVolume", function()
         awful.util.spawn("amixer set Master 10%-")
     end),
-    awful.key({}, "XF86AudioMute", function() 
+    awful.key({}, "XF86AudioMute", function()
         awful.util.spawn("amixer sset Master toggle")
     end)
 )
@@ -459,10 +456,9 @@ client.connect_signal("manage", function (c, startup)
     end
 end)
 
+-- Add keychain for pianobar (Pandora) control
 keychains.init(globalkeys,nil)
-
-keychains.add({modkey}, "c", "Pandora Radio", nil, piano_key_map)
-
+keychains.add({modkey}, "c", "Pandora Radio", nil, get_pianobar_keymap)
 keychains.start(5)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
