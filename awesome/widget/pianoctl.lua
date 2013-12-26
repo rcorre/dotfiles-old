@@ -1,15 +1,18 @@
 -- Widget to interface with pianobar (CLI to pandora) using pianoctl
 local naughty = require("naughty")
-local ctl_dir = ".config/pianobar/ctl"
-local out_dir = ".config/pianobar/out"
+local wibox = require("wibox")
+-- files that pianobar uses for input and output
+-- set in pianobar's config file
+local ctl_file = ".config/pianobar/ctl"
+local out_file = ".config/pianobar/out"
 
 -- Commands that can be sent to pianobar
 pianocmd = {
-    skip = 'n',
-    play = 'p',
-    love = '+',
-    ban = '-',
-    quit = 'q',
+    skip     = 'n',
+    play     = 'p',
+    love     = '+',
+    ban      = '-',
+    quit     = 'q',
     upcoming = 'u'
 }
 
@@ -22,12 +25,11 @@ pianobar_running = function ()
 end
 
 start_pianobar = function ()
-    os.execute("nohup pianobar &>" .. out_dir .. " &disown")
+    os.execute("nohup pianobar &>" .. out_file .. " &disown")
 end
 
-
 get_pianobar_keymap = function ()
-    if (pianobar_running()) then 
+    if (pianobar_running()) then
         return {
             n = {
                 func = function()
@@ -78,6 +80,13 @@ get_pianobar_keymap = function ()
     end
 end
 
+pianobar_widget =  wibox.widget.textbox()
+pianobar_widget:set_text(" Pandora off ")
+
+piano_update = function (artist, song)
+    pianobar_widget:set_text(song .. " by " .. artist)
+end
+
 piano_send = function (cmd)
-    os.execute(string.format("echo %s > %s", cmd, ctl_dir))
+    os.execute(string.format("echo %s > %s", cmd, ctl_file))
 end

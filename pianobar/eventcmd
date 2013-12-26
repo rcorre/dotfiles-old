@@ -32,10 +32,12 @@ when 'songstart'
     sleep 1     #need to wait for pianobar to write new song
     info = `tail -n 1 /home/erethar/.config/pianobar/out`
     if (match = info.match(OUT_FORMAT))
-        msg = "#{match[:song]} by #{match[:artist]}"
-        msg.gsub!(COLOR_END, '</span>')
-        msg.gsub!(COLOR_START, "<span color=\\\"#{color_map['\1'.to_i]}\\\">")
-        notify = "naughty.notify({text='#{msg}', timeout=#{NOTIFY_TIMEOUT}})" 
-        `echo "#{notify}" | awesome-client`
+        msg = "piano_update(\"#{match[:artist]}\", \"#{match[:song]}\")"
+        #msg.gsub!(COLOR_END, '</span>')
+        #msg.gsub!(COLOR_START, "<span color=\\\"#{color_map['\1'.to_i]}\\\">")
+        msg.gsub!(COLOR_END, '')
+        msg.gsub!(COLOR_START, '')
+        #TODO: handle special chars in song names
+        `echo \'#{msg}\' | awesome-client`
     end
 end
