@@ -14,6 +14,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'bling/vim-airline'
+Bundle 'godlygeek/tabular'
 
 " End of Bundles
 " YCM
