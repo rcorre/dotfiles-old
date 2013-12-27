@@ -25,18 +25,22 @@ color_map = {
 }
 color_map.default = 'white'
 
+def clean_string str
+    str.gsub(COLOR_END, '').gsub(COLOR_START, '').gsub(/(['"])/, "\\\\\\1")
+end
+
 case ARGV[0]    #event type
 when 'userlogin'
     `echo "pianobar started" | awesome-client`
 when 'songstart'
     sleep 1     #need to wait for pianobar to write new song
-    info = `tail -n 1 /home/erethar/.config/pianobar/out`
+    info = `tail -n 1 #{PIANOBAR_OUTPUT}`
     if (match = info.match(OUT_FORMAT))
-        msg = "piano_update(\"#{match[:artist]}\", \"#{match[:song]}\")"
+        artist = clean_string match[:artist]
+        song = clean_string match[:song]
+        msg = "piano_update(\"#{artist}\", \"#{song}\")"
         #msg.gsub!(COLOR_END, '</span>')
         #msg.gsub!(COLOR_START, "<span color=\\\"#{color_map['\1'.to_i]}\\\">")
-        msg.gsub!(COLOR_END, '')
-        msg.gsub!(COLOR_START, '')
         #TODO: handle special chars in song names
         `echo \'#{msg}\' | awesome-client`
     end
