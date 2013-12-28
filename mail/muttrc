@@ -1,0 +1,72 @@
+# Paths
+set editor           = `echo \$EDITOR`
+set my_name          = "Ryan"
+set folder           = ~/Mail
+set alias_file       = ~/.mutt/alias
+set header_cache     = "~/.cache/mutt/headers"
+set message_cachedir = "~/.cache/mutt/bodies"
+set certificate_file = ~/.mutt/certificates
+set mailcap_path     = ~/.mutt/mailcap
+set tmpdir           = ~/.mutt/temp
+set signature        = ~/.mutt/sig
+
+# Basic options
+set wait_key = no   # no key prompt for external command
+set mbox_type = Maildir
+set timeout = 3     # time before scanning
+set mail_check = 0  # minimum time between scans
+unset move          # handled by gmail
+#unset confirmappend          # don't ask to confirm
+#set delete          # don't ask to confirm
+#set quit          # don't ask to confirm
+unset mark_old
+set beep_new        # bell for new
+set pipe_decode        # bell for new
+set thorough_search        # bell for new
+
+# Status Bar
+set status_chars = " *%A"
+set status_format = "---[ Folder: %f ]---[%r%m messages%?n? (%n new)?%?d?"
+
+# Header Options
+
+# Account
+set spoolfile = "+gmail/INBOX"
+
+# These will show in sidebar
+mailboxes   +gmail/INBOX \
+            +gmail/financial \
+            +gmail/commerce \
+            +gmail/programming \
+            +gmail/personal \
+
+set mbox = "+gmail/archive"
+set postponed = "+gmail/Drafts"
+
+# index options
+set date_format = "%m/%d/%Y"
+set index_format = "[%Z] %D %-20.20F  %s"
+set sort = threads
+set sort_aux = reverse-last-date-received
+set uncollapse_jump
+set sort_re
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+
+# Index key bindings
+bind index gg first-entry
+bind index G last-entry
+
+bind index R group-reply
+bind index <tab> sync-mailbox
+bind index <space> collapse-thread
+
+# Ctrl-R marks all as read
+macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
+
+# sync email
+macro index O "<shell-escape>offlineimap<enter>" "sync all with offlineimap"
+macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "sync inbox with offlineimap"
+
+# Saner copy/move dialogs
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
