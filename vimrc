@@ -50,9 +50,10 @@ set bg=dark
 
 " vim-airline config
 set laststatus=2    "always show
-let g:airline_left_sep='>'
-let g:airline_right_sep='<'
+"let g:airline_left_sep='>'
+"let g:airline_right_sep='<'
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
 let g:airline_detect_iminsert=0
 let g:airline_theme='powerlineish'
+set guifont="Inconsolata for Powerline"
