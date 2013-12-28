@@ -84,8 +84,8 @@ pianobar_widget =  wibox.widget.textbox()
 pianobar_widget:set_text(" Pandora off ")
 
 piano_update = function (artist, song)
-    song = '<span weight="bold" color="green">' .. song .. '</span>'
-    artist = '<span weight="bold" color="green">' .. artist .. '</span> '
+    song = '<span weight="bold" color="cyan">' .. song .. '</span>'
+    artist = '<span weight="bold" color="cyan">' .. artist .. '</span> '
     pianobar_widget:set_markup(song .. " by " .. artist)
 end
 
