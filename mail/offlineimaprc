@@ -1,0 +1,37 @@
+[general]
+ui = TTY.TTYUI
+accounts = gmail
+pythonfile = .offlineimap/offlineimap.py
+fsync = false
+
+[Account gmail]
+localrepository = gmail-local
+remoterepository = gmail-remote
+status_backend = sqlite
+
+[Repository gmail-local]
+type = Maildir
+localfolders = ~/Mail/gmail
+#minutes between syncs
+autorefresh = 5
+# number of quick-syncs between autorefreshes
+# do not update if the only changes were to IMAP flags
+quick = 10
+
+[Repository gmail-remote]
+type = Gmail
+remoteuser = murphyslaw480@gmail.com
+remotepasseval = getpwd("gmail")
+# leave a copy of deleted messages in Gmail's All Mail
+realdelete = no
+# Remove annoying [Gmail] tags
+nametrans = lambda foldername:  re.sub ('^\[gmail\]', 'bak',
+                                re.sub ('send_mail', 'sent',
+                                re.sub ('starred', 'flagged',
+                                re.sub (' ', '_', foldername.lower()))))
+folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail'
+# Needed for OfflineIMAP 6.5.4
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+# send data to keep connection alive
+keepalive = 60
+holdconnection = yes
