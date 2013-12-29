@@ -49,8 +49,8 @@ set tw=80 	  " wrap text at 80 chars
 set t_Co=256    "enable 256 colors
 set t_AB=[48;5;%dm
 set t_AF=[38;5;%dm
-colorscheme wombat256
 set bg=dark
+colorscheme solarized
 
 " vim-airline config
 set laststatus=2    "always show
