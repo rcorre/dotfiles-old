@@ -10,11 +10,15 @@ Bundle 'gmarik/vundle'
 " Run :BundleInstall after adding
 " Run :BundleUpdate to update
 " Run :BundleClean after removing
+" vim-scripts
+Bundle 'Tabmerge'
+" other repos
 Bundle 'flazz/vim-colorschemes'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
+Bundle 'tpope/vim-surround'
 
 " End of Bundles
 " YCM
