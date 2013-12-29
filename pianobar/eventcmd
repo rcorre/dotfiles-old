@@ -13,11 +13,11 @@ when 'userlogin'
     `echo "naughty.notify({text = 'pianobar started'}" | awesome-client`
 when 'songstart'
     data = {}
-    STDIN.each_line do |line|   # recieve data from pianobar on STDIN
-        data.store(*line.chomp.split('=',2))     # store name=val in dict
+    STDIN.each_line do |line|           # recieve data from pianobar on STDIN
+        data.store(*line.chomp.split('=',2))        # store name=val in dict
     end
-    artist = data['artist']
-    song = data['title']
+    artist = data['artist'].gsub("'", %q{\\\'})     # clean single quotes
+    song = data['title'].gsub("'", %q{\\\'})        # clean single quotes
     IO.popen('awesome-client', 'w') do |pipe|
         pipe.puts("piano_update('#{artist}', '#{song}')")
         pipe.close_write
