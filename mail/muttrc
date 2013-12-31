@@ -11,8 +11,6 @@ set tmpdir           = ~/.mutt/temp
 set signature        = ~/.mutt/sig
 
 # Gmail Options
-set record="~/Mail/gmail/gmail.sent"
-set record="~/Mail/gmail/gmail.sent"
 
 # Basic options
 set wait_key   = no     # no key prompt for external command
@@ -43,9 +41,9 @@ set spoolfile = "+gmail/INBOX"
 # Select all subdirs as mailboxes
 mailboxes   `echo ~/Mail/gmail/*`
 
-set mbox = "+gmail/archive"
-set postponed = "+gmail/Drafts"
-set record = "+gmail/Sent"
+#set mbox = "+gmail/archive"
+set postponed = "+gmail/gmail.Drafts"
+set record="+gmail/gmail.sent"
 
 # index view options
 set date_format = "%m/%d/%Y"
@@ -99,6 +97,7 @@ macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "sync inbox with offl
 # Saner copy/move dialogs
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+macro index d "<save-message>+gmail/gmail.Trash<enter>" "move message to trash"
 
 #content viewing
 auto_view text/html     # automatically open viewer for html
