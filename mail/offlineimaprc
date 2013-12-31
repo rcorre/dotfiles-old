@@ -3,20 +3,25 @@ ui = ttyui
 accounts = gmail
 pythonfile = ~/dotfiles/mail/offlineimap.py
 fsync = false
+# only sync 1 account at once
+maxsyncaccounts = 1
 
 [Account gmail]
 localrepository = gmail-local
 remoterepository = gmail-remote
 status_backend = sqlite
+#automatic syncing
+#autorefresh = 5
+#quick = 10
 
 [Repository gmail-local]
 type = Maildir
 localfolders = ~/Mail/gmail
 #minutes between syncs
-autorefresh = 5
+#autorefresh = 5
 # number of quick-syncs between autorefreshes
 # do not update if the only changes were to IMAP flags
-quick = 10
+#quick = 10
 # translate names back to gmail-compatible names
 nametrans = lambda foldername:  re.sub ('^gmail', '[Gmail]',
                                 re.sub ('sent', 'Sent Mail',
@@ -26,7 +31,7 @@ nametrans = lambda foldername:  re.sub ('^gmail', '[Gmail]',
 [Repository gmail-remote]
 type = Gmail
 # training wheels: don't create any folders on server
-createfolders = false
+# createfolders = false
 remoteuser = murphyslaw480@gmail.com
 remotepasseval = getpwd("gmail")
 # leave a copy of deleted messages in Gmail's All Mail
@@ -41,5 +46,6 @@ folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail'
 # Needed for OfflineIMAP 6.5.4
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 # send data to keep connection alive
-keepalive = 60
-holdconnection = yes
+#keepalive = 60
+#holdconnection = yes
+#maxconnections = 2

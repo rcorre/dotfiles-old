@@ -1,5 +1,5 @@
 # Paths
-set editor           = `echo \$EDITOR`
+set editor           = "vim -c 'set spell'"
 set my_name          = "Ryan"
 set folder           = ~/Mail
 set alias_file       = ~/.mutt/alias
@@ -10,40 +10,44 @@ set mailcap_path     = ~/.mutt/mailcap
 set tmpdir           = ~/.mutt/temp
 set signature        = ~/.mutt/sig
 
+# Gmail Options
+set record="~/Mail/gmail/gmail.sent"
+set record="~/Mail/gmail/gmail.sent"
+
 # Basic options
-set wait_key = no   # no key prompt for external command
-set mbox_type = Maildir
-set timeout = 3     # time before scanning
-set mail_check = 0  # minimum time between scans
-unset move          # handled by gmail
-#unset confirmappend          # don't ask to confirm
-#set delete          # don't ask to confirm
-#set quit          # don't ask to confirm
+set wait_key   = no     # no key prompt for external command
+set mbox_type  = Maildir
+set timeout    = 3      # time before scanning
+set mail_check = 0      # minimum time between scans
+
+unset move            # don't move read messages from spool (handled by gmail)
+set delete            # don't ask to confirm
+unset confirmappend   # don't ask to confirm
+set quit              # don't ask to confirm
 unset mark_old
-set beep_new        # bell for new
-set pipe_decode        # bell for new
-set thorough_search        # bell for new
+
+set beep_new            # bell for new
+set pipe_decode         # bell for new
+set thorough_search     # bell for new
 
 # Status Bar
 set status_chars = " *%A"
-set status_format = "---[ Folder: %f ]---[%r%m messages%?n? (%n new)?%?d?"
+#set status_format = "---[ Folder: %f ]---[%r%m messages%?n? (%n new)?%?d?"
+set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
 
 # Header Options
 
 # Account
 set spoolfile = "+gmail/INBOX"
 
-# These will show in sidebar
-mailboxes   +gmail/INBOX \
-            +gmail/financial \
-            +gmail/commerce \
-            +gmail/programming \
-            +gmail/personal \
+# Select all subdirs as mailboxes
+mailboxes   `echo ~/Mail/gmail/*`
 
 set mbox = "+gmail/archive"
 set postponed = "+gmail/Drafts"
+set record = "+gmail/Sent"
 
-# index options
+# index view options
 set date_format = "%m/%d/%Y"
 set index_format = "[%Z] %D %-20.20F  %s"
 set sort = threads
@@ -60,6 +64,31 @@ bind index R group-reply
 bind index <tab> sync-mailbox
 bind index <space> collapse-thread
 
+# pager keybindings
+bind pager j next-line
+bind pager k previous-line
+bind pager gg top
+bind pager G bottom
+bind pager \Cd half-down
+bind pager \Cu half-up
+
+bind pager R group-reply
+
+# view attachments properly
+bind attach <return> view-mailcap
+
+# pager view options
+set pager_index_lines = 10
+set pager_context = 3       #number of context lines to show
+set pager_stop              #don't automatically go to next msg
+set menu_scroll             #scroll in menus
+set smart_wrap              #wrap at word boundaries
+set tilde                   #show tildes like in vim
+unset markers               #no ugly + signs
+
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+alternative_order text/plain text/enriched text/html
+
 # Ctrl-R marks all as read
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
 
@@ -70,3 +99,15 @@ macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "sync inbox with offl
 # Saner copy/move dialogs
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
+#content viewing
+auto_view text/html     # automatically open viewer for html
+
+# header control
+ignore *
+unignore from: to: cc: date: subject:
+hdr_order from: to: cc: date: subject:
+
+# Colorscheme
+#source '~/.mutt/xoria256-colorscheme'
+source '~/.mutt/colors/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc'
