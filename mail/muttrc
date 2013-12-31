@@ -10,8 +10,6 @@ set mailcap_path     = ~/.mutt/mailcap
 set tmpdir           = ~/.mutt/temp
 set signature        = ~/.mutt/sig
 
-# Gmail Options
-
 # Basic options
 set wait_key   = no     # no key prompt for external command
 set mbox_type  = Maildir
@@ -67,10 +65,10 @@ bind pager j next-line
 bind pager k previous-line
 bind pager gg top
 bind pager G bottom
+bind pager R group-reply
 bind pager \Cd half-down
 bind pager \Cu half-up
-
-bind pager R group-reply
+macro pager \Cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
 
 # view attachments properly
 bind attach <return> view-mailcap
