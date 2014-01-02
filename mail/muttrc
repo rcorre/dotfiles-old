@@ -41,7 +41,7 @@ mailboxes   `echo ~/Mail/gmail/*`
 
 #set mbox = "+gmail/archive"
 set postponed = "+gmail/gmail.Drafts"
-set record="+gmail/gmail.sent"
+#set record="+gmail/gmail.sent"     #gmail handles saving sent messages
 
 # index view options
 set date_format = "%m/%d/%Y"
@@ -59,6 +59,12 @@ bind index G last-entry
 bind index R group-reply
 bind index <tab> sync-mailbox
 bind index <space> collapse-thread
+
+# Mailbox shortcuts
+macro index gi "<change-folder> =gmail/INBOX<enter>" "go to inbox"
+macro index gs "<change-folder> =gmail/gmail.sent<enter>" "go to sent mail"
+macro index gt "<change-folder> =gmail/gmail.Trash<enter>" "go to trash"
+macro index gd "<change-folder> =gmail/gmail.Drafts<enter>" "go to drafts"
 
 # pager keybindings
 bind pager j next-line
@@ -104,6 +110,33 @@ auto_view text/html     # automatically open viewer for html
 ignore *
 unignore from: to: cc: date: subject:
 hdr_order from: to: cc: date: subject:
+
+# Compose view
+set realname = "Ryan RC"
+set envelope_from
+set sig_dashes
+set edit_headers
+set fast_reply
+set askcc
+set fcc_attach      #save attachments with body
+unset mime_forward  #forward attachments as part of bodyj
+set forward_format = "Fwd: %s"
+set forward_decode
+set attribution = "On %d, %n wrote:"
+set reply_to
+set reverse_name
+set include
+set forward_quote
+bind compose p postpone-message
+bind index p recall-message
+
+# msmtp sending
+set smtp_pass = `pass mail/gmail`
+set from = "murphyslaw480@gmail.com"
+set smtp_url="smtp://murphyslaw480@smtp.gmail.com:587/"
+#set sendmail = "msmtp -a gmail --passwordeval '/usr/bin/pass mail/gmail'"
+set sendmail_wait = 0
+unset record
 
 # Colorscheme
 #source '~/.mutt/xoria256-colorscheme'
