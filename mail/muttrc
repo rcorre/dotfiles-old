@@ -15,6 +15,7 @@ set wait_key   = no     # no key prompt for external command
 set mbox_type  = Maildir
 set timeout    = 3      # time before scanning
 set mail_check = 0      # minimum time between scans
+set sleep_time = 0      # no wait when switching mailboxes
 
 unset move            # don't move read messages from spool (handled by gmail)
 set delete            # don't ask to confirm
