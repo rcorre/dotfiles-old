@@ -1,0 +1,24 @@
+# Account
+set spoolfile = "+ufl/INBOX"
+
+# Select all subdirs as mailboxes
+mailboxes   `echo ~/Mail/ufl/*`
+
+# Mailbox shortcuts
+macro index gi "<change-folder> =ufl/INBOX<enter>" "go to inbox"
+macro index gs "<change-folder> =ufl/Sent<enter>" "go to sent mail"
+macro index gt "<change-folder> =ufl/Trash<enter>" "go to trash"
+macro index gd "<change-folder> =ufl/Drafts<enter>" "go to drafts"
+
+# Deletion
+macro index d "<save-message>+ufl/Trash<enter>" "move message to trash"
+
+# Composition
+set realname = "Ryan Roden-Corrent"
+
+# smtp sending
+set smtp_pass = `pass mail/ufl`
+set from = "rcorrent@ufl.edu"
+set smtp_url="smtp://rcorrent@smtp.ufl.edu:587/"
+set sendmail_wait = 0
+unset record
