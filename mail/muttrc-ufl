@@ -2,7 +2,9 @@
 set spoolfile = "+ufl/INBOX"
 
 # Select all subdirs as mailboxes
+unmailboxes *
 mailboxes   `echo ~/Mail/ufl/*`
+set postponed = "+ufl/Drafts"
 
 # Mailbox shortcuts
 macro index gi "<change-folder> =ufl/INBOX<enter>" "go to inbox"

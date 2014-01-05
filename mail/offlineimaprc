@@ -66,5 +66,3 @@ remoteuser = rcorrent
 remotepasseval = getpwd("ufl")
 folderfilter = lambda folder: not folder.startswith('INBOX/nosync')
 nametrans = lambda folder: re.sub("INBOX/", '', folder)
-createfolders = false
-

@@ -31,12 +31,6 @@ set status_chars = " *%A"
 #set status_format = "---[ Folder: %f ]---[%r%m messages%?n? (%n new)?%?d?"
 set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
 
-# Header Options
-
-#set mbox = "+gmail/archive"
-set postponed = "+gmail/gmail.Drafts"
-#set record="+gmail/gmail.sent"     #gmail handles saving sent messages
-
 # index view options
 set date_format = "%m/%d/%Y"
 set index_format = "[%Z] %D %-20.20F  %s"
@@ -120,4 +114,8 @@ bind index p recall-message
 source '~/.mutt/colors/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc'
 
 # Multiple accounts
-source '~/dotfiles/mail/muttrc-ufl'
+folder-hook ~/Mail/gmail/* source ~/dotfiles/mail/muttrc-gmail
+folder-hook ~/Mail/ufl/* source ~/dotfiles/mail/muttrc-ufl
+source '~/dotfiles/mail/muttrc-gmail'
+macro index <f2> '<change-folder>+gmail/INBOX<enter>'
+macro index <f3> '<change-folder>+ufl/INBOX<enter>'

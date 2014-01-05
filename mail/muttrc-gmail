@@ -2,7 +2,9 @@
 set spoolfile = "+gmail/INBOX"
 
 # Select all subdirs as mailboxes
+unmailboxes *
 mailboxes   `echo ~/Mail/gmail/*`
+set postponed = "+gmail/gmail.Drafts"
 
 # Mailbox shortcuts
 macro index gi "<change-folder> =gmail/INBOX<enter>" "go to inbox"
@@ -20,6 +22,5 @@ set realname = "Ryan RC"
 set smtp_pass = `pass mail/gmail`
 set from = "murphyslaw480@gmail.com"
 set smtp_url="smtp://murphyslaw480@smtp.gmail.com:587/"
-#set sendmail = "msmtp -a gmail --passwordeval '/usr/bin/pass mail/gmail'"
 set sendmail_wait = 0
 unset record
