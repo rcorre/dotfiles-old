@@ -42,6 +42,12 @@ nametrans = lambda foldername:  re.sub ('^\[Gmail\]', 'gmail',
                                 re.sub ('Starred', 'flagged',
                                 re.sub (' ', '_', foldername))))
 folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail'
+# Needed for OfflineIMAP 6.5.4
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+# send data to keep connection alive
+#keepalive = 60
+#holdconnection = yes
+#maxconnections = 2
 
 [Account ufl]
 localrepository = ufl-local
@@ -62,9 +68,3 @@ folderfilter = lambda folder: not folder.startswith('INBOX/nosync')
 nametrans = lambda folder: re.sub("INBOX/", '', folder)
 createfolders = false
 
-# Needed for OfflineIMAP 6.5.4
-sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-# send data to keep connection alive
-#keepalive = 60
-#holdconnection = yes
-#maxconnections = 2
