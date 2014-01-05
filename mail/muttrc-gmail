@@ -1,0 +1,25 @@
+# Account
+set spoolfile = "+gmail/INBOX"
+
+# Select all subdirs as mailboxes
+mailboxes   `echo ~/Mail/gmail/*`
+
+# Mailbox shortcuts
+macro index gi "<change-folder> =gmail/INBOX<enter>" "go to inbox"
+macro index gs "<change-folder> =gmail/gmail.sent<enter>" "go to sent mail"
+macro index gt "<change-folder> =gmail/gmail.Trash<enter>" "go to trash"
+macro index gd "<change-folder> =gmail/gmail.Drafts<enter>" "go to drafts"
+
+# Deletion
+macro index d "<save-message>+gmail/gmail.Trash<enter>" "move message to trash"
+
+# Composition
+set realname = "Ryan RC"
+
+# smtp sending
+set smtp_pass = `pass mail/gmail`
+set from = "murphyslaw480@gmail.com"
+set smtp_url="smtp://murphyslaw480@smtp.gmail.com:587/"
+#set sendmail = "msmtp -a gmail --passwordeval '/usr/bin/pass mail/gmail'"
+set sendmail_wait = 0
+unset record
