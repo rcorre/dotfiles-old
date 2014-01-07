@@ -5,6 +5,7 @@ set spoolfile = "+ufl/INBOX"
 unmailboxes *
 mailboxes   `echo ~/Mail/ufl/*`
 set postponed = "+ufl/Drafts"
+set record = "+ufl/Sent"
 
 # Mailbox shortcuts
 macro index gi "<change-folder> =ufl/INBOX<enter>" "go to inbox"
@@ -23,4 +24,3 @@ set smtp_pass = `pass mail/ufl`
 set from = "rcorrent@ufl.edu"
 set smtp_url="smtp://rcorrent@smtp.ufl.edu:587/"
 set sendmail_wait = 0
-unset record
