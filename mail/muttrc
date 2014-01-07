@@ -81,9 +81,10 @@ macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "ma
 macro index O "<shell-escape>offlineimap<enter>" "sync all with offlineimap"
 macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "sync inbox with offlineimap"
 
-# Saner copy/move dialogs
-macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
-macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+# Automatically start searching when moving messages
+macro index C "<copy-message>?<toggle-mailboxes><search>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes><search>" "move a message to a mailbox"
+macro index y "<change-folder>?<toggle-mailboxes><search>" "change mailbox"
 
 #content viewing
 auto_view text/html     # automatically open viewer for html
