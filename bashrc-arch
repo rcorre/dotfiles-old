@@ -48,3 +48,6 @@ man () {
      export GPG_AGENT_INFO
      export SSH_AUTH_SOCK
  fi
+
+ # taskwarrior
+ alias gamelist="task rc:~/.task/taskrc_gamelist"
