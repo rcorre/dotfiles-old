@@ -19,6 +19,7 @@ require("keychains")    -- hotkey chaining
 require("widget/battery")
 require("widget/thermal")
 require("widget/date")
+require("widget/volume")
 require("widget/pianoctl")
 
 -- {{{ Error handling
@@ -202,6 +203,7 @@ for s = 1, screen.count() do
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(pianobar_widget)    --custom
+    right_layout:add(volume_widget)    --custom
     right_layout:add(thermal_widget)    --custom
     right_layout:add(battery_widget)    --custom
     right_layout:add(date_widget)
@@ -288,13 +290,13 @@ globalkeys = awful.util.table.join(
 
     --Sound
     awful.key({}, "XF86AudioRaiseVolume", function()
-        awful.util.spawn("amixer set Master 10%+")
+        volume_control("up")
     end),
     awful.key({}, "XF86AudioLowerVolume", function()
-        awful.util.spawn("amixer set Master 10%-")
+        volume_control("down")
     end),
     awful.key({}, "XF86AudioMute", function()
-        awful.util.spawn("amixer sset Master toggle")
+        volume_control("mute")
     end)
 )
 
