@@ -81,7 +81,9 @@ modkey = "Mod4"
 local layouts =
 {
     awful.layout.suit.tile,
-    awful.layout.suit.tile.bottom
+    awful.layout.suit.tile.bottom,
+    awful.layout.suit.fair,
+    awful.layout.suit.fair.horizontal,
 }
 -- }}}
 
@@ -297,7 +299,17 @@ globalkeys = awful.util.table.join(
     end),
     awful.key({}, "XF86AudioMute", function()
         volume_control("mute")
+    end),
+
+    -- Maximize
+    awful.key({ modkey }, "m", function()
+        if (awful.layout.get() == awful.layout.suit.max) then
+            awful.layout.set(awful.layout.suit.tile)
+        else
+            awful.layout.set(awful.layout.suit.max)
+        end
     end)
+    
 )
 
 clientkeys = awful.util.table.join(
@@ -312,12 +324,14 @@ clientkeys = awful.util.table.join(
             -- The client currently has the input focus, so it cannot be
             -- minimized, since minimized clients can't have the focus.
             c.minimized = true
-        end),
+        end)
+        --[[
     awful.key({ modkey,           }, "m",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
             c.maximized_vertical   = not c.maximized_vertical
         end)
+        ]]
 )
 
 -- Bind all key numbers to tags.
