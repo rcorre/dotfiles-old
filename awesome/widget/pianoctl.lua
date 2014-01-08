@@ -58,6 +58,7 @@ get_pianobar_keymap = function ()
             q = {
                 func = function ()
                     piano_send(pianocmd.quit)
+                    pianobar_widget:set_text("Pandora off")
                 end,
                 info = "Quit pianobar"
             },
@@ -81,7 +82,7 @@ get_pianobar_keymap = function ()
 end
 
 pianobar_widget =  wibox.widget.textbox()
-pianobar_widget:set_text(" Pandora off ")
+pianobar_widget:set_text("Pandora off")
 
 piano_update = function (artist, song)
     song = '<span weight="bold" color="cyan">' .. song .. '</span>'

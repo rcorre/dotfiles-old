@@ -14,11 +14,11 @@ volume_control = function (mode)
     local volume = string.match(status, "(%d?%d?%d)%%")
     volume = string.format("% 3d", volume)
     if string.find(status, "[on]", 1, true) then
-        volume = volume .. "% "
+        volume = volume .. "%"
     else
-        volume = volume .. "M "
+        volume = volume .. "M"
     end
-    volume_widget:set_text("VOL: " .. volume)
+    volume_widget:set_text("VOL:" .. volume)
 end
 
 volume_widget = wibox.widget.textbox()

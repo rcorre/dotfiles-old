@@ -14,7 +14,7 @@ local update_function = function (widget, args)
     else
         tag = tag .. 'color="cyan">'
     end
-    return " " .. tag .. 'TEMP: ' .. temp .. '°C</span> ' end
+    return tag .. 'TEMP: ' .. temp .. '°C</span>' end
 end
 
 vicious.register(thermal_widget, vicious.widgets.thermal, update_function, 19, 

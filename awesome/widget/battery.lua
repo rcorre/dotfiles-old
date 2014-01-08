@@ -13,7 +13,7 @@ local update_function = function (widget, args)
     else
         tag = tag .. 'color="cyan">'
     end
-    return " " .. tag .. 'BAT: ' .. charge .. '%</span> ' end
+    return tag .. 'BAT: ' .. charge .. '%</span>' end
 end
 
 vicious.register(battery_widget, vicious.widgets.bat, update_function,
