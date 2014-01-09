@@ -52,12 +52,12 @@ function keymap.globalkeys(modkey)
         awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
         awful.key({ modkey }, "x",
-        function ()
-            awful.prompt.run({ prompt = "Run Lua code: " },
-            mypromptbox[mouse.screen].widget,
-            awful.util.eval, nil,
-            awful.util.getdir("cache") .. "/history_eval")
-        end),
+            function ()
+                awful.prompt.run({ prompt = "Run Lua code: " },
+                mypromptbox[mouse.screen].widget,
+                awful.util.eval, nil,
+                awful.util.getdir("cache") .. "/history_eval")
+            end),
         -- Menubar
         awful.key({ modkey }, "p", function() menubar.show() end),
 
@@ -91,25 +91,8 @@ function keymap.clientkeys(modkey)
         awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
         awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
         awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
-        awful.key({ modkey,           }, "n",
-        function (c)
-            -- The client currently has the input focus, so it cannot be
-            -- minimized, since minimized clients can't have the focus.
-            c.minimized = true
-        end),
-        awful.key({ modkey,           }, "s",
-        function (c)
-            -- The client currently has the input focus, so it cannot be
-            -- minimized, since minimized clients can't have the focus.
-            c.sticky = not c.sticky
-        end)
-        --[[
-        awful.key({ modkey,           }, "m",
-        function (c)
-        c.maximized_horizontal = not c.maximized_horizontal
-        c.maximized_vertical   = not c.maximized_vertical
-        end)
-        ]]
+        awful.key({ modkey,           }, "n",      function (c) c.minimized = true               end),
+        awful.key({ modkey,           }, "s",      function (c) c.sticky = not c.sticky          end)
     )
 end
 
