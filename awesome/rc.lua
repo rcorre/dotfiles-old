@@ -491,6 +491,7 @@ end)
 -- Add keychain for pianobar (Pandora) control
 keychains.init(globalkeys,nil)
 keychains.add({modkey}, "c", "Pandora Radio", nil, get_pianobar_keymap)
+keychains.add({modkey}, "q", "Quick Launch", nil, require("quicklaunch"))
 keychains.start(5)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
