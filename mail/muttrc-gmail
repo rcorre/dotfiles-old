@@ -19,8 +19,6 @@ macro index d "<save-message>+gmail/gmail.Trash<enter>" "move message to trash"
 set realname = "Ryan RC"
 
 # smtp sending
-set smtp_pass = `pass mail/gmail`
-set from = "murphyslaw480@gmail.com"
-set smtp_url="smtp://murphyslaw480@smtp.gmail.com:587/"
-set sendmail_wait = 0
-unset record
+source '~/dotfiles/mail/smtp-gmail'
+reply-hook . source '~/dotfiles/mail/smtp-gmail'
+reply-hook '~t @comcast.net' source '~/dotfiles/mail/smtp-comcast'

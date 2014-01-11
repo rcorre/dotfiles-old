@@ -1,0 +1,5 @@
+set smtp_pass = `pass mail/gmail`
+set from = "murphyslaw480@gmail.com"
+set smtp_url="smtp://murphyslaw480@smtp.gmail.com:587/"
+set sendmail_wait = 0
+unset record

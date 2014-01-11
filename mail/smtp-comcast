@@ -1,0 +1,5 @@
+set smtp_pass = `pass mail/comcast`
+set from = "ryanrc1@comcast.net"
+set smtp_url="smtp://ryanrc1@smtp.comcast.net:465/"
+set sendmail_wait = 0
+set record = "+gmail/Sent"
