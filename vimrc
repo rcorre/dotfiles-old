@@ -19,6 +19,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-surround'
+Bundle 'xuhdev/vim-latex-live-preview'
 
 " End of Bundles
 " YCM
