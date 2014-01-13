@@ -3,8 +3,8 @@ local naughty = require("naughty")
 local wibox = require("wibox")
 -- files that pianobar uses for input and output
 -- set in pianobar's config file
-local ctl_file = ".config/pianobar/ctl"
-local out_file = ".config/pianobar/out"
+local ctl_file = "~/.config/pianobar/ctl"
+local out_file = "~/.config/pianobar/out"
 
 -- Commands that can be sent to pianobar
 pianocmd = {
