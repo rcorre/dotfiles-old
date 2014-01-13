@@ -22,3 +22,4 @@ set realname = "Ryan RC"
 source '~/dotfiles/mail/smtp-gmail'
 reply-hook . source '~/dotfiles/mail/smtp-gmail'
 reply-hook '~t @comcast.net' source '~/dotfiles/mail/smtp-comcast'
+reply-hook '~t @groups.facebook.com' source '~/dotfiles/mail/smtp-comcast'
