@@ -97,7 +97,7 @@ end
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
-tags = { "main", "web", "mail", "work", 5, 6 }
+tags = { "main", "work", "web", "mail", 5, 6 }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
     tags[s] = awful.tag(tags, s, layouts[1])
