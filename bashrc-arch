@@ -11,7 +11,8 @@ export EDITOR=vim
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-set -o vi 	#vi command line editing
+set -o vi 	                #vi command line editing
+shopt -s direxpand          #expand directory variables with <TAB> after /
 export GREP_COLOR='1;32'	#green grep result highlight
 
 #pass tab completion
