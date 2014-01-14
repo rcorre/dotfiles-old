@@ -33,8 +33,8 @@ set status_chars = " *%A"
 set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
 
 # index view options
-set date_format = "%m/%d/%Y"
-set index_format = "[%Z] %D %-20.20F  %s"
+set date_format = "%m/%d/%y %I:%M%p"
+set index_format = "[%Z] %D ┃ %-20.20F ┃ %s"
 set sort = threads
 set sort_aux = reverse-last-date-received
 set uncollapse_jump
