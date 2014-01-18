@@ -20,7 +20,8 @@ Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-surround'
 Bundle 'xuhdev/vim-latex-live-preview'
-
+Bundle 'Matt-Stevens/vim-systemd-syntax'
+Bundle 'jcf/vim-latex'
 " End of Bundles
 " YCM
 let g:ycm_confirm_extra_conf = 0
@@ -29,25 +30,30 @@ let g:ycm_collect_identifiers_from_tags_files = 1
 filetype plugin indent on
 syntax on
 
-set rnu	        " Relative numbering
+" vim-latex settings
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+
+set rnu	            " Relative numbering
 set smartindent
-set wildmenu    " Command line completion
+set wildmenu        " Command line completion
 
-set hlsearch    " highlight search results
-set incsearch 	" jump to result during search input
-set ignorecase  " case insensitive searching
+set hlsearch        " highlight search results
+set incsearch 	    " jump to result during search input
+set ignorecase      " case insensitive searching
 
-set showmatch	" show matching brackets
+set showmatch	    " show matching brackets
 
-set noerrorbells  " no annoying noise on error
+set noerrorbells    " no annoying noise on error
 
-set expandtab	  " tabs = spaces
+set expandtab	    " tabs = spaces
 set smarttab
-set tabstop=4	  " 4 space tabs
-set shiftwidth=4
-set tw=80 	  " wrap text at 80 chars
+set tabstop=2	    " 4 space tabs
+set shiftwidth=2
+set tw=80 	        " wrap text at 80 chars
+let mapleader = "," "use , as leader character
 
-set t_Co=256    "enable 256 colors
+set t_Co=256        "enable 256 colors
 set t_AB=[48;5;%dm
 set t_AF=[38;5;%dm
 set bg=dark
