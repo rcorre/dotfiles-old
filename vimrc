@@ -21,7 +21,7 @@ Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-surround'
 Bundle 'xuhdev/vim-latex-live-preview'
 Bundle 'Matt-Stevens/vim-systemd-syntax'
-Bundle 'jcf/vim-latex'
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
 " End of Bundles
 " YCM
 let g:ycm_confirm_extra_conf = 0
