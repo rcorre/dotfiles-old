@@ -52,3 +52,6 @@ man () {
 
  # taskwarrior
  alias gamelist="task rc:~/.task/taskrc_gamelist"
+
+ #top level of git project
+ alias gittop='cd "$(git rev-parse --show-toplevel)"'
