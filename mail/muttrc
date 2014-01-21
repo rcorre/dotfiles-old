@@ -119,5 +119,6 @@ source '~/.mutt/colors/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttr
 folder-hook ~/Mail/gmail/* source ~/dotfiles/mail/muttrc-gmail
 folder-hook ~/Mail/ufl/* source ~/dotfiles/mail/muttrc-ufl
 source '~/dotfiles/mail/muttrc-gmail'
+source '~/.mutt/alias'
 macro index <f2> '<change-folder>+gmail/INBOX<enter>'
 macro index <f3> '<change-folder>+ufl/INBOX<enter>'
