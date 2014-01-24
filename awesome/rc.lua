@@ -16,6 +16,7 @@ local vicious = require("vicious")
 require ("blingbling")  -- fancier widgets
 require("keychains")    -- hotkey chaining
 --Custom Widgets
+require("conky")
 require("widget/battery")
 require("widget/thermal")
 require("widget/date")
@@ -314,8 +315,10 @@ globalkeys = awful.util.table.join(
         else
             awful.layout.set(awful.layout.suit.max)
         end
-    end)
-    
+    end),
+
+    --Conky
+    awful.key({}, "F10", raise_conky, lower_conky)
 )
 
 clientkeys = awful.util.table.join(
@@ -413,6 +416,14 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
+    { rule = { class = "Conky" },
+      properties = {
+        floating = true,
+        sticky = true,
+        ontop = false,
+        focusable = false,
+        size_hints = {"program_position", "program_size"}
+      } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
@@ -497,3 +508,5 @@ keychains.start(5)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+-- Launch conky
+awful.util.spawn("conky")
