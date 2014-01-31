@@ -83,7 +83,7 @@ macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "sync inbox with offl
 
 # Automatically start searching when moving messages
 macro index C "<copy-message>?<toggle-mailboxes><search>" "copy a message to a mailbox"
-macro index M "<save-message>?<toggle-mailboxes><search>" "move a message to a mailbox"
+macro index,pager M "<save-message>?<toggle-mailboxes><search>" "move a message to a mailbox"
 macro index y "<change-folder>?<toggle-mailboxes><search>" "change mailbox"
 
 #content viewing
