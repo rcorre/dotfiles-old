@@ -68,3 +68,6 @@ let g:airline_detect_paste=1
 let g:airline_detect_iminsert=0
 let g:airline_theme='powerlineish'
 set guifont="Inconsolata for Powerline"
+
+" vim-latex
+let g:LatexBox_Folding=1
