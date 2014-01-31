@@ -47,3 +47,5 @@ man () {
 
  #top level of git project
  alias gittop='cd "$(git rev-parse --show-toplevel)"'
+ alias uf-connect='sudo netctl start wlp2s0-uf'
+ alias uf-reconnect='sudo netctl restart wlp2s0-uf'
