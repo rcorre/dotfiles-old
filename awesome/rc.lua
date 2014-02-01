@@ -334,6 +334,14 @@ clientkeys = awful.util.table.join(
             -- minimized, since minimized clients can't have the focus.
             c.minimized = true
         end),
+    awful.key({ modkey, "Shift"   }, "n",
+        function ()
+          --unminimize all windows
+          local tag = awful.tag.selected()
+          for i=1, #tag:clients() do
+            tag:clients()[i].minimized=false
+          end
+        end),
     awful.key({ modkey,           }, "s",
         function (c)
             -- The client currently has the input focus, so it cannot be
