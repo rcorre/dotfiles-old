@@ -5,7 +5,6 @@ set spoolfile = "+ufl/INBOX"
 unmailboxes *
 mailboxes   `echo ~/Mail/ufl/*`
 set postponed = "+ufl/Drafts"
-set record = "+ufl/Sent"
 
 # Mailbox shortcuts
 macro index gi "<change-folder> =ufl/INBOX<enter>" "go to inbox"
@@ -16,11 +15,5 @@ macro index gd "<change-folder> =ufl/Drafts<enter>" "go to drafts"
 # Deletion
 macro index d "<save-message>+ufl/Trash<enter>" "move message to trash"
 
-# Composition
-set realname = "Ryan Roden-Corrent"
-
-# smtp sending
-set smtp_pass = `pass mail/ufl`
-set from = "rcorrent@ufl.edu"
-set smtp_url="smtp://rcorrent@smtp.ufl.edu:587/"
-set sendmail_wait = 0
+source '~/dotfiles/mail/smtp-gmail'
+reply-hook . source '~/dotfiles/mail/smtp-ufl'

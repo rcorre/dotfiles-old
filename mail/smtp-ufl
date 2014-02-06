@@ -1,0 +1,8 @@
+# smtp sending
+set smtp_pass = `pass mail/ufl`
+set from = "rcorrent@ufl.edu"
+set smtp_url="smtp://rcorrent@smtp.ufl.edu:587/"
+set sendmail_wait = 0
+
+# Composition
+set realname = "Ryan Roden-Corrent"

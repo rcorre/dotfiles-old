@@ -1,0 +1,7 @@
+VERBOSE=off
+
+MAILDIR=~/Mail
+#procmail main directory
+PMDIR=~/.procmail
+LOGFILE=$PMDIR/log
+INCLUDERC=$PMDIR/rc.lists
