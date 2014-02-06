@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 " Run :BundleClean after removing
 " vim-scripts
 Bundle 'Tabmerge'
+Bundle 'vim-scripts/clips.vim'
 " other repos
 Bundle 'flazz/vim-colorschemes'
 Bundle 'kien/ctrlp.vim'
@@ -71,3 +72,5 @@ set guifont="Inconsolata for Powerline"
 
 " vim-latex
 let g:LatexBox_Folding=1
+"CLIPS
+au BufRead,BufNewFile *.clp set filetype=clips
