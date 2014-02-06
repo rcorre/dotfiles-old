@@ -81,10 +81,9 @@ modkey = "Mod4"
     awful.layout.suit.magnifier]]
 local layouts =
 {
+    awful.layout.suit.fair,
     awful.layout.suit.tile,
     awful.layout.suit.tile.bottom,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
 }
 -- }}}
 
