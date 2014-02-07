@@ -26,6 +26,33 @@ data.location=~/.task/general
 #include /usr/share/doc/task/rc/dark-gray-256.theme
 include /usr/share/doc/task/rc/solarized-dark-256.theme
 
-default.command=list
+default.command=next
 dateformat=m/d/y
 dateformat.report=a m/d/y
+
+#Urgency coefficient for 'next' special tag
+urgency.next.coefficient=15.0
+#Urgency coefficient for blocking tasks
+urgency.blocking.coefficient=8.0
+#Urgency coefficient for blocked tasks
+urgency.blocked.coefficient=-5.0
+#Urgency coefficient for due dates
+urgency.due.coefficient=13.0
+#Urgency coefficient for priorities
+urgency.priority.coefficient=4.0
+#Urgency coefficient for waiting status
+urgency.waiting.coefficient=-3.0
+#Urgency coefficient for active tasks
+urgency.active.coefficient=4.0
+#Urgency coefficient for scheduled tasks
+urgency.scheduled.coefficient=5.0
+#Urgency coefficient for projects
+urgency.project.coefficient=1.0
+#Urgency coefficient for tags
+urgency.tags.coefficient=0.5
+#Urgency coefficient for annotations
+urgency.annotations.coefficient=0.5
+#Urgency coefficient for the age of tasks
+urgency.age.coefficient=1.0
+#maximum age to contribute to urgency
+urgency.age.max=365
