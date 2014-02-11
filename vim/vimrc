@@ -36,6 +36,7 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 
 set rnu	            " Relative numbering
+set nu	            " full line number on current line
 set smartindent
 set wildmenu        " Command line completion
 
@@ -43,13 +44,13 @@ set hlsearch        " highlight search results
 set incsearch 	    " jump to result during search input
 set ignorecase      " case insensitive searching
 
-set showmatch	    " show matching brackets
+set showmatch	      " show matching brackets
 
 set noerrorbells    " no annoying noise on error
 
-set expandtab	    " tabs = spaces
+set expandtab	      " tabs = spaces
 set smarttab
-set tabstop=2	    " 4 space tabs
+set tabstop=2	      " 4 space tabs
 set shiftwidth=2
 set tw=80 	        " wrap text at 80 chars
 let mapleader = "," "use , as leader character
