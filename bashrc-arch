@@ -51,4 +51,4 @@ man () {
  alias uf-reconnect='sudo netctl restart wlp2s0-uf'
 
  #ruby gems
- PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH)"
+ PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
