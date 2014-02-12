@@ -1,10 +1,10 @@
 local wibox = require("wibox")
 
 local volume_cmd = {
-    up   = "set Master 10%+",
-    down = "set Master 10%-",
+    up   = "-M set Master 10%+",
+    down = "-M set Master 10%-",
     mute = "set Master toggle",
-    read = "get Master"
+    read = "-M get Master"
 }
 
 volume_control = function (mode)
@@ -12,7 +12,7 @@ volume_control = function (mode)
     local status = fd:read("*all")
     fd:close()
     local volume = string.match(status, "(%d?%d?%d)%%")
-    volume = string.format("% 3d", volume)
+    volume = string.format("% 3d", math.floor(volume/10)*10)
     if string.find(status, "[on]", 1, true) then
         volume = volume .. "%"
     else
