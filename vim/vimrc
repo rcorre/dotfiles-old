@@ -75,3 +75,5 @@ set guifont="Inconsolata for Powerline"
 let g:LatexBox_Folding=1
 "CLIPS
 au BufRead,BufNewFile *.clp set filetype=clips
+"consular
+au BufRead,BufNewFile ~/dotfiles/consular/termfiles/* set filetype=ruby
