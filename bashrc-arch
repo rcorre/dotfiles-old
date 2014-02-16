@@ -9,6 +9,8 @@ export TERM=xterm-256color
 export EDITOR=vim
 
 alias ls='ls --color=auto'
+#color ls
+eval `dircolors ~/.dircolors`
 PS1='[\u@\h \W]\$ '
 
 set -o vi 	                #vi command line editing
@@ -32,6 +34,8 @@ man () {
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
  }
+ 
+
 
  #gpg-agent
  GPG_TTY=$(tty)
@@ -46,6 +50,7 @@ man () {
  alias gamelist="task rc:~/.task/taskrc_gamelist"
 
  #top level of git project
+ alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
  alias gittop='cd "$(git rev-parse --show-toplevel)"'
  alias uf-connect='sudo netctl start wlp2s0-uf'
  alias uf-reconnect='sudo netctl restart wlp2s0-uf'
