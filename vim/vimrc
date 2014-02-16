@@ -23,6 +23,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'xuhdev/vim-latex-live-preview'
 Bundle 'Matt-Stevens/vim-systemd-syntax'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
+Bundle 'SirVer/ultisnips'
 " End of Bundles
 " YCM
 let g:ycm_confirm_extra_conf = 0
@@ -70,6 +71,15 @@ let g:airline_detect_paste=1
 let g:airline_detect_iminsert=0
 let g:airline_theme='powerlineish'
 set guifont="Inconsolata for Powerline"
+
+"Ultisnips config
+let g:UltiSnipsSnippetsDir = "~/dotfiles/vim/UltiSnips"
+let g:UltiSnipsEditSplit = "horizontal"
+let g:UltiSnipsExpandTrigger = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+let g:UltiSnipsListSnippets = "<c-i>"
+"let g:UltiSnipsSnippetsDirectories = '~/dotfiles/vim/UltiSnips'
 
 " vim-latex
 let g:LatexBox_Folding=1
