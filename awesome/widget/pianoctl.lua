@@ -1,6 +1,7 @@
 -- Widget to interface with pianobar (CLI to pandora) using pianoctl
 local naughty = require("naughty")
 local wibox = require("wibox")
+local awful = require("awful")
 -- files that pianobar uses for input and output
 -- set in pianobar's config file
 local ctl_file = "~/.config/pianobar/ctl"
@@ -85,6 +86,8 @@ pianobar_widget =  wibox.widget.textbox()
 pianobar_widget:set_text("Pandora off")
 
 piano_update = function (artist, song)
+    song = awful.util.escape(song)      --escape xml characters
+    artist = awful.util.escape(artist)  --escape xml characters
     song = '<span weight="bold" color="cyan">' .. song .. '</span>'
     artist = '<span weight="bold" color="cyan">' .. artist .. '</span> '
     pianobar_widget:set_markup(song .. " by " .. artist)
