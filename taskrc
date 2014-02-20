@@ -51,7 +51,7 @@ urgency.project.coefficient=1.0
 #Urgency coefficient for tags
 urgency.tags.coefficient=0.5
 #Urgency coefficient for annotations
-urgency.annotations.coefficient=0.5
+urgency.annotations.coefficient=0.0
 #Urgency coefficient for the age of tasks
 urgency.age.coefficient=1.0
 #maximum age to contribute to urgency
