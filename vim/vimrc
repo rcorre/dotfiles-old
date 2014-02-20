@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 " Run :BundleClean after removing
 " vim-scripts
 Bundle 'Tabmerge'
+Bundle 'javacomplete'
 Bundle 'vim-scripts/clips.vim'
 " other repos
 Bundle 'flazz/vim-colorschemes'
@@ -87,3 +88,5 @@ let g:LatexBox_Folding=1
 au BufRead,BufNewFile *.clp set filetype=clips
 "consular
 au BufRead,BufNewFile ~/dotfiles/consular/termfiles/* set filetype=ruby
+"javacomplete
+autocmd Filetype java setlocal omnifunc=javacomplete#Complete
