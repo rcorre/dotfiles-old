@@ -4,6 +4,7 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+source ~/.profile
 
 export TERM=xterm-256color
 export EDITOR=vim
@@ -25,7 +26,7 @@ source ~/dotfiles/bash-dirs
 
 # colored man pages
 man () {
-    env LESS_TERMCAP_mb=$'\E[01;31m' \
+  env LESS_TERMCAP_mb=$'\E[01;31m' \
     LESS_TERMCAP_md=$'\E[01;38;5;74m' \
     LESS_TERMCAP_me=$'\E[0m' \
     LESS_TERMCAP_se=$'\E[0m' \
@@ -33,27 +34,32 @@ man () {
     LESS_TERMCAP_ue=$'\E[0m' \
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
- }
- 
+}
 
+#gpg-agent
+GPG_TTY=$(tty)
+export GPG_TTY
+if [ -f "{$HOME}/.gpg-agent-info" ]; then
+  . "{$HOME}/.gpg-agent-info"
+  export GPG_AGENT_INFO
+  export SSH_AUTH_SOCK
+fi
 
- #gpg-agent
- GPG_TTY=$(tty)
- export GPG_TTY
- if [ -f "{$HOME}/.gpg-agent-info" ]; then
-     . "{$HOME}/.gpg-agent-info"
-     export GPG_AGENT_INFO
-     export SSH_AUTH_SOCK
- fi
+# taskwarrior
+alias gamelist="task rc:~/.task/taskrc_gamelist"
+alias songlist="task rc:~/.task/taskrc_songlist"
 
- # taskwarrior
- alias gamelist="task rc:~/.task/taskrc_gamelist"
+#top level of git project
+alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
+alias gittop='cd "$(git rev-parse --show-toplevel)"'
+alias uf-connect='sudo netctl start wlp2s0-uf'
+alias uf-reconnect='sudo netctl restart wlp2s0-uf'
 
- #top level of git project
- alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
- alias gittop='cd "$(git rev-parse --show-toplevel)"'
- alias uf-connect='sudo netctl start wlp2s0-uf'
- alias uf-reconnect='sudo netctl restart wlp2s0-uf'
+#ruby gems
+#rvm should handle this ... ?
 
- #ruby gems
- PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+[[ -r "$HOME/.rvm/scripts/completion" ]] && source \
+  "$HOME/.rvm/scripts/completion"
+PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"   #system gems
