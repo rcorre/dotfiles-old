@@ -1,9 +1,37 @@
-snippet testsnippet "a test"
-add some text
+snippet bold "bold text"
+\\textbf\{${1}\} 
 endsnippet
 
-snippet tikz "isolated tikzpicture"
-\\begin\{tikzpicture\}
+snippet ital "italic text"
+\\emph\{${1}\} 
+endsnippet
 
-\\end\{tikzpicture\}
+snippet minipage "minipage environment"
+\\begin{minipage}[${1:tcb}]{${2:0.5}\\textwidth}
+	$0
+\\end{minipage}
+endsnippet
+
+snippet lstinput "input source code"
+\\lstinputlisting\{${2:file}\}
+endsnippet
+
+snippet lstinputlang "input source code (specify language)"
+\\lstinputlisting[language=${1:sql}]\{${2:file}\}
+endsnippet
+
+snippet lstinputlines "input specific code lines"
+\\lstinputlisting[language=${1:sql},firstline=${2:0},lastline=${3:1}]\{${4:file}\}
+endsnippet
+
+snippet dfrac "large fraction"
+\\dfrac\{${1:num}\}\{${2:denom}\}
+endsnippet
+
+snippet tpath "tikz path"
+\\path [${1:line}] (${2:node1}) ${3:--} (${4:node2});
+endsnippet
+
+snippet tnode "tikz node"
+\\node [${1:entity}, ${2:above}=${3:1}cm of ${4:node}] (${5:name}) \{$5\};
 endsnippet
