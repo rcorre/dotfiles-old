@@ -1,7 +1,6 @@
 set sw=2
 set iskeyword+=:
 "latex-box
-"nnoremap <leader>mm :exec<Space>MakeAndClean()<Enter>''
 nnoremap <leader>mm :w<Enter>:Latexmk<Enter>
 nnoremap <leader>mc :LatexmkClean<Enter>
 nnoremap <leader>v  :LatexView<Enter>
