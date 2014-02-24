@@ -1,0 +1,8 @@
+snippet lock "try-finally locked statement"
+${1:lock}.lock();
+try {
+	${2:${VISUAL}}
+} finally {
+	$1.unlock();
+}
+endsnippet

@@ -35,3 +35,17 @@ endsnippet
 snippet tnode "tikz node"
 \\node [${1:entity}, ${2:above}=${3:1}cm of ${4:node}] (${5:name}) \{$5\};
 endsnippet
+
+snippet subfigs "figure with subfigures"
+\\begin\{figure\}[${1:H}]
+	${2:\\centering}
+	\\begin\{subfigure\}[${3:b}]\{${4:0.5}\\textwidth\}
+		\\includegraphics[width=\\textwidth]\{${5}\}
+		\\caption\{${6}\}
+	\\end\{subfigure\}
+	\\begin\{subfigure\}[$3]\{$4\\textwidth\}
+		\\includegraphics[width=\\textwidth]\{${7}\}
+		\\caption\{${8}\}
+	\\end\{subfigure\}
+\\end\{figure\}
+endsnippet
