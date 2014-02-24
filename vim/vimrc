@@ -21,7 +21,8 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-surround'
-Bundle 'xuhdev/vim-latex-live-preview'
+Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-fugitive'
 Bundle 'Matt-Stevens/vim-systemd-syntax'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'SirVer/ultisnips'
@@ -70,7 +71,8 @@ set laststatus=2    "always show
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
 let g:airline_detect_iminsert=0
-let g:airline_theme='powerlineish'
+let g:airline_theme='solarized'
+let g:airline_powerline_fonts=1
 set guifont="Inconsolata for Powerline"
 
 "Ultisnips config
