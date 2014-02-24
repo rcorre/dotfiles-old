@@ -12,6 +12,7 @@
 	dif = diff --name-only
 	pom = push origin master
 	diffc = diff --cached
+	cmend = commit --amend
 [color]
 	ui = auto
 [core]
