@@ -50,6 +50,7 @@ alias gamelist="task rc:~/.task/taskrc_gamelist"
 alias songlist="task rc:~/.task/taskrc_songlist"
 
 #top level of git project
+alias op="xdg-open"
 alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
 alias gittop='cd "$(git rev-parse --show-toplevel)"'
 alias uf-connect='sudo netctl start wlp2s0-uf'
