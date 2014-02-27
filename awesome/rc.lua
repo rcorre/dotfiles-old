@@ -307,6 +307,20 @@ globalkeys = awful.util.table.join(
         volume_control("mute")
     end),
 
+    -- Touchpad
+    awful.key({}, "XF86TouchpadToggle", function()
+        local fd = io.popen("synclient -l")
+        local off = string.match(fd:read("*all"), "TouchpadOff%s*=%s*(%d)")
+        fd:close()
+        if (tonumber(off) == 1) then                    --touchpad was off
+            awful.util.spawn("synclient TouchpadOff=0") --turn on
+            naughty.notify({ text = "touchpad enabled" })
+        else                                            --touchpad was on
+            awful.util.spawn("synclient TouchpadOff=1") --turn off
+            naughty.notify({ text = "touchpad disabled" })
+        end
+    end),
+
     -- Maximize
     awful.key({ modkey }, "m", function()
         if (awful.layout.get() == awful.layout.suit.max) then
