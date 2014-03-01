@@ -1,3 +1,4 @@
 *.swp
 Session.vim
 tags
+.vim.local
