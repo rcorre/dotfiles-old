@@ -23,13 +23,18 @@ Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-dispatch'
 Bundle 'Matt-Stevens/vim-systemd-syntax'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'SirVer/ultisnips'
+Bundle 'majutsushi/tagbar'
 " End of Bundles
 " YCM
-let g:ycm_confirm_extra_conf = 0
+let g:ycm_confirm_extra_conf = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_complete_in_comments = 1
 
 filetype plugin indent on
 syntax on
@@ -49,6 +54,8 @@ set ignorecase      " case insensitive searching
 
 set showmatch	      " show matching brackets
 
+set splitbelow	    " open splits (including preview) in lower portion of window
+
 set noerrorbells    " no annoying noise on error
 
 set expandtab	      " tabs = spaces
@@ -56,6 +63,7 @@ set smarttab
 set tabstop=2	      " 4 space tabs
 set shiftwidth=2
 set tw=80 	        " wrap text at 80 chars
+set colorcolumn=81	" show where text should wrap
 let mapleader = "," "use , as leader character
 
 set t_Co=256        "enable 256 colors
@@ -83,6 +91,20 @@ let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 let g:UltiSnipsListSnippets = "<c-i>"
 "let g:UltiSnipsSnippetsDirectories = '~/dotfiles/vim/UltiSnips'
+"Tabularize shortcut
+map <leader>a :Tabularize /
+
+"load project-local vimrc if it exists
+if filereadable(".vim.local")
+  so .vim.local
+endif
+au BufRead,BufNewFile .vim.local set filetype=vim
+
+" Don't screw up folds when inserting text that might affect them, until
+" leaving insert mode. Foldmethod is local to the window. Protect against
+" screwing up folding when switching between windows.
+autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
 " vim-latex
 let g:LatexBox_Folding=1
@@ -92,3 +114,7 @@ au BufRead,BufNewFile *.clp set filetype=clips
 au BufRead,BufNewFile ~/dotfiles/consular/termfiles/* set filetype=ruby
 "javacomplete
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+
+"edit ftplugin for current filetype
+command! FTPedit exe "tabnew" resolve("$HOME/.vim/ftplugin/" . &ft . ".vim")
+
