@@ -298,9 +298,15 @@ globalkeys = awful.util.table.join(
 
     --Sound
     awful.key({}, "XF86AudioRaiseVolume", function()
-        volume_control("up")
+        volume_control("bigup")
     end),
     awful.key({}, "XF86AudioLowerVolume", function()
+        volume_control("bigdown")
+    end),
+    awful.key({"Control"}, "XF86AudioRaiseVolume", function()
+        volume_control("up")
+    end),
+    awful.key({"Control"}, "XF86AudioLowerVolume", function()
         volume_control("down")
     end),
     awful.key({}, "XF86AudioMute", function()
@@ -445,9 +451,6 @@ awful.rules.rules = {
         focusable = false,
         size_hints = {"program_position", "program_size"}
       } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    { rule = { class = "Firefox" },
-      properties = { tag = tags[1][3] } },
     { rule = { class = "mutt" },
       properties = { tag = tags[1][4] } },
     { rule = { class = "Steam" },
