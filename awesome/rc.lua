@@ -13,7 +13,6 @@ naughty = require("naughty")    -- global so other scripts can send notification
 local menubar = require("menubar")
 local vicious = require("vicious")
 -- awesome extensions
-require ("blingbling")  -- fancier widgets
 require("keychains")    -- hotkey chaining
 --Custom Widgets
 require("conky")
