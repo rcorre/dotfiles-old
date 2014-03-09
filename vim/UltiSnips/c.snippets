@@ -1,5 +1,33 @@
+snippet st "struct"
+typedef struct ${1} {
+	${2}
+} $1;
+$0
+endsnippet
+
+snippet enum "enumeration"
+typedef enum ${1} {
+	${2}
+} $1;
+$0
+endsnippet
+
 snippet ckfun "call function, check return value"
 if (!(${1:var} = ${2:fn}(${3:args}))) {
 	${4}
 }
+endsnippet
+
+snippet hguard "header guard"
+#ifndef ${1:`!p
+if not snip.c:
+	import random, string
+	snip.rv = re.sub(r'[^A-Za-z0-9]+','_', snip.fn).upper()
+else:
+	snip.rv = snip.c`}
+#define $1
+
+${0}
+
+#endif /* end of include guard: $1 */
 endsnippet

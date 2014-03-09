@@ -1,9 +1,18 @@
+snippet fig "Figure environment" b
+\begin{figure}[${2:H}]
+	\centering
+	\includegraphics[width=${3:0.5}\linewidth]{${4:name.ext}}
+	\caption{${5}}
+\end{figure}
+$0
+endsnippet
+
 snippet bold "bold text"
-\\textbf\{${1}\} 
+\\textbf\{${VISUAL}\}
 endsnippet
 
 snippet ital "italic text"
-\\emph\{${1}\} 
+\\emph\{${VISUAL}\}
 endsnippet
 
 snippet minipage "minipage environment"
@@ -55,8 +64,16 @@ snippet sum "math sigma sum"
 endsnippet
 
 snippet eqnbracket "math equation bracket"
-\left\{\begin\{array\}\{c l\}
+\\left\{\begin\{array\}\{c l\}
 	${1:1} & ${2:n=0}\\\\
 	${3:0} & ${4:else}\\\\
-\end\{array\}\right.\\\\
+\\end\{array\}\right.\\\\
+endsnippet
+
+snippet H "frequency response"
+H(e^\{j${1:\\hat\{w\}}\}) =$0
+endsnippet
+
+snippet exp "e^{...}"
+e^\{${1}\}$0
 endsnippet

@@ -1,3 +1,10 @@
+snippet rule "CLIPS rule"
+(defrule ${1:name} "${2:description}"
+		(${3:condition})
+	=>
+		(${4:action}))$0
+endsnippet
+
 snippet route "cap6685 project route"
 (route (city1 "${1:Talahassee}") (city2 "${2:Lake City}") (distance ${3:1}))
 route$0

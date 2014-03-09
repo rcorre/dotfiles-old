@@ -1,1 +1,1 @@
-syn keyword Keyword LIMIT
+syn keyword Keyword LIMIT COUNT

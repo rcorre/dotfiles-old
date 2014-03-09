@@ -6,3 +6,17 @@ WHERE ${4};
 
 query$0
 endsnippet
+
+snippet insert "INSERT INTO"
+INSERT INTO ${1:Table} (${2:row_names}) VALUES
+  (${3:row_vals})$0;
+endsnippet
+
+snippet trigger "sql trigger"
+CREATE ${1:OR REPLACE} TRIGGER ${2:name}
+${3:BEFORE|AFTER|INSTEAD OF} ${4:INSERT|UPDATE|DELETE|TRUNCATE} ON ${5:Table}
+REFERENCING NEW ROW AS ${6:NewRowName}
+FOR EACH ROW
+${7:WHEN ${8:COND}}
+$0
+endsnippet
