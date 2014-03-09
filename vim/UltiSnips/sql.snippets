@@ -13,10 +13,13 @@ INSERT INTO ${1:Table} (${2:row_names}) VALUES
 endsnippet
 
 snippet trigger "sql trigger"
-CREATE ${1:OR REPLACE} TRIGGER ${2:name}
-${3:BEFORE|AFTER|INSTEAD OF} ${4:INSERT|UPDATE|DELETE|TRUNCATE} ON ${5:Table}
-REFERENCING NEW ROW AS ${6:NewRowName}
-FOR EACH ROW
-${7:WHEN ${8:COND}}
-$0
+CREATE ${1:OR REPLACE} FUNCTION ${2:fn_name}() RETURNS trigger AS $$2$
+	BEGIN
+		$0
+	END;
+$$2$ LANGUAGE ${3:plpgsql};
+
+CREATE TRIGGER ${4:TriggerName}
+${5:BEFORE|AFTER|INSTEAD OF} ${6:INSERT|UPDATE}
+FOR EACH ROW EXECUTE PROCEDURE $2();
 endsnippet
