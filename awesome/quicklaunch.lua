@@ -1,7 +1,7 @@
 return {
     m = {
         func = function()
-            awful.util.spawn(terminal .. " --classname=mutt -x mutt")
+            awful.util.spawn_with_shell(terminal .. " --classname=mutt -x mutt")
         end,
         info = "mutt"
     },
@@ -29,7 +29,7 @@ return {
     },
     s = {
         func = function()
-            awful.util.spawn("STEAM_FORCE_CLOSE=1 steam")
+            awful.util.spawn_with_shell("STEAM_FORCE_CLOSE=1 steam")
         end,
         info = "steam"
     }
