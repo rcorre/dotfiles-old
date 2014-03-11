@@ -77,3 +77,19 @@ endsnippet
 snippet exp "e^{...}"
 e^\{${1}\}$0
 endsnippet
+
+snippet article "basic article template"
+\documentclass{article}
+\usepackage{float}
+\usepackage{fullpage}
+\usepackage{color}
+
+\title{${1:Title}}
+\author{${2:Author}}
+\date{\today}
+\begin{document}
+\maketitle
+\setlength{\parindent}{0cm}
+$0
+\end{document}
+endsnippet
