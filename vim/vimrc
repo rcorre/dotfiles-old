@@ -134,3 +134,10 @@ nmap <leader>ev :EditVimrc<CR>
 nmap <leader>el :EditVimrcLocal<CR>
 nmap <leader>ef :EditFtp<CR>
 nmap <leader>eu :EditDefaultSnippets<CR>
+
+" save and load view automatically (to save folds)
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview 
+
+" delete trailing whitespace
+nmap <leader>dt :%s/<space>$//g
