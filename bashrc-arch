@@ -60,7 +60,6 @@ alias uf-reconnect='sudo netctl restart wlp2s0-uf'
 #ruby gems
 #rvm should handle this ... ?
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -r "$HOME/.rvm/scripts/completion" ]] && source \
   "$HOME/.rvm/scripts/completion"
