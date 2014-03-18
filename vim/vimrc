@@ -67,6 +67,10 @@ set tw=80 	        " wrap text at 80 chars
 set colorcolumn=81	" show where text should wrap
 let mapleader = "," " use , as leader character
 
+" terminal speed up
+set ttyfast
+set lazyredraw
+
 set t_Co=256        " enable 256 colors
 set t_AB=[48;5;%dm
 set t_AF=[38;5;%dm
