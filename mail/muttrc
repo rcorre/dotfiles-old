@@ -57,7 +57,8 @@ bind pager G bottom
 bind pager R group-reply
 bind pager \Cd half-down
 bind pager \Cu half-up
-macro pager \Cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+#macro pager \Cb <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+macro pager \Cb <pipe-entry>'urlscan'<enter> 'Follow links with urlscan'
 
 # view attachments properly
 bind attach <return> view-mailcap
