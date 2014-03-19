@@ -21,16 +21,8 @@ snippet minipage "minipage environment"
 \\end{minipage}
 endsnippet
 
-snippet lstinput "input source code"
-\\lstinputlisting\{${2:file}\}
-endsnippet
-
-snippet lstinputlang "input source code (specify language)"
-\\lstinputlisting[language=${1:sql}]\{${2:file}\}
-endsnippet
-
-snippet lstinputlines "input specific code lines"
-\\lstinputlisting[language=${1:sql},firstline=${2:0},lastline=${3:1}]\{${4:file}\}
+snippet lstinput "input code from a file"
+\\lstinputlisting[${1:language=${2}},${3:firstline=${4}},${5:lastline=${6}]\{${7:file}\}
 endsnippet
 
 snippet frac "fraction"
