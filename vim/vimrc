@@ -144,4 +144,4 @@ autocmd BufWinLeave *.* mkview
 autocmd BufWinEnter *.* silent loadview 
 
 " delete trailing whitespace
-nmap <leader>dt :%s/<space>$//g
+nmap <leader>dt :%s/<space>$//g<cr>
