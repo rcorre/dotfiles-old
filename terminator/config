@@ -1,6 +1,7 @@
 [global_config]
   title_transmit_bg_color = "#d30102"
   focus = system
+  suppress_multiple_term_dialog = True
 [keybindings]
 [profiles]
   [[default]]

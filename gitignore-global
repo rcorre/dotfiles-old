@@ -2,3 +2,4 @@
 Session.vim
 tags
 .vim.local
+.ycm_extra_conf.pyc
