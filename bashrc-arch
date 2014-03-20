@@ -1,4 +1,4 @@
-#
+# vim: filetype=sh
 # ~/.bashrc
 #
 
@@ -59,8 +59,12 @@ alias uf-reconnect='sudo netctl restart wlp2s0-uf'
 
 #ruby gems
 #rvm should handle this ... ?
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-[[ -r "$HOME/.rvm/scripts/completion" ]] && source \
+if hash rbenv 2>/dev/null; then
+  eval "$(rbenv init -)"
+else
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+  [[ -r "$HOME/.rvm/scripts/completion" ]] && source \
   "$HOME/.rvm/scripts/completion"
-PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"   #system gems
+fi
+# system gems
+export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"   #system gems
