@@ -48,6 +48,7 @@ set rnu	            " Relative numbering
 set nu	            " full line number on current line
 set smartindent
 set wildmenu        " Command line completion
+set wildignore+=*.swp,*.bak,*.pyc
 
 set hlsearch        " highlight search results
 set incsearch 	    " jump to result during search input
@@ -140,8 +141,8 @@ nmap <leader>ef :EditFtp<CR>
 nmap <leader>eu :EditDefaultSnippets<CR>
 
 " save and load view automatically (to save folds)
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview 
+autocmd BufWinLeave ?* mkview
+autocmd BufWinEnter ?* silent loadview 
 
 " delete trailing whitespace
 nmap <leader>dt :%s/<space>$//g<cr>

@@ -1,6 +1,7 @@
-nmap <leader>t :TagbarToggle<CR>
-nmap <leader>m :make<CR>
-nmap gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nmap <leader>t :TagbarToggle<cr>
+nmap <leader>m :w<cr>:make<cr>
+nmap gd :YcmCompleter GoToDefinitionElseDeclaration<cr>
 " Align comments
-nmap <leader>ac :Tabularize /\/\/<cr>
+map <leader>ac :Tabularize /\/\/<cr>
 set foldmethod=syntax
+set foldnestmax=2
