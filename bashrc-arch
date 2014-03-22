@@ -51,6 +51,7 @@ alias gamelist="task rc:~/.task/taskrc_gamelist"
 alias songlist="task rc:~/.task/taskrc_songlist"
 
 alias op="xdg-open"
+alias make="colormake"
 alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
 #top level of git project
 alias gitop='cd "$(git rev-parse --show-toplevel)"'
