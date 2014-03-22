@@ -146,3 +146,8 @@ autocmd BufWinEnter ?* silent loadview
 
 " delete trailing whitespace
 nmap <leader>dt :%s/<space>$//g<cr>
+
+au BufRead,BufNewFile */documents/classes/* nmap <leader>s call SendToCise()
+function SendToCise()
+  execute "!" . "$CLASSES/send-to-cise.sh " . expand("%")
+endfunction
