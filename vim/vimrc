@@ -79,8 +79,7 @@ set bg=dark
 colorscheme solarized
 
 "fold settings
-set foldnestmax=3   " fold nesting limit 
-set foldminlines=2  " do not fold a block smaller than 3 lines
+set foldnestmax=3   " fold nesting limit
 
 " vim-airline config
 set laststatus=2    "always show
@@ -142,10 +141,10 @@ nmap <leader>eu :EditDefaultSnippets<CR>
 
 " save and load view automatically (to save folds)
 autocmd BufWinLeave ?* mkview
-autocmd BufWinEnter ?* silent loadview 
+autocmd BufWinEnter ?* silent loadview
 
 " delete trailing whitespace
-nmap <leader>dt :%s/<space>$//g<cr>
+nmap <leader>dt :%s/\s\+$//g<cr>
 
 au BufRead,BufNewFile */documents/classes/* nmap <leader>s call SendToCise()
 function SendToCise()

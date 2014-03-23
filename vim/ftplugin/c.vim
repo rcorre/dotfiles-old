@@ -1,7 +1,7 @@
 nmap <leader>t :TagbarToggle<cr>
-nmap <leader>m :w<cr>:make<cr>
+nmap <leader>m :w<cr>:!colormake<cr>
 nmap gd :YcmCompleter GoToDefinitionElseDeclaration<cr>
 " Align comments
 map <leader>ac :Tabularize /\/\/<cr>
 set foldmethod=syntax
-set foldnestmax=2
+set foldnestmax=1
