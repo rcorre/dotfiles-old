@@ -2,9 +2,9 @@ local wibox = require("wibox")
 
 local volume_cmd= {
     bigup   = "-M set Master 10%+",
-    up      = "-M set Master 2%+",
+    up      = "-M set Master 5%+",
     bigdown = "-M set Master 10%-",
-    down    = "-M set Master 2%-",
+    down    = "-M set Master 5%-",
     mute    = "set Master toggle",
     read    = "-M get Master"
 }

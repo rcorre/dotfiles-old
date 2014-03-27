@@ -297,16 +297,16 @@ globalkeys = awful.util.table.join(
 
     --Sound
     awful.key({}, "XF86AudioRaiseVolume", function()
-        volume_control("bigup")
-    end),
-    awful.key({}, "XF86AudioLowerVolume", function()
-        volume_control("bigdown")
-    end),
-    awful.key({"Control"}, "XF86AudioRaiseVolume", function()
         volume_control("up")
     end),
-    awful.key({"Control"}, "XF86AudioLowerVolume", function()
+    awful.key({}, "XF86AudioLowerVolume", function()
         volume_control("down")
+    end),
+    awful.key({"Control"}, "XF86AudioRaiseVolume", function()
+        volume_control("bigup")
+    end),
+    awful.key({"Control"}, "XF86AudioLowerVolume", function()
+        volume_control("bigdown")
     end),
     awful.key({}, "XF86AudioMute", function()
         volume_control("mute")
