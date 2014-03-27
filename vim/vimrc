@@ -78,9 +78,6 @@ set t_AF=[38;5;%dm
 set bg=dark
 colorscheme solarized
 
-"fold settings
-set foldnestmax=3   " fold nesting limit
-
 " vim-airline config
 set laststatus=2    "always show
 "let g:airline_left_sep='>'
