@@ -147,3 +147,5 @@ au BufRead,BufNewFile */documents/classes/* nmap <leader>s call SendToCise()
 function SendToCise()
   execute "!" . "$CLASSES/send-to-cise.sh " . expand("%")
 endfunction
+
+set re=1
