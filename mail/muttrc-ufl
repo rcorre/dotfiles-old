@@ -15,6 +15,7 @@ macro index gd "<change-folder> =ufl/Drafts<enter>" "go to drafts"
 # Deletion
 macro index d "<save-message>+ufl/Trash<enter>" "move message to trash"
 
-source '~/dotfiles/mail/smtp-gmail'
+source '~/.mutt/cis4301-alias'
+source '~/dotfiles/mail/smtp-ufl'
 send-hook . source '~/dotfiles/mail/smtp-ufl'
 reply-hook . source '~/dotfiles/mail/smtp-ufl'
