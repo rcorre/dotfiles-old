@@ -1,7 +1,8 @@
 return {
     m = {
         func = function()
-            awful.util.spawn_with_shell(terminal .. " --classname=mutt -x mutt")
+            awful.util.spawn_with_shell(terminal .. 
+              " -x $HOME/dotfiles/mail/start-mutt.sh")
         end,
         info = "mutt"
     },
