@@ -60,6 +60,7 @@ alias uf-connect='sudo netctl start wlp2s0-uf'
 alias uf-reconnect='sudo netctl restart wlp2s0-uf'
 alias cise-ssh="$CLASSES/cise-ssh.sh"
 alias cise-sftp="$CLASSES/cise-sftp.sh"
+alias matlab="$CLASSES/cise-matlab.sh"
 
 #ruby gems
 #rvm should handle this ... ?
