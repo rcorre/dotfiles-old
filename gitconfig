@@ -21,3 +21,5 @@
 [user]
 	name = Ryan RC
 	email = murphyslaw480@gmail.com
+[push]
+	default = upstream
