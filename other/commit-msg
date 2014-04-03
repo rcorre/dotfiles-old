@@ -1,0 +1,36 @@
+#!/usr/bin/ruby
+
+$tags = %w{
+  vim bash awesome pianobar mail terminator conky task consular zathura git
+}
+           
+
+def get_commit_tag filename
+    $tags.find{|tag| filename.match tag}
+end
+
+to_commit = `git diff --cached --name-only`.split "\n"
+
+commit_tags = to_commit.map {|filename| get_commit_tag filename}
+
+unless commit_tags.all? {|s| s == nil || s == commit_tags.first}
+    puts "Not all commit tags match!"
+    to_commit.zip(commit_tags).each {|s| puts "#{s.first} --> #{s.last}"}
+    puts "Are you sure you want to commit files for different categories?"
+    puts "Use git commit --no-verify to override"
+    exit 1
+end
+
+commit_tag = commit_tags.first
+
+unless commit_tag.nil? || commit_tag.empty?   #append message based on class
+    message_file = ARGV[0]
+    commit_msg = File.read(message_file)
+    commit_msg.sub! /^\[.*\]/, ''             #remove previous tag (for amend)
+
+    File.open message_file, "w" do |file|
+        file.puts "[#{commit_tag}] #{commit_msg}"
+    end
+end
+
+exit 0
