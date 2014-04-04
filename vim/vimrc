@@ -52,7 +52,8 @@ set wildignore+=*.swp,*.bak,*.pyc
 
 set hlsearch        " highlight search results
 set incsearch 	    " jump to result during search input
-set smartcase       " case insensitive searching
+set ignorecase      " case insensitive searching
+set smartcase       " unless a capital letter given in search term
 
 set showmatch	      " show matching brackets
 
@@ -143,3 +144,5 @@ au BufRead,BufNewFile */documents/classes/* nmap <leader>s call SendToCise()
 function SendToCise()
   execute "!" . "$CLASSES/send-to-cise.sh " . expand("%")
 endfunction
+
+set re=1

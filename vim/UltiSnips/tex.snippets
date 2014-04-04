@@ -106,3 +106,10 @@ snippet item "itemize list"
 	_item$0
 \\end{itemize}
 endsnippet
+
+snippet table "table"
+\begin{table}[${1:H}]
+  \caption{${2}}
+	${3:${VISUAL}}
+\end{table}$0
+endsnippet
