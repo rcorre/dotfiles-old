@@ -73,3 +73,6 @@ else
 fi
 # system gems
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"   #system gems
+if [ -e "/usr/local/heroku" ]; then
+  export PATH="/usr/local/heroku/bin:$PATH"
+fi
