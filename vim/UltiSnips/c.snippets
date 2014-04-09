@@ -1,3 +1,9 @@
+snippet fori "for int loop (fori)"
+for (${1:int} ${2:i} = 0; $2 < ${3:count}; ${4:$2++}) {
+	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
+}
+endsnippet
+
 snippet st "struct"
 typedef struct ${1} {
 	${2}
