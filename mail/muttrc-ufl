@@ -17,5 +17,7 @@ macro index d "<save-message>+ufl/Trash<enter>" "move message to trash"
 
 source '~/.mutt/cis4301-alias'
 source '~/dotfiles/mail/smtp-ufl'
+unhook send-hook
+unhook reply-hook
 send-hook . source '~/dotfiles/mail/smtp-ufl'
 reply-hook . source '~/dotfiles/mail/smtp-ufl'

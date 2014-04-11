@@ -2,4 +2,8 @@ set smtp_pass = `pass mail/gmail`
 set from = "murphyslaw480@gmail.com"
 set smtp_url="smtp://murphyslaw480@smtp.gmail.com:587/"
 set sendmail_wait = 0
-set record = "+ufl/Sent"
+set record = "+gmail/gmail.Sent"
+
+# Composition
+set realname = "Ryan RC"
+
