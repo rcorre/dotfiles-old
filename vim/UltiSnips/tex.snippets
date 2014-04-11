@@ -107,6 +107,17 @@ snippet item "itemize list"
 \\end{itemize}
 endsnippet
 
+snippet _desc "desc item, internal to description"
+\\item [${1}] {${2}}
+_desc$0
+endsnippet
+
+snippet desc "description list"
+\\begin{description}
+	_desc$0
+\\end{description}
+endsnippet
+
 snippet table "table"
 \begin{table}[${1:H}]
   \caption{${2}}
