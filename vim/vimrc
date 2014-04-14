@@ -72,6 +72,7 @@ let mapleader = "," " use , as leader character
 set ttyfast
 set lazyredraw
 
+" Solarized
 set t_Co=256        " enable 256 colors
 set t_AB=[48;5;%dm
 set t_AF=[38;5;%dm
