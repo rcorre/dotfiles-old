@@ -28,7 +28,7 @@ snippet minipage "minipage environment"
 endsnippet
 
 snippet lstinput "input code from a file"
-\\lstinputlisting[${1:language=${2},}${3:firstline=${4}},${5:lastline=${6}}]\{${7:file}\}
+\lstinputlisting[firstline=$1,lastline=$2,caption=$3,label=lst:$4]{$5}
 endsnippet
 
 snippet frac "fraction"
@@ -123,4 +123,12 @@ snippet table "table"
   \caption{${2}}
 	${3:${VISUAL}}
 \end{table}$0
+endsnippet
+
+snippet code "inline code listing"
+\lstinline{$1} $0
+endsnippet
+
+snippet fileref "link to a local file"
+\href{run:${1:path/to/file}}{${2:$1}} $0
 endsnippet

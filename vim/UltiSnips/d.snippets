@@ -1,0 +1,31 @@
+snippet fore "foreach"
+foreach (${1:element}; ${2:values}) {
+	$3
+}
+$0
+endsnippet
+
+snippet if "if statement"
+if ($1) {
+	${2:${VISUAL}}
+}
+${3:else}$0
+endsnippet
+
+snippet else "else statement"
+else {
+	${1:${VISUAL}}
+}
+$0
+endsnippet
+
+snippet elseif "else if statement"
+else if ($1) {
+	${2:${VISUAL}}
+}
+${3:else}$0
+endsnippet
+
+snippet imp "import"
+import ${1:std}.$0
+endsnippet
