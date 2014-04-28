@@ -20,7 +20,7 @@ shopt -s direxpand          #expand directory variables with <TAB> after /
 export GREP_COLOR='1;32'	#green grep result highlight
 
 #pass tab completion
-source /usr/share/bash-completion/completions/password-store
+source /usr/share/bash-completion/completions/pass
 
 #load directory shortcuts
 source ~/dotfiles/bash-dirs
