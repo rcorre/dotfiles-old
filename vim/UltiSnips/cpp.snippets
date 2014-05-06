@@ -1,0 +1,11 @@
+extends c
+
+snippet doxfile "doxygen file documentation"
+/** \file `!v expand("%:t")`
+  * \brief ${1}
+**/
+endsnippet
+
+snippet db "doxygen block comment"
+/** \brief $1 */$0
+endsnippet

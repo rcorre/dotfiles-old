@@ -10,10 +10,6 @@ Bundle 'gmarik/vundle'
 " Run :BundleInstall after adding
 " Run :BundleUpdate to update
 " Run :BundleClean after removing
-" vim-scripts
-Bundle 'javacomplete'
-Bundle 'vim-scripts/clips.vim'
-" other repos
 Bundle 'flazz/vim-colorschemes'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
@@ -31,7 +27,7 @@ Bundle 'majutsushi/tagbar'
 " YCM
 let g:ycm_confirm_extra_conf = 1
 "let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_enable_diagnostic_signs = 0
@@ -73,7 +69,7 @@ set ttyfast
 set lazyredraw
 
 " Solarized
-set t_Co=256        " enable 256 colors
+set t_Co=16        " enable 256 colors
 set t_AB=[48;5;%dm
 set t_AF=[38;5;%dm
 set bg=dark
@@ -107,6 +103,9 @@ if filereadable(".vim.local")
 endif
 au BufRead,BufNewFile .vim.local set filetype=vim
 
+" Folding
+set foldnestmax=1
+
 " Don't screw up folds when inserting text that might affect them, until
 " leaving insert mode. Foldmethod is local to the window. Protect against
 " screwing up folding when switching between windows.
@@ -115,21 +114,20 @@ autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:las
 
 " vim-latex
 let g:LatexBox_Folding=1
-"CLIPS
-au BufRead,BufNewFile *.clp set filetype=clips
 "consular
 au BufRead,BufNewFile ~/dotfiles/consular/termfiles/* set filetype=ruby
-"javacomplete
-autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 
-"quickly open a tab to edit important files
-"edit ftplugin for current filetype
+" command to save and exit while creating a session file
+command! Bye :mksession! | :wqall
+
+" quickly open a tab to edit important files
+" edit ftplugin for current filetype
 command! EditFtp exe "tabnew" resolve("$HOME/.vim/ftplugin/" . &ft . ".vim")
-"edit main vimrc
+" edit main vimrc
 command! EditVimrc exe "tabnew" resolve("$MYVIMRC")
-"edit local vimrc
+" edit local vimrc
 command! EditVimrcLocal exe "tabnew" resolve(".vim.local")
-"Edit default snippets for filetype
+" Edit default snippets for filetype
 command! EditDefaultSnippets exe "tabnew" resolve("$HOME/.vim/bundle/ultisnips/UltiSnips/" . &ft . ".snippets")
 nmap <leader>es :UltiSnipsEdit<CR>
 nmap <leader>ev :EditVimrc<CR>
@@ -145,4 +143,5 @@ function SendToCise()
   execute "!" . "$CLASSES/send-to-cise.sh " . expand("%")
 endfunction
 
+" Use old regex engine (avoid syntax highlighting performance issues)
 set re=1

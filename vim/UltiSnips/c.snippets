@@ -37,3 +37,13 @@ ${0}
 
 #endif /* end of include guard: $1 */
 endsnippet
+
+snippet doxfile "doxygen file documentation"
+/** \file `!v expand("%:t")`
+  * \brief ${1}
+**/
+endsnippet
+
+snippet db "doxygen block comment"
+/** \brief ${1:${VISUAL}} */$0
+endsnippet
