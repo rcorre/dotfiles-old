@@ -13,6 +13,7 @@ naughty = require("naughty")    -- global so other scripts can send notification
 local menubar = require("menubar")
 local vicious = require("vicious")
 -- awesome extensions
+require("util")         -- my utilities
 require("keychains")    -- hotkey chaining
 --Custom Widgets
 require("conky")
@@ -53,7 +54,7 @@ beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 -- beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "terminator"
+terminal = "st"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -536,4 +537,6 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 -- Launch conky
-awful.util.spawn("conky")
+if (not is_process_running("conky")) then
+  awful.util.spawn("conky")
+end
