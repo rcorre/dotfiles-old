@@ -62,17 +62,13 @@ alias cise-ssh="$CLASSES/cise-ssh.sh"
 alias cise-sftp="$CLASSES/cise-sftp.sh"
 alias matlab="$CLASSES/cise-matlab.sh"
 
-#ruby gems
-#rvm should handle this ... ?
+# rbenv
 if hash rbenv 2>/dev/null; then
   eval "$(rbenv init -)"
-else
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-  [[ -r "$HOME/.rvm/scripts/completion" ]] && source \
-  "$HOME/.rvm/scripts/completion"
 fi
 # system gems
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"   #system gems
+# heroku
 if [ -e "/usr/local/heroku" ]; then
   export PATH="/usr/local/heroku/bin:$PATH"
 fi
