@@ -5,3 +5,6 @@ let g:rubycomplete_rails = 1
 nnoremap <leader>r :w<cr>:!ruby %<cr>
 set foldnestmax=1
 set foldmethod=syntax
+
+" closing end
+inoremap <S-cr> <cr><cr>end<esc>kcc
