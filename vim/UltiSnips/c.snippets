@@ -1,3 +1,13 @@
+snippet incl "c include local"
+#include "$1.h"
+$0
+endsnippet
+
+snippet incs "c include std"
+#include <$1>
+$0
+endsnippet
+
 snippet fori "for int loop (fori)"
 for (${1:int} ${2:i} = 0; $2 < ${3:count}; ${4:$2++}) {
 	${VISUAL}${0:${VISUAL/(.*)/(?1::\/* code *\/)/}}
@@ -45,5 +55,16 @@ snippet doxfile "doxygen file documentation"
 endsnippet
 
 snippet db "doxygen block comment"
-/** \brief ${1:${VISUAL}} */$0
+/** ${1:${VISUAL}} */$0
+endsnippet
+
+snippet line "comment line - 80 chars"
+/******************************************************************************/
+endsnippet
+
+snippet doxfn "doxygen function documentation"
+/** ${1:description}
+  * \param ${2:arg_name description of argument}
+  * \return ${3:return value description}
+**/
 endsnippet
