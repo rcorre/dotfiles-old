@@ -5,7 +5,7 @@ local volume_cmd= {
     up      = "-M set Master 5%+",
     bigdown = "-M set Master 10%-",
     down    = "-M set Master 5%-",
-    mute    = "set Master toggle",
+    mute    = "-M set Master toggle",
     read    = "-M get Master"
 }
 
