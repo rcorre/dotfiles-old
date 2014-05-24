@@ -68,3 +68,16 @@ snippet doxfn "doxygen function documentation"
   * \return ${3:return value description}
 **/
 endsnippet
+
+snippet perr "print an error message"
+fprintf(stderr, "$1"$2);
+exit(${3:-1});
+endsnippet
+
+snippet ma "malloc"
+malloc(sizeof($1));
+endsnippet
+
+snippet di "doxygen inline member comment"
+///< $0
+endsnippet

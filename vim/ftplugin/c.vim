@@ -6,3 +6,5 @@ nmap gd :YcmCompleter GoToDefinitionElseDeclaration<cr>
 map <leader>ac :Tabularize /\/\/<cr>
 set foldmethod=syntax
 set foldnestmax=1
+set foldlevel=1
+let c_no_comment_fold=1
