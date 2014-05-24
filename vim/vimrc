@@ -28,6 +28,7 @@ Bundle 'majutsushi/tagbar'
 let g:ycm_confirm_extra_conf = 1
 "let g:ycm_collect_identifiers_from_tags_files = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_enable_diagnostic_signs = 0
@@ -43,7 +44,7 @@ set rnu	            " Relative numbering
 set nu	            " full line number on current line
 set smartindent
 set wildmenu        " Command line completion
-set wildignore+=*.swp,*.bak,*.pyc
+set wildignore+=*.swp,*.bak,*.pyc,Session.vim
 
 set hlsearch        " highlight search results
 set incsearch 	    " jump to result during search input
@@ -56,13 +57,20 @@ set splitbelow	    " open splits (including preview) in lower portion of window
 
 set noerrorbells    " no annoying noise on error
 
+set completeopt="menu"
+
 set expandtab	      " tabs = spaces
 set smarttab
 set tabstop=2	      " 4 space tabs
 set shiftwidth=2
 set tw=80 	        " wrap text at 80 chars
 set colorcolumn=81	" show where text should wrap
+
 let mapleader = "," " use , as leader character
+
+let g:lasttab = 1
+nmap gl :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
 
 " terminal speed up
 set ttyfast
