@@ -1,5 +1,7 @@
 set sw=2
 set iskeyword+=:
+setlocal spell
+setlocal spelllang=en_us
 "latex-box
 nnoremap <leader>mm :w<Enter>:Latexmk<Enter>
 nnoremap <leader>mc :LatexmkClean<Enter>
