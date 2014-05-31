@@ -133,3 +133,26 @@ endsnippet
 snippet fileref "link to a local file"
 \href{run:${1:path/to/file}}{${2:$1}} $0
 endsnippet
+
+snippet syghw "syg2430 homework writing assignment"
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{titling}
+\usepackage{changepage}
+\title{${1:Title} \\ SYG2430 Lesson ${2:num}}
+\author{Ryan Roden-Corrent}
+\begin{document}
+\setlength{\droptitle}{-3cm} % Eliminate the default vertical space
+\maketitle
+${3:\doublespacing}
+
+$0
+
+\end{document}
+endsnippet
+
+snippet q "quote"
+\`\`${1:${VISUAL}}''$0
+endsnippet

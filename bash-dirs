@@ -1,10 +1,6 @@
 #classes
 export CLASSES=~/documents/classes
-export CAP=$CLASSES/cap6685
-export CIS=$CLASSES/cis4301
-export COP=$CLASSES/cop5618
-export EEL=$CLASSES/eel3135
-export STA=$CLASSES/sta3032
+export SYG=$CLASSES/syg2430
 
 #config files
 export MYBASHRC=~/.bashrc
