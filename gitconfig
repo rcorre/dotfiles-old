@@ -13,6 +13,7 @@
 	pom = push origin master
 	diffc = diff --cached
 	cmend = commit --amend
+	last = log -1
 [color]
 	ui = auto
 [core]
