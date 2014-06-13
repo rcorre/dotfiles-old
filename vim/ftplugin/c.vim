@@ -4,7 +4,7 @@ nmap <leader>x :w<cr>:!doxygen<cr>
 nmap gd :YcmCompleter GoToDefinitionElseDeclaration<cr>
 " Align comments
 map <leader>ac :Tabularize /\/\/<cr>
-map <leader>aC :Tabularize /\/\/\/<cr>
+map <leader>aC :Tabularize /\/\/\/<<cr>
 set foldmethod=syntax
 set foldnestmax=1
 set foldlevel=1
