@@ -153,3 +153,6 @@ endfunction
 
 " Use old regex engine (avoid syntax highlighting performance issues)
 set re=1
+
+" vim fugitive
+nmap <leader>gs :Gstatus<cr>
