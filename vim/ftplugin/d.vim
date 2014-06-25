@@ -6,6 +6,5 @@ map <leader>aC :Tabularize /\/\/\/<cr>
 
 set foldmethod=syntax
 set foldnestmax=2
-set foldlevel=2
 set tw=120
 set colorcolumn=121

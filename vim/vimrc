@@ -117,6 +117,8 @@ au BufRead,BufNewFile .vim.local set filetype=vim
 
 " Folding
 set foldnestmax=1
+" don't fold at start
+set foldlevelstart=99
 
 " Don't screw up folds when inserting text that might affect them, until
 " leaving insert mode. Foldmethod is local to the window. Protect against
