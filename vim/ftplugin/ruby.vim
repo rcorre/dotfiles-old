@@ -3,6 +3,7 @@ let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
 nnoremap <leader>r :w<cr>:!ruby %<cr>
+nnoremap <leader>t :w<cr>:!rspec %<cr>
 set foldnestmax=1
 set foldmethod=syntax
 " matching parens seems to slow down ruby syntax
