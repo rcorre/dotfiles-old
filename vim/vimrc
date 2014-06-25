@@ -68,6 +68,10 @@ set colorcolumn=81	" show where text should wrap
 
 let mapleader = "," " use , as leader character
 
+" Y yanks to end of line instead of whole line -- more like D and C
+nnoremap Y y$
+
+" jump to previous tab
 let g:lasttab = 1
 nmap gl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
