@@ -1,7 +1,6 @@
 local wibox = require("wibox")
 local vicious = require("vicious")
 
-
 thermal_widget = wibox.widget.textbox()
 
 local update_function = function (widget, args)
@@ -18,4 +17,4 @@ local update_function = function (widget, args)
 end
 
 vicious.register(thermal_widget, vicious.widgets.thermal, update_function, 19, 
-    {"coretemp.0", "core"})
+    {"thermal_zone1", "sys"})
