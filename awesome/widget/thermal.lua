@@ -16,5 +16,5 @@ local update_function = function (widget, args)
     return tag .. 'TEMP: ' .. temp .. '°C</span>'
 end
 
-vicious.register(thermal_widget, vicious.widgets.thermal, update_function, 19, 
+vicious.register(thermal_widget, vicious.widgets.thermal, update_function, 19,
     {"thermal_zone1", "sys"})
