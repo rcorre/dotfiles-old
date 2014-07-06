@@ -13,6 +13,7 @@ Bundle 'gmarik/vundle'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'Hackerpilot/DCD', {'rtp': 'editors/vim'}
 Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-surround'
@@ -32,6 +33,10 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_enable_diagnostic_signs = 0
+
+" DCD
+let g:dcd_importPath=['/usr/include/dlang/dmd', '/usr/include/dlang/dmd/core']
+let g:dcd_path=resolve(expand("~/.vim/bundle/DCD"))
 
 filetype plugin indent on
 syntax on
