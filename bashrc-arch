@@ -61,6 +61,8 @@ alias uf-reconnect='sudo netctl restart wlp2s0-uf'
 alias cise-ssh="$CLASSES/cise-ssh.sh"
 alias cise-sftp="$CLASSES/cise-sftp.sh"
 alias matlab="$CLASSES/cise-matlab.sh"
+# clipboard paste
+alias cpaste='xclip -out -sel clip'
 
 # rbenv
 if hash rbenv 2>/dev/null; then
