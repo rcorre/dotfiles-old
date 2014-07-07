@@ -55,6 +55,8 @@ set hlsearch        " highlight search results
 set incsearch 	    " jump to result during search input
 set ignorecase      " case insensitive searching
 set smartcase       " unless a capital letter given in search term
+set nostartofline   " keep cursor in same column for long range moves
+set scrolloff=3     " number of screen lines to show around cursor
 
 set showmatch	      " show matching brackets
 
