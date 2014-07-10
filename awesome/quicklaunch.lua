@@ -37,9 +37,9 @@ return {
         func = function()
             awful.util.spawn("inkscape")
         end,
-        info = "Inkscape"
+        info = "inkscape"
     },
-    i = {
+    g = {
         func = function()
             awful.util.spawn("gimp")
         end,
