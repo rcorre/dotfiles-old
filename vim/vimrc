@@ -10,7 +10,7 @@ Bundle 'gmarik/vundle'
 " Run :BundleInstall after adding
 " Run :BundleUpdate to update
 " Run :BundleClean after removing
-Bundle 'flazz/vim-colorschemes'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'Hackerpilot/DCD', {'rtp': 'editors/vim'}
@@ -37,6 +37,9 @@ let g:ycm_enable_diagnostic_signs = 0
 " DCD
 let g:dcd_importPath=['/usr/include/dlang/dmd', '/usr/include/dlang/dmd/core']
 let g:dcd_path=resolve(expand("~/.vim/bundle/DCD"))
+
+" Solarized
+call togglebg#map("<F5>")
 
 filetype plugin indent on
 syntax on
