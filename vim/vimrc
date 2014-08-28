@@ -39,7 +39,7 @@ let g:dcd_importPath=['/usr/include/dlang/dmd', '/usr/include/dlang/dmd/core']
 let g:dcd_path=resolve(expand("~/.vim/bundle/DCD"))
 
 " Solarized
-call togglebg#map("<F5>")
+call togglebg#map("<F1>")
 
 filetype plugin indent on
 syntax on
@@ -80,6 +80,12 @@ let mapleader = "," " use , as leader character
 
 " Y yanks to end of line instead of whole line -- more like D and C
 nnoremap Y y$
+
+" clipboard paste
+noremap <leader>v :read !xclip -out -sel clip<cr>
+" error jumping
+noremap <c-l> :cn<cr>
+noremap <c-h> :cp<cr>
 
 " jump to previous tab
 let g:lasttab = 1
@@ -138,8 +144,6 @@ autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:las
 
 " vim-latex
 let g:LatexBox_Folding=1
-"consular
-au BufRead,BufNewFile ~/dotfiles/consular/termfiles/* set filetype=ruby
 
 " command to save and exit while creating a session file
 command! Bye :mksession! | :wqall
@@ -159,16 +163,17 @@ nmap <leader>el :EditVimrcLocal<CR>
 nmap <leader>ef :EditFtp<CR>
 nmap <leader>eu :EditDefaultSnippets<CR>
 
+" substitution
+noremap <leader>s :s/<c-r><c-w>//g<left><left>
+noremap <leader>S :%s/<c-r><c-w>//g<left><left>
+
 " delete trailing whitespace
 nmap <leader>dt :%s/\s\+$//g<cr>
-
-au BufRead,BufNewFile */documents/classes/* nmap <leader>s call SendToCise()
-function SendToCise()
-  execute "!" . "$CLASSES/send-to-cise.sh " . expand("%")
-endfunction
 
 " Use old regex engine (avoid syntax highlighting performance issues)
 set re=1
 
 " vim fugitive
-nmap <leader>gs :Gstatus<cr>
+noremap <leader>gs :Gstatus<cr>
+noremap <leader>gd :Gdiff<cr>
+noremap <leader>gp :Gpush<cr>
