@@ -40,3 +40,23 @@ debug {
 	writeln($1);
 }$0
 endsnippet
+
+snippet debugf "debug block"
+debugf {
+	import std.stdio;
+	writefln("$1", $2);
+}$0
+endsnippet
+
+snippet main "main function"
+void main() {
+	$0
+}
+endsnippet
+
+snippet gdebug "graphical debug block (Allegro)"
+debug {
+	import graphics.primitive;
+	$1;
+}$0
+endsnippet
