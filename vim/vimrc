@@ -2,7 +2,7 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+call vundle#begin()
 " let vundle managle vundle - required!
 Bundle 'gmarik/vundle'
 
@@ -13,7 +13,6 @@ Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'Hackerpilot/DCD', {'rtp': 'editors/vim'}
 Bundle 'bling/vim-airline'
 Bundle 'godlygeek/tabular'
 Bundle 'tpope/vim-surround'
@@ -24,7 +23,13 @@ Bundle 'Matt-Stevens/vim-systemd-syntax'
 Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'SirVer/ultisnips'
 Bundle 'majutsushi/tagbar'
+Bundle 'elzr/vim-json'
+Bundle 'idanarye/vim-dutyl'
 " End of Bundles
+call vundle#end()
+filetype plugin indent on
+syntax on
+
 " YCM
 let g:ycm_confirm_extra_conf = 1
 "let g:ycm_collect_identifiers_from_tags_files = 1
@@ -33,16 +38,14 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_filepath_completion_use_working_dir = 1
 
-" DCD
-let g:dcd_importPath=['/usr/include/dlang/dmd', '/usr/include/dlang/dmd/core']
-let g:dcd_path=resolve(expand("~/.vim/bundle/DCD"))
+" Dutyl
+let g:dutyl_stdImportPaths=['/usr/include/dlang/dmd', '/usr/include/dlang/dmd/core']
+"let g:dcd_path=resolve(expand("~/.vim/bundle/DCD"))
 
 " Solarized
 call togglebg#map("<F1>")
-
-filetype plugin indent on
-syntax on
 
 " vim-latex settings
 set grepprg=grep\ -nH\ $*
@@ -71,7 +74,7 @@ set completeopt="menu"
 
 set expandtab	      " tabs = spaces
 set smarttab
-set tabstop=2	      " 4 space tabs
+set tabstop=2	      " 2 space tabs
 set shiftwidth=2
 set tw=80 	        " wrap text at 80 chars
 set colorcolumn=81	" show where text should wrap
@@ -83,9 +86,10 @@ nnoremap Y y$
 
 " clipboard paste
 noremap <leader>v :read !xclip -out -sel clip<cr>
-" error jumping
-noremap <c-l> :cn<cr>
-noremap <c-h> :cp<cr>
+" error jumping (first, next, previous)
+nnoremap ge :cf<cr>
+nnoremap gn :cn<cr>
+nnoremap gp :cp<cr>
 
 " jump to previous tab
 let g:lasttab = 1
