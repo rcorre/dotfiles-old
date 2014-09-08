@@ -85,9 +85,10 @@ nnoremap Y y$
 
 " clipboard paste
 noremap <leader>v :read !xclip -out -sel clip<cr>
-" error jumping
-noremap <c-l> :cn<cr>
-noremap <c-h> :cp<cr>
+" error jumping (first, next, previous)
+nnoremap ge :cf<cr>
+nnoremap gn :cn<cr>
+nnoremap gp :cp<cr>
 
 " jump to previous tab
 let g:lasttab = 1
