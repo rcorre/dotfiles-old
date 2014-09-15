@@ -48,6 +48,13 @@ debugf {
 }$0
 endsnippet
 
+snippet trace "debug with tracing info"
+debug {
+	import std.stdio;
+	writeln(__FUNCTION__, ": ", $1);
+}$0
+endsnippet
+
 snippet main "main function"
 void main() {
 	$0

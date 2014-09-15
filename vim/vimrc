@@ -39,6 +39,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_filepath_completion_use_working_dir = 1
 
 " Dutyl
 let g:dutyl_stdImportPaths=['/usr/include/dlang/dmd', '/usr/include/dlang/dmd/core']
@@ -74,7 +75,7 @@ set completeopt="menu"
 
 set expandtab	      " tabs = spaces
 set smarttab
-set tabstop=2	      " 4 space tabs
+set tabstop=2	      " 2 space tabs
 set shiftwidth=2
 set tw=80 	        " wrap text at 80 chars
 set colorcolumn=81	" show where text should wrap
