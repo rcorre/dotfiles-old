@@ -51,7 +51,14 @@ endsnippet
 snippet trace "debug with tracing info"
 debug {
 	import std.stdio;
-	writeln(__FUNCTION__, ": ", $1);
+	writeln(__FUNCTION__, ": ", "$1");
+}$0
+endsnippet
+
+snippet traces "trace with statement"
+debug {
+	import std.stdio;
+	writeln(__FUNCTION__, ": ", "$1 = ", $1);
 }$0
 endsnippet
 

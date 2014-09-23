@@ -40,6 +40,9 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_filepath_completion_use_working_dir = 1
 
+" CtrlP
+let g:ctrlp_custom_ignore = { 'file': '\v\.(wav,png,ogg)$' }
+
 " Dutyl
 let g:dutyl_stdImportPaths=['/usr/include/dlang/dmd', '/usr/include/dlang/dmd/core']
 "let g:dcd_path=resolve(expand("~/.vim/bundle/DCD"))
@@ -81,6 +84,10 @@ set colorcolumn=81	" show where text should wrap
 
 let mapleader = "," " use , as leader character
 
+" avoid escape
+inoremap <c-[> <esc>
+inoremap <c-c> <esc>
+
 " Y yanks to end of line instead of whole line -- more like D and C
 nnoremap Y y$
 
@@ -90,6 +97,7 @@ noremap <leader>v :read !xclip -out -sel clip<cr>
 nnoremap ge :cf<cr>
 nnoremap gn :cn<cr>
 nnoremap gp :cp<cr>
+nnoremap gc :cclose<cr>
 
 " jump to previous tab
 let g:lasttab = 1
