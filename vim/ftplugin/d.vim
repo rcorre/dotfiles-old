@@ -12,7 +12,7 @@ map <f5> :wa<cr>:!clear<cr>:Dispatch dub run<cr>
 set foldmethod=syntax
 set foldnestmax=2
 set tw=100
-set colorcolumn=121
+set colorcolumn=101
 
 " allow jumping to unittest assert failures from quickfix
 set errorformat^=%m@%f(%l):\ unittest\ failure
