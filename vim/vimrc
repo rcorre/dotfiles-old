@@ -134,7 +134,7 @@ let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 let g:UltiSnipsListSnippets = "<c-i>"
-let g:UltiSnipsSnippetsDirectories = ["UltiSnips", "CustomSnips"]
+let g:UltiSnipsSnippetDirectories=["CustomSnips", "UltiSnips"]
 "Tabularize shortcut
 map <leader>a :Tabularize /
 
@@ -168,13 +168,10 @@ command! EditFtp exe "tabnew" resolve("$HOME/.vim/ftplugin/" . &ft . ".vim")
 command! EditVimrc exe "tabnew" resolve("$MYVIMRC")
 " edit local vimrc
 command! EditVimrcLocal exe "tabnew" resolve(".vim.local")
-" Edit default snippets for filetype
-command! EditDefaultSnippets exe "tabnew" resolve("$HOME/.vim/bundle/ultisnips/UltiSnips/" . &ft . ".snippets")
 nmap <leader>es :UltiSnipsEdit<CR>
 nmap <leader>ev :EditVimrc<CR>
 nmap <leader>el :EditVimrcLocal<CR>
 nmap <leader>ef :EditFtp<CR>
-nmap <leader>eu :EditDefaultSnippets<CR>
 
 " substitution
 noremap <leader>s :s/<c-r><c-w>//g<left><left>

@@ -1,39 +1,3 @@
-snippet fore "foreach"
-foreach (${1:element}; ${2:values}) {
-	$3
-}
-$0
-endsnippet
-
-snippet if "if statement"
-if ($1) {
-	${2:${VISUAL}}
-}
-${3:else}$0
-endsnippet
-
-snippet else "else statement"
-else {
-	${1:${VISUAL}}
-}
-$0
-endsnippet
-
-snippet elseif "else if statement"
-else if ($1) {
-	${2:${VISUAL}}
-}
-${3:else}$0
-endsnippet
-
-snippet imp "import"
-import ${1:std}.$0
-endsnippet
-
-snippet write "writefln"
-writefln("$1"$2);$0
-endsnippet
-
 snippet debug "debug block"
 debug {
 	import std.stdio;
@@ -41,7 +5,7 @@ debug {
 }$0
 endsnippet
 
-snippet dbgf "debug block"
+snippet debugf "debug block"
 debugf {
 	import std.stdio;
 	writefln("$1", $2);
@@ -59,18 +23,5 @@ snippet traces "trace with statement"
 debug {
 	import std.stdio;
 	writeln(__FUNCTION__, ": ", "$1 = ", $1);
-}$0
-endsnippet
-
-snippet main "main function"
-void main() {
-	$0
-}
-endsnippet
-
-snippet gdebug "graphical debug block (Allegro)"
-debug {
-	import graphics.primitive;
-	$1;
 }$0
 endsnippet
