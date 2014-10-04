@@ -6,6 +6,7 @@ setlocal spelllang=en_us
 nnoremap <leader>mm :w<Enter>:Latexmk<Enter>
 nnoremap <leader>mc :LatexmkClean<Enter>
 nnoremap <leader>v  :LatexView<Enter>
+autocmd BufWritePost *.tex :Latexmk
 "let g:LatexBox_latexmk_options="--output-directory=latex-build"
 let g:LatexBox_Folding=1
 "let b:build_dir="texbuild"
