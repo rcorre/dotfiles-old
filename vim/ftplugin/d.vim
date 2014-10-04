@@ -8,7 +8,7 @@ map <leader>aC :Tabularize /\/\/\/<cr>
 map <f3> :wa<cr>:!clear<cr>:Dispatch dub test<cr>
 map <f4> :wa<cr>:!clear<cr>:Dispatch dub build<cr>
 map <f5> :wa<cr>:!clear<cr>:Dispatch dub run<cr>
-"
+
 "map <f3> :wa<cr>:!clear<cr>:Dispatch make test<cr>
 "map <f4> :wa<cr>:!clear<cr>:Dispatch make<cr>
 "map <f5> :wa<cr>:!clear<cr>:Dispatch make run<cr>
