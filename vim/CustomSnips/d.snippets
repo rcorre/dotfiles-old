@@ -1,0 +1,27 @@
+snippet debug "debug block"
+debug {
+	import std.stdio;
+	writeln($1);
+}$0
+endsnippet
+
+snippet debugf "debug block"
+debugf {
+	import std.stdio;
+	writefln("$1", $2);
+}$0
+endsnippet
+
+snippet trace "debug with tracing info"
+debug {
+	import std.stdio;
+	writeln(__FUNCTION__, ": ", "$1");
+}$0
+endsnippet
+
+snippet traces "trace with statement"
+debug {
+	import std.stdio;
+	writeln(__FUNCTION__, ": ", "$1 = ", $1);
+}$0
+endsnippet

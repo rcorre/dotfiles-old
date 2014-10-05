@@ -41,6 +41,9 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_filepath_completion_use_working_dir = 1
 
+" CtrlP
+let g:ctrlp_custom_ignore = { 'file': '\v\.(wav,png,ogg)$' }
+
 " Dutyl
 let g:dutyl_stdImportPaths=['/usr/include/dlang/dmd', '/usr/include/dlang/dmd/core']
 "let g:dcd_path=resolve(expand("~/.vim/bundle/DCD"))
@@ -82,6 +85,10 @@ set colorcolumn=81	" show where text should wrap
 
 let mapleader = "," " use , as leader character
 
+" avoid escape
+inoremap <c-[> <esc>
+inoremap <c-c> <esc>
+
 " Y yanks to end of line instead of whole line -- more like D and C
 nnoremap Y y$
 
@@ -91,6 +98,7 @@ noremap <leader>v :read !xclip -out -sel clip<cr>
 nnoremap ge :cf<cr>
 nnoremap gn :cn<cr>
 nnoremap gp :cp<cr>
+nnoremap gc :cclose<cr>
 
 " jump to previous tab
 let g:lasttab = 1
@@ -120,13 +128,13 @@ let g:airline_powerline_fonts=1
 set guifont="Inconsolata for Powerline"
 
 "Ultisnips config
-let g:UltiSnipsSnippetsDir = "~/dotfiles/vim/UltiSnips"
+let g:UltiSnipsSnippetsDir = "~/dotfiles/vim/CustomSnips"
 let g:UltiSnipsEditSplit = "horizontal"
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 let g:UltiSnipsListSnippets = "<c-i>"
-"let g:UltiSnipsSnippetsDirectories = '~/dotfiles/vim/UltiSnips'
+let g:UltiSnipsSnippetDirectories=["CustomSnips", "UltiSnips"]
 "Tabularize shortcut
 map <leader>a :Tabularize /
 
@@ -158,13 +166,10 @@ command! EditFtp exe "tabnew" resolve("$HOME/.vim/ftplugin/" . &ft . ".vim")
 command! EditVimrc exe "tabnew" resolve("$MYVIMRC")
 " edit local vimrc
 command! EditVimrcLocal exe "tabnew" resolve(".vim.local")
-" Edit default snippets for filetype
-command! EditDefaultSnippets exe "tabnew" resolve("$HOME/.vim/bundle/ultisnips/UltiSnips/" . &ft . ".snippets")
 nmap <leader>es :UltiSnipsEdit<CR>
 nmap <leader>ev :EditVimrc<CR>
 nmap <leader>el :EditVimrcLocal<CR>
 nmap <leader>ef :EditFtp<CR>
-nmap <leader>eu :EditDefaultSnippets<CR>
 
 " substitution
 noremap <leader>s :s/<c-r><c-w>//g<left><left>
