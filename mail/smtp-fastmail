@@ -1,0 +1,13 @@
+# smtp sending
+set my_smtp_server=mail.messagingengine.com
+set my_user=`pass user/fastmail`
+set my_pass=`pass mail/fastmail`
+
+#set smtp_pass=$my_pass
+set smtp_url="smtps://$my_user:$my_pass@$my_smtp_server:465/"
+set certificate_file="/etc/ssl/certs/ca-certificates.crt"
+
+set sendmail_wait = 0
+set record = "+fastmail/Sent__Items"
+set from=$my_user
+set realname = "Ryan"

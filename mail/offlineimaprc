@@ -76,7 +76,8 @@ status_backend = sqlite
 [Repository fastmail-local]
 type = Maildir
 localfolders = ~/Mail/fastmail
-#nametrans = lambda folder: folder if folder == "INBOX" else ("INBOX/" + folder)
+nametrans = lambda folder: folder if folder == "INBOX" else \
+  re.sub("__", " ", "INBOX." + folder)
 
 [Repository fastmail-remote]
 type = IMAP
@@ -86,6 +87,4 @@ remoteuser = rcore@fastmail.fm
 remotepasseval = getpwd("fastmail")
 ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-#cert_fingerprint = 05:0E:9B:F2:0F:0E:4C:DE:F9:8B:D3:2D:9B:FB:B6:CE
-#folderfilter = lambda folder: not folder.startswith('INBOX/nosync')
-#nametrans = lambda folder: re.sub("INBOX/", '', folder)
+nametrans = lambda folder: re.sub("INBOX.", '', re.sub(" ", "__", folder))

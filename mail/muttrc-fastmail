@@ -1,0 +1,24 @@
+# Account
+set spoolfile = "+fastmail/INBOX"
+
+# Select all subdirs as mailboxes
+unmailboxes *
+mailboxes `echo ~/Mail/fastmail/*`
+set postponed = "+fastmail/Drafts"
+
+# Mailbox shortcuts
+macro index gi "<change-folder> =fastmail/INBOX<enter>" "go to inbox"
+macro index gs "<change-folder> =fastmail/Sent__Mail<enter>" "go to sent mail"
+macro index gj "<change-folder> =fastmail/Junk__Mail<enter>" "go to sent mail"
+macro index gt "<change-folder> =fastmail/Trash<enter>" "go to trash"
+macro index gd "<change-folder> =fastmail/Drafts<enter>" "go to drafts"
+
+# Deletion
+macro index d "<save-message>+fastmail/Trash<enter>" "move message to trash"
+
+#source '~/.mutt/cis4301-alias' TODO: alias file for fastmail
+source '~/dotfiles/mail/smtp-fastmail'
+unhook send-hook
+unhook reply-hook
+send-hook . source '~/dotfiles/mail/smtp-fastmail'
+reply-hook . source '~/dotfiles/mail/smtp-fastmail'
