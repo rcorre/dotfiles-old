@@ -8,7 +8,7 @@ set postponed = "+fastmail/Drafts"
 
 # Mailbox shortcuts
 macro index gi "<change-folder> =fastmail/INBOX<enter>" "go to inbox"
-macro index gs "<change-folder> =fastmail/Sent__Mail<enter>" "go to sent mail"
+macro index gs "<change-folder> =fastmail/Sent__Items<enter>" "go to sent mail"
 macro index gj "<change-folder> =fastmail/Junk__Mail<enter>" "go to sent mail"
 macro index gt "<change-folder> =fastmail/Trash<enter>" "go to trash"
 macro index gd "<change-folder> =fastmail/Drafts<enter>" "go to drafts"
