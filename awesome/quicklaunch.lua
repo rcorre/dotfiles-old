@@ -50,5 +50,23 @@ return {
             awful.util.spawn_with_shell("STEAM_FORCE_CLOSE=1 steam")
         end,
         info = "steam"
+    },
+    a = {
+        func = function()
+            awful.util.spawn_with_shell("aseprite")
+        end,
+        info = "aseprite"
+    },
+    l = {
+        func = function()
+            awful.util.spawn_with_shell("lmms")
+        end,
+        info = "lmms"
+    },
+    t = {
+        func = function()
+            awful.util.spawn_with_shell("tiled")
+        end,
+        info = "tiled"
     }
 }
