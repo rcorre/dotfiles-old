@@ -1,6 +1,4 @@
 #!/bin/bash
 
 #process mailto link with mutt
-TERMINAL="terminator"
-
-exec $TERMINAL -x mutt "$@"
+exec st -c mutt -t mutt -e mutt "$@"

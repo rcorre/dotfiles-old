@@ -1,6 +1,6 @@
 [general]
 ui = ttyui
-accounts = gmail, ufl
+accounts = gmail, ufl, fastmail
 pythonfile = ~/dotfiles/mail/offlineimap.py
 fsync = false
 # only sync 1 account at once
@@ -67,3 +67,24 @@ remoteuser = rcorrent
 remotepasseval = getpwd("ufl")
 folderfilter = lambda folder: not folder.startswith('INBOX/nosync')
 nametrans = lambda folder: re.sub("INBOX/", '', folder)
+
+[Account fastmail]
+localrepository = fastmail-local
+remoterepository = fastmail-remote
+status_backend = sqlite
+
+[Repository fastmail-local]
+type = Maildir
+localfolders = ~/Mail/fastmail
+nametrans = lambda folder: folder if folder == "INBOX" else \
+  re.sub("__", " ", "INBOX." + folder)
+
+[Repository fastmail-remote]
+type = IMAP
+remotehost = mail.messagingengine.com
+remoteport = 993
+remoteuser = rcore@fastmail.fm
+remotepasseval = getpwd("fastmail")
+ssl = yes
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+nametrans = lambda folder: re.sub("INBOX.", '', re.sub(" ", "__", folder))

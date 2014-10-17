@@ -138,10 +138,8 @@ let g:UltiSnipsSnippetDirectories=["CustomSnips", "UltiSnips"]
 "Tabularize shortcut
 map <leader>a :Tabularize /
 
-"load project-local vimrc if it exists
-if filereadable(".vim.local")
-  so .vim.local
-endif
+"load project-local vimrc if it exists (after ftplugin)
+au FileType * if filereadable(".vim.local") | so .vim.local | endif
 au BufRead,BufNewFile .vim.local set filetype=vim
 
 " Folding
