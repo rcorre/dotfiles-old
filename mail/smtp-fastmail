@@ -11,4 +11,5 @@ set certificate_file="/etc/ssl/certs/ca-certificates.crt"
 set sendmail_wait = 0
 set record = "+fastmail/Sent__Items"
 set from=$my_sender
-set realname = "Ryan"
+set realname = "Ryan Roden-Corrent"
+set signature="~/dotfiles/mail/signature.txt"
