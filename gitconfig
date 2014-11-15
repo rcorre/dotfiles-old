@@ -20,7 +20,7 @@
 	editor = vim
 	excludesfile = ~/dotfiles/gitignore-global
 [user]
-	name = Ryan RC
-	email = murphyslaw480@gmail.com
+	name = Ryan
+	email = ryan@rcorre.net
 [push]
 	default = upstream
