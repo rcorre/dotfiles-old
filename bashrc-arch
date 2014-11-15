@@ -16,9 +16,10 @@ alias ls='ls --color=auto'
 eval `dircolors ~/.dircolors`
 PS1='[\u@\h \W]\$ '
 
-set -o vi 	                #vi command line editing
-shopt -s direxpand          #expand directory variables with <TAB> after /
-export GREP_COLOR='1;32'	#green grep result highlight
+set -o vi                # vi command line editing
+shopt -s direxpand       # expand directory variables with <TAB> after /
+export GREP_COLOR='1;32' # green grep result highlight
+stty -ixon               # don't let <c-s> stop vim
 
 #pass tab completion
 source /usr/share/bash-completion/completions/pass
