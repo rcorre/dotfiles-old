@@ -68,7 +68,3 @@ if hash rbenv 2>/dev/null; then
 fi
 # system gems
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"   #system gems
-# heroku
-if [ -e "/usr/local/heroku" ]; then
-  export PATH="/usr/local/heroku/bin:$PATH"
-fi
