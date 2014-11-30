@@ -17,6 +17,12 @@ return {
         end,
         info = "firefox"
     },
+    d = {
+        func = function()
+            awful.util.spawn("dwb")
+        end,
+        info = "dwb"
+    },
     c = {
         func = function()
             awful.util.spawn(
