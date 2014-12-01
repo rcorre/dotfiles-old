@@ -5,7 +5,7 @@ pythonfile = ~/dotfiles/mail/offlineimap.py
 fsync = false
 # only sync 1 account at once
 maxsyncaccounts = 1
-socktimeout = 10
+socktimeout = 30
 
 [Account gmail]
 localrepository = gmail-local
