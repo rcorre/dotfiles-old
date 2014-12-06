@@ -9,7 +9,7 @@
 export TERM=xterm-256color
 export TERMINAL=st
 export EDITOR=vim
-export BROWSER=firefox
+export BROWSER=dwb
 
 alias ls='ls --color=auto'
 #color ls
