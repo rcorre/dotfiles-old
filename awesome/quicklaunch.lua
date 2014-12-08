@@ -1,13 +1,8 @@
 return {
     m = {
         func = function()
-          if (terminal == 'st') then
             awful.util.spawn_with_shell(terminal ..
               " -c mutt -t mutt -e $HOME/dotfiles/mail/start-mutt.sh")
-          else
-            awful.util.spawn_with_shell(terminal ..
-              " -x $HOME/dotfiles/mail/start-mutt.sh")
-          end
         end,
         info = "mutt"
     },
