@@ -1,2 +1,2 @@
 #!/bin/bash
-BROWSER='/bin/firefox' mutt
+BROWSER='/bin/dwb' mutt
