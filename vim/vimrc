@@ -93,6 +93,9 @@ inoremap <c-c> <esc>
 " Y yanks to end of line instead of whole line -- more like D and C
 nnoremap Y y$
 
+" reformat entire file
+nnoremap <leader>f mzgg=G`z<cr>
+
 " clipboard paste
 noremap <leader>v :read !xclip -out -sel clip<cr>
 " error jumping (first, next, previous)
