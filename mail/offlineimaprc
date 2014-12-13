@@ -3,8 +3,8 @@ ui = ttyui
 accounts = gmail, ufl, fastmail
 pythonfile = ~/dotfiles/mail/offlineimap.py
 fsync = false
-# only sync 1 account at once
-maxsyncaccounts = 1
+# sync 3 accounts at once
+maxsyncaccounts = 3
 socktimeout = 30
 
 [Account gmail]
@@ -48,7 +48,7 @@ sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 # send data to keep connection alive
 #keepalive = 60
 #holdconnection = yes
-#maxconnections = 2
+maxconnections = 3
 
 [Account ufl]
 localrepository = ufl-local
@@ -67,6 +67,7 @@ remoteuser = rcorrent
 remotepasseval = getpwd("ufl")
 folderfilter = lambda folder: not folder.startswith('INBOX/nosync')
 nametrans = lambda folder: re.sub("INBOX/", '', folder)
+maxconnections = 3
 
 [Account fastmail]
 localrepository = fastmail-local
@@ -88,3 +89,4 @@ remotepasseval = getpwd("fastmail")
 ssl = yes
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 nametrans = lambda folder: re.sub("INBOX.", '', re.sub(" ", "__", folder))
+maxconnections = 3
