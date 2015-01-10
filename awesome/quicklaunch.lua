@@ -6,12 +6,6 @@ return {
         end,
         info = "mutt"
     },
-    f = {
-        func = function()
-            awful.util.spawn("firefox")
-        end,
-        info = "firefox"
-    },
     d = {
         func = function()
             awful.util.spawn("dwb")
@@ -20,19 +14,9 @@ return {
     },
     c = {
         func = function()
-            awful.util.spawn(
-              "firefox --new-window https://www.google.com/calendar/render"
-            )
+            awful.util.spawn("chromium")
         end,
-        info = "google calendar"
-    },
-    p = {
-        func = function()
-            awful.util.spawn(
-              "firefox --new-window https://play.google.com/music/listen#/now"
-            )
-        end,
-        info = "google play music"
+        info = "chromium"
     },
     i = {
         func = function()
