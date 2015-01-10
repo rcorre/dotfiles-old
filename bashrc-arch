@@ -12,6 +12,7 @@ export EDITOR=vim
 export BROWSER=dwb
 
 alias ls='ls --color=auto'
+alias sthere='st . & disown'
 #color ls
 eval `dircolors ~/.dircolors`
 PS1='[\u@\h \W]\$ '
