@@ -1,1 +1,1 @@
-nnoremap <leader>r :!bash %<cr>
+nnoremap <leader>r :!sh %<cr>

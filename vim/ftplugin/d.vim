@@ -7,11 +7,13 @@ nnoremap <leader>b o//**<esc>80a*/<esc>
 
 map <leader>ac :Tabularize /\/\/<cr>
 map <leader>aC :Tabularize /\/\/\/<cr>
+map <leader>am :Tabularize /_.*/<cr>
 
 map <f3> :wa<cr>:!clear<cr>:Dispatch make test<cr>
 map <f4> :wa<cr>:!clear<cr>:Dispatch make<cr>
 map <f5> :wa<cr>:!clear<cr>:Dispatch make run<cr>
 
+map <leader>f :vimgrep src/**<left><left><left><left><left><left><left>
 map <leader>F :vimgrep <c-r><c-w> src/**<cr>
 
 set foldmethod=syntax
