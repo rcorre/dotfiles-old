@@ -2,25 +2,26 @@
     path=~/.gitconfig-local
 
 [alias]
-	st = status
-	br = branch
-	cm = "commit -m"
-	co = checkout
+	st      = status
+	br      = branch
+	cm      = "commit -m"
+	co      = checkout
   unstage = "reset HEAD"
-	adda = "add --all"
-	cma = commit -am
-	dif = diff --name-only
-	pom = push origin master
-	diffc = diff --cached
-	cmend = commit --amend
-	last = log -1
+	adda    = "add --all"
+	cma     = commit -am
+	dif     = diff --name-only
+	pom     = push origin master
+	diffc   = diff --cached
+	cmend   = commit --amend
+	last    = log -1
+  graph   = log --graph --decorate=full --oneline --all
 [color]
 	ui = auto
 [core]
-	editor = vim
+	editor       = vim
 	excludesfile = ~/dotfiles/gitignore-global
 [user]
-	name = Ryan
+	name  = Ryan
 	email = ryan@rcorre.net
 [push]
 	default = upstream
