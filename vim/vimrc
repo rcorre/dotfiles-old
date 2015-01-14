@@ -26,7 +26,6 @@ Bundle 'honza/vim-snippets'
 Bundle 'majutsushi/tagbar'
 Bundle 'elzr/vim-json'
 Bundle 'idanarye/vim-dutyl'
-Bundle 'kiith-sa/DSnips'
 " End of Bundles
 call vundle#end()
 filetype plugin indent on
