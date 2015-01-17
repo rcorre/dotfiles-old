@@ -1,9 +1,0 @@
-"3.7.1 (created: 2013/05/22 20:32:57)
-
-noremap k 8k
-noremap j 8j
-noremap h 3h
-noremap l 3l
-source! /home/erethar/.vimperatorrc.local
-
-" vim: set ft=vimperator:

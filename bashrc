@@ -25,9 +25,6 @@ stty -ixon               # don't let <c-s> stop vim
 #pass tab completion
 source /usr/share/bash-completion/completions/pass
 
-#load directory shortcuts
-source ~/dotfiles/bash-dirs
-
 # colored man pages
 man () {
   env LESS_TERMCAP_mb=$'\E[01;31m' \

@@ -1,9 +1,0 @@
-#classes
-export CLASSES=~/documents/classes
-export SYG=$CLASSES/syg2430
-
-#config files
-export MYBASHRC=~/.bashrc
-export MYVIMRC=~/.vimrc
-export MYMUTTRC=~/.mutt/muttrc
-export KARATE=~/documents/groups/karate
