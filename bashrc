@@ -10,6 +10,7 @@ export TERM=xterm-256color
 export TERMINAL=st
 export EDITOR=vim
 export BROWSER=dwb
+export DC=dmd
 
 alias ls='ls --color=auto'
 alias sthere='st . & disown'
