@@ -16,7 +16,6 @@ local vicious = require("vicious")
 require("util")         -- my utilities
 require("keychains")    -- hotkey chaining
 --Custom Widgets
-require("conky")
 require("widget/battery")
 require("widget/thermal")
 require("widget/date")
