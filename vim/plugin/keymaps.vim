@@ -1,7 +1,5 @@
 " general-purpose custom key mappings and commands
 
-let mapleader = "," " use , as leader character
-
 " Y yanks to end of line instead of whole line -- more like D and C
 nnoremap Y y$
 

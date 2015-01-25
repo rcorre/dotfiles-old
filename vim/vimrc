@@ -31,4 +31,7 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 
+" set mapleader here so it applies to all future keymaps
+let mapleader = "," " use , as leader character
+
 " remaining configuration settings are in plugin/**/*.vim
