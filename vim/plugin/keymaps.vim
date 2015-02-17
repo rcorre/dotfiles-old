@@ -4,7 +4,7 @@
 nnoremap Y y$
 
 " format entire file
-nnoremap <leader>f mzgg=G`z<cr>
+nnoremap <leader>= mzgg=G`z<cr>
 
 " jump to previous tab
 let g:lasttab = 1
@@ -32,9 +32,9 @@ nmap <leader>dt :%s/\s\+$//g<cr>
 
 " quickly open a tab to edit important files
 command! EditFtp exe "tabnew" resolve("$HOME/.vim/ftplugin/" . &ft . ".vim")
-command! EditVimrc exe "tabnew" resolve("$MYVIMRC")
-command! EditVimrcLocal exe "tabnew" resolve(".vim.local")
+command! EditVimFolder exe "tabnew" resolve("$HOME/.vim")
+command! EditVimLocal exe "tabnew" resolve(".vim.local")
 nmap <leader>es :UltiSnipsEdit<CR>
-nmap <leader>ev :EditVimrc<CR>
-nmap <leader>el :EditVimrcLocal<CR>
+nmap <leader>ev :EditVimFolder<CR>
+nmap <leader>el :EditVimLocal<CR>
 nmap <leader>ef :EditFtp<CR>
