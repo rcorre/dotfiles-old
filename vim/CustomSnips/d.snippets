@@ -8,30 +8,38 @@ switch ($1) with ($2) {
 }$0
 endsnippet
 
+snippet fswith "final switch with"
+final switch ($1) with ($2) {
+	case $3:
+		$4
+		break;
+}$0
+endsnippet
+
 snippet debug "debug block"
 debug {
-	import std.stdio;
+	import std.stdio : writeln;
 	writeln($1);
 }$0
 endsnippet
 
 snippet debugf "debug block"
 debugf {
-	import std.stdio;
+	import std.stdio : writefln;
 	writefln("$1", $2);
 }$0
 endsnippet
 
 snippet trace "debug with tracing info"
 debug {
-	import std.stdio;
+	import std.stdio : writeln;
 	writeln(__FUNCTION__, ": ", "$1");
 }$0
 endsnippet
 
 snippet traces "trace with statement"
 debug {
-	import std.stdio;
+	import std.stdio : writeln;
 	writeln(__FUNCTION__, ": ", "$1 = ", $1);
 }$0
 endsnippet
