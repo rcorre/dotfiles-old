@@ -6,11 +6,11 @@ return {
         end,
         info = "mutt"
     },
-    d = {
+    q = {
         func = function()
-            awful.util.spawn("dwb")
+            awful.util.spawn("qutebrowser")
         end,
-        info = "dwb"
+        info = "qutebrowser"
     },
     c = {
         func = function()
