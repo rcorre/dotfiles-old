@@ -1,2 +1,2 @@
 #!/bin/bash
-BROWSER='/bin/dwb' mutt
+BROWSER='/bin/qutebrowser' mutt
