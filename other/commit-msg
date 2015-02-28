@@ -1,10 +1,16 @@
 #!/usr/bin/ruby
 
+# This commit message hook will prefix commit messages with a tag indicating
+# their configuration area.
+# For example, commits that modify vim-related files will prefix the commit with 
+# the tag [vim].
+# This script will also reject a commit if changes are made to separate areas.
+# Use `git commit --no-verify` if such a commit is intentional.
+
 $tags = %w{
-  vim bash awesome pianobar mail terminator conky task consular zathura git
+  awesome bash git mail pianobar qutebrowser vim task zathura 
 }
            
-
 def get_commit_tag filename
     $tags.find{|tag| filename.match tag}
 end
