@@ -25,7 +25,7 @@ Bundle 'SirVer/ultisnips'
 Bundle 'majutsushi/tagbar'
 Bundle 'elzr/vim-json'
 Bundle 'idanarye/vim-dutyl'
-Bundle 'file:///data/project/nimrod.vim'
+Bundle 'file:///home/erethar/project/nimrod.vim'
 " End of Bundles
 call vundle#end()
 filetype plugin indent on
