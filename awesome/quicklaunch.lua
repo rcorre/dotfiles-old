@@ -53,5 +53,11 @@ return {
             awful.util.spawn_with_shell("tiled")
         end,
         info = "tiled"
+    },
+    f = {
+        func = function()
+            awful.util.spawn_with_shell("gnucash")
+        end,
+        info = "gnucash"
     }
 }
