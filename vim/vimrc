@@ -26,6 +26,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'elzr/vim-json'
 Bundle 'idanarye/vim-dutyl'
 Bundle 'file:///home/erethar/project/nimrod.vim'
+Bundle 'rust-lang/rust.vim'
 " End of Bundles
 call vundle#end()
 filetype plugin indent on
