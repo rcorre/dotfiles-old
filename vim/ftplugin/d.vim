@@ -2,7 +2,7 @@
 nmap <leader>c :w <bar> !dmd %<cr>
 nmap <leader>r :w <bar> !rdmd --compiler=dmd %<cr>
 nmap <leader>m :w <bar> !make<cr>
-nmap <leader>t :w <bar> !rdmd -main -unittest -debug -g %<cr>
+nmap <leader>t :w <bar> !rdmd --compiler=dmd -main -unittest -debug -g %<cr>
 
 " comment line
 nnoremap <leader>b o//**<esc>80a*/<esc>
