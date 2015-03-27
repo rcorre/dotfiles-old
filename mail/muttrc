@@ -1,7 +1,7 @@
 # Paths
 set editor           = "vim -c 'set spell'"
 set my_name          = "Ryan"
-set folder           = ~/Mail
+set folder           = ~/.mail
 set alias_file       = ~/.mutt/alias
 set header_cache     = "~/.cache/mutt/headers"
 set message_cachedir = "~/.cache/mutt/bodies"
@@ -80,7 +80,7 @@ macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "ma
 
 # sync email
 macro index O "<shell-escape>offlineimap<enter>" "sync all with offlineimap"
-macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "sync inbox with offlineimap"
+macro index o "<shell-escape>offlineimap -qf Inbox<enter>" "sync inbox with offlineimap"
 
 # Automatically start searching when moving messages
 macro index C "<copy-message>?<toggle-mailboxes><search>" "copy a message to a mailbox"
@@ -117,11 +117,11 @@ bind index p recall-message
 source '~/.mutt/colors/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc'
 
 # Multiple accounts
-folder-hook ~/Mail/gmail/* source ~/dotfiles/mail/muttrc-gmail
-folder-hook ~/Mail/ufl/* source ~/dotfiles/mail/muttrc-ufl
-folder-hook ~/Mail/fastmail/* source ~/dotfiles/mail/muttrc-fastmail
+folder-hook ~/.mail/gmail/* source ~/dotfiles/mail/muttrc-gmail
+folder-hook ~/.mail/ufl/* source ~/dotfiles/mail/muttrc-ufl
+folder-hook ~/.mail/fastmail/* source ~/dotfiles/mail/muttrc-fastmail
 source '~/dotfiles/mail/muttrc-gmail'
 source '~/.mutt/alias'
-macro index <f2> '<change-folder>+gmail/INBOX<enter>'
-macro index <f3> '<change-folder>+ufl/INBOX<enter>'
-macro index <f4> '<change-folder>+fastmail/INBOX<enter>'
+macro index <f2> '<change-folder>+gmail/Inbox<enter>'
+macro index <f3> '<change-folder>+ufl/Inbox<enter>'
+macro index <f4> '<change-folder>+fastmail/Inbox<enter>'

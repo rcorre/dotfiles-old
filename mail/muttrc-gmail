@@ -3,7 +3,7 @@ set spoolfile = "+gmail/INBOX"
 
 # Select all subdirs as mailboxes
 unmailboxes *
-mailboxes   `echo ~/Mail/gmail/*`
+mailboxes   `echo ~/.mail/gmail/*`
 set postponed = "+gmail/gmail.Drafts"
 
 # Mailbox shortcuts

@@ -3,7 +3,7 @@ set spoolfile = "+ufl/INBOX"
 
 # Select all subdirs as mailboxes
 unmailboxes *
-mailboxes   `echo ~/Mail/ufl/*`
+mailboxes   `echo ~/.mail/ufl/*`
 set postponed = "+ufl/Drafts"
 
 # Mailbox shortcuts
