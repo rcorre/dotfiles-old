@@ -1,15 +1,17 @@
 [alias]
 	st      = status
 	br      = branch
+	ci      = commit
+	ca      = "commit -a"
 	cm      = "commit -m"
+	cma     = "commit -am"
+	cmend   = "commit --amend"
 	co      = checkout
   unstage = "reset HEAD"
 	adda    = "add --all"
-	cma     = commit -am
 	dif     = diff --name-only
 	pom     = push origin master
 	diffc   = diff --cached
-	cmend   = commit --amend
 	last    = log -1
   graph   = log --graph --decorate=full --oneline --all
 [color]
