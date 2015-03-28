@@ -1,3 +1,6 @@
+SyncState *
+Create Slave
+
 IMAPAccount fastmail
 Host mail.messagingengine.com
 User rcore@fastmail.fm
@@ -9,13 +12,73 @@ IMAPStore fastmail-remote
 Account fastmail
 
 MaildirStore fastmail-local
-Path ~/.mail/fastmail
-Inbox ~/.mail/fastmail/Inbox
+Path ~/Mail/fastmail/
+Inbox ~/Mail/fastmail/INBOX
 
-Channel fastmail
-Master :fastmail-remote:
-Slave :fastmail-local:
-# only create missing folders locally, do not create new folders on remote
-Create Slave
-# Save synchronization state files in relevant directory
-SyncState *
+Channel fastmail-inbox
+Master :fastmail-remote:"INBOX"
+Slave :fastmail-local:"Inbox"
+
+Channel fastmail-archive
+Master :fastmail-remote:"INBOX/Archive"
+Slave :fastmail-local:"Archive"
+
+Channel fastmail-drafts
+Master :fastmail-remote:"INBOX/Drafts"
+Slave :fastmail-local:"Drafts"
+
+Channel fastmail-sent
+Master :fastmail-remote:"INBOX/Sent Items"
+Slave :fastmail-local:"Sent"
+
+Channel fastmail-junk
+Master :fastmail-remote:"INBOX/Junk Mail"
+Slave :fastmail-local:"Junk"
+
+Channel fastmail-trash
+Master :fastmail-remote:"INBOX/Trash"
+Slave :fastmail-local:"Trash"
+
+Channel fastmail-commerce
+Master :fastmail-remote:"INBOX/commerce"
+Slave :fastmail-local:"commerce"
+
+Channel fastmail-finance
+Master :fastmail-remote:"INBOX/finance"
+Slave :fastmail-local:"finance"
+
+Channel fastmail-coding
+Master :fastmail-remote:"INBOX/coding"
+Slave :fastmail-local:"coding"
+
+Channel fastmail-gaming
+Master :fastmail-remote:"INBOX/gaming"
+Slave :fastmail-local:"gaming"
+
+Channel fastmail-housing
+Master :fastmail-remote:"INBOX/housing"
+Slave :fastmail-local:"housing"
+
+Channel fastmail-personal
+Master :fastmail-remote:"INBOX/personal"
+Slave :fastmail-local:"personal"
+
+Channel fastmail-health
+Master :fastmail-remote:"INBOX/health"
+Slave :fastmail-local:"health"
+
+Channel fastmail-domain
+Master :fastmail-remote:"INBOX/domain"
+Slave :fastmail-local:"domain"
+
+Channel fastmail-work
+Master :fastmail-remote:"INBOX/work"
+Slave :fastmail-local:"work"
+
+Channel fastmail-fitness
+Master :fastmail-remote:"INBOX/fitness"
+Slave :fastmail-local:"fitness"
+
+Channel fastmail-school
+Master :fastmail-remote:"INBOX/school"
+Slave :fastmail-local:"school"
