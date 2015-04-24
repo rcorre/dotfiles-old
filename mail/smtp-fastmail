@@ -12,4 +12,3 @@ set sendmail_wait = 0
 set record = "+fastmail/Sent"
 set from=$my_sender
 set realname = "Ryan Roden-Corrent"
-set signature="~/dotfiles/mail/signature.txt"
