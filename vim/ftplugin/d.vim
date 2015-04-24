@@ -16,9 +16,9 @@ map <leader>am :Tabularize /_.*/<cr>
 nnoremap <leader>db dt{da{
 
 " makefile build/test/run
-map <f3> :wa<cr>:!clear<cr>:Dispatch make test<cr>
-map <f4> :wa<cr>:!clear<cr>:Dispatch make<cr>
-map <f5> :wa<cr>:!clear<cr>:Dispatch make run<cr>
+map <f3> :wa<cr>:!clear<cr>:Dispatch dub test --quiet<cr>
+map <f4> :wa<cr>:!clear<cr>:Dispatch dub build --quiet<cr>
+map <f5> :wa<cr>:!clear<cr>:Dispatch dub run --quiet<cr>
 
 " search source files
 map <leader>f :vimgrep src/**<left><left><left><left><left><left><left>
