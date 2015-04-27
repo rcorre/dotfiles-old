@@ -6,3 +6,6 @@ text/html; lynx -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousou
 #Documents
 application/pdf; xdg-open %s;
 application/msword; abiword %s;
+
+# Video
+video/*; mplayer %s;
