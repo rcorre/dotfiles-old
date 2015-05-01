@@ -20,13 +20,10 @@ Bundle 'tpope/vim-eunuch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-dispatch'
 Bundle 'Matt-Stevens/vim-systemd-syntax'
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
 Bundle 'SirVer/ultisnips'
 Bundle 'majutsushi/tagbar'
 Bundle 'elzr/vim-json'
 Bundle 'idanarye/vim-dutyl'
-Bundle 'file:///home/erethar/project/nimrod.vim'
-Bundle 'rust-lang/rust.vim'
 " End of Bundles
 call vundle#end()
 filetype plugin indent on
