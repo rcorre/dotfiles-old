@@ -24,6 +24,9 @@ map <f5> :wa<cr>:!clear<cr>:Dispatch dub run --quiet<cr>
 map <leader>f :vimgrep src/**<left><left><left><left><left><left><left>
 map <leader>F :vimgrep <c-r><c-w> src/**<cr>
 
+" open a junk file for quick experimenting
+map <leader>j :tabnew /tmp/scratch.d<cr>
+
 " folding
 set foldmethod=syntax
 set foldnestmax=2
@@ -35,3 +38,6 @@ set colorcolumn=101
 " allow jumping to unittest assert failures from quickfix
 set errorformat^=%m@%f(%l):\ unittest\ failure
 set errorformat+=%-G%.%#
+
+" comment continuation
+set formatoptions+=c,r,o
