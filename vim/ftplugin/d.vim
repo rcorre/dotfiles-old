@@ -16,6 +16,7 @@ map <leader>am :Tabularize /_.*/<cr>
 nnoremap <leader>db dt{da{
 
 " makefile build/test/run
+map <f2> :wa<cr>:!clear<cr>:Dispatch dub build --quiet --build=ddox<cr>
 map <f3> :wa<cr>:!clear<cr>:Dispatch dub test --quiet<cr>
 map <f4> :wa<cr>:!clear<cr>:Dispatch dub build --quiet<cr>
 map <f5> :wa<cr>:!clear<cr>:Dispatch dub run --quiet<cr>
@@ -40,4 +41,6 @@ set errorformat^=%m@%f(%l):\ unittest\ failure
 set errorformat+=%-G%.%#
 
 " comment continuation
-set formatoptions+=c,r,o
+setlocal formatoptions+=c,r,o
+" only continue block comments
+setlocal comments-=:// comments+=f://
