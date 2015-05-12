@@ -20,3 +20,4 @@ let g:ycm_filepath_completion_use_working_dir = 1
 let g:ycm_enable_diagnostic_signs = 0
 
 "let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_global_ycm_extra_conf = '~/dotfiles/vim/ycm_global_conf.py'
