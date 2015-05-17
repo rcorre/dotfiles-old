@@ -338,8 +338,10 @@ globalkeys = awful.util.table.join(
         end
     end),
 
-    --Conky
-    awful.key({}, "F10", raise_conky, lower_conky)
+    -- Screenshot
+    awful.key({}, "Print", function()
+      awful.util.spawn("scrot -e 'mv $f ~/screenshots 2>/dev/null'")
+    end)
 )
 
 clientkeys = awful.util.table.join(
