@@ -23,9 +23,10 @@ nnoremap gc :cclose<cr>
 " command to save and exit while creating a session file
 command! Bye :mksession! | :wqall
 
-" substitution (line and global)
-noremap <leader>s :s/<c-r><c-w>//g<left><left>
-noremap <leader>S :%s/<c-r><c-w>//g<left><left>
+" substitution (line, global, confirm)
+noremap sl :s/<c-r><c-w>//g<left><left>
+noremap sg :%s/<c-r><c-w>//g<left><left>
+noremap sc :%s/<c-r><c-w>//gc<left><left><left>
 
 " delete trailing whitespace
 nmap <leader>dt :%s/\s\+$//g<cr>
