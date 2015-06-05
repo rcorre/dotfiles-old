@@ -30,7 +30,7 @@ map <leader>j :tabnew /tmp/scratch.d<cr>
 
 " folding
 set foldmethod=syntax
-set foldnestmax=2
+set foldnestmax=4
 
 " text width
 set tw=100
@@ -44,3 +44,6 @@ set errorformat+=%-G%.%#
 setlocal formatoptions+=c,r,o
 " only continue block comments
 setlocal comments-=:// comments+=f://
+
+" surround with /++ ++/ comments (use S+ to surround selection)
+let b:surround_43 = "/++ \r ++/"
