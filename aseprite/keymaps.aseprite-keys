@@ -1,0 +1,61 @@
+<keyboard version="1">
+    <commands>
+        <key command="Exit" shortcut="Ctrl+Q" removed="true" />
+        <key command="Undo" shortcut="Ctrl+U" removed="true" />
+        <key command="Undo" shortcut="Ctrl+Z" />
+        <key command="ReplaceColor" shortcut="Shift+R" removed="true" />
+        <key command="ConfigureTools" shortcut="C" removed="true" />
+        <key command="SnapToGrid" shortcut="Shift+S" removed="true" />
+        <key command="ChangeBrush" shortcut="+" removed="true">
+            <param name="change" value="increment-size" />
+        </key>
+        <key command="ChangeBrush" shortcut="+ Pad" removed="true">
+            <param name="change" value="increment-size" />
+        </key>
+        <key command="ChangeBrush" shortcut="T">
+            <param name="change" value="increment-size" />
+        </key>
+        <key command="ChangeBrush" shortcut="-" removed="true">
+            <param name="change" value="decrement-size" />
+        </key>
+        <key command="ChangeBrush" shortcut="- Pad" removed="true">
+            <param name="change" value="decrement-size" />
+        </key>
+        <key command="ChangeBrush" shortcut="Ctrl+T">
+            <param name="change" value="decrement-size" />
+        </key>
+    </commands>
+    <tools>
+        <key tool="rectangular_marquee" shortcut="M" removed="true" />
+        <key tool="rectangular_marquee" shortcut="S" />
+        <key tool="elliptical_marquee" shortcut="Shift+M" removed="true" />
+        <key tool="elliptical_marquee" shortcut="Shift+S" />
+        <key tool="magic_wand" shortcut="W" />
+        <key tool="eraser" shortcut="E" />
+        <key tool="zoom" shortcut="Z" removed="true" />
+        <key tool="paint_bucket" shortcut="G" />
+        <key tool="paint_bucket" shortcut="F" />
+        <key tool="line" shortcut="L" removed="true" />
+        <key tool="line" shortcut="D" />
+        <key tool="curve" shortcut="Shift+L" removed="true" />
+        <key tool="curve" shortcut="Shift+D" />
+        <key tool="rectangle" shortcut="U" removed="true" />
+        <key tool="rectangle" shortcut="R" />
+        <key tool="filled_rectangle" shortcut="U" removed="true" />
+        <key tool="filled_rectangle" shortcut="Shift+R" />
+        <key tool="ellipse" shortcut="Shift+U" removed="true" />
+        <key tool="ellipse" shortcut="C" />
+        <key tool="filled_ellipse" shortcut="Shift+U" removed="true" />
+        <key tool="filled_ellipse" shortcut="Shift+C" />
+        <key tool="contour" shortcut="D" removed="true" />
+        <key tool="polygon" shortcut="Shift+D" removed="true" />
+        <key tool="blur" shortcut="R" removed="true" />
+        <key tool="jumble" shortcut="R" removed="true" />
+    </tools>
+    <quicktools>
+        <key tool="eyedropper" shortcut="Alt" removed="true" />
+        <key tool="eyedropper" shortcut="Ctrl" />
+        <key tool="move" shortcut="Ctrl" removed="true" />
+    </quicktools>
+    <actions />
+</keyboard>

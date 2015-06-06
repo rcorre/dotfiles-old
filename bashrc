@@ -52,12 +52,6 @@ alias make="colormake"
 alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
 # top level of git project
 alias gitop='cd "$(git rev-parse --show-toplevel)"'
-# uf stuff
-alias uf-connect='sudo netctl start wlp2s0-uf'
-alias uf-reconnect='sudo netctl restart wlp2s0-uf'
-alias cise-ssh="$CLASSES/cise-ssh.sh"
-alias cise-sftp="$CLASSES/cise-sftp.sh"
-alias matlab="$CLASSES/cise-matlab.sh"
 # clipboard paste
 alias cpaste='xclip -out -sel clip'
 
