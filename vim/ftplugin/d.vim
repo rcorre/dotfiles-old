@@ -23,7 +23,7 @@ map <f4> :wa<cr>:!clear<cr>:Dispatch dub build --quiet<cr>
 map <f5> :wa<cr>:!clear<cr>:Dispatch dub run --quiet<cr>
 
 " search source files
-map <leader>f :vimgrep src/**<left><left><left><left><left><left><left>
+map <leader>f :vimgrep  src/**<left><left><left><left><left><left><left>
 map <leader>F :vimgrep <c-r><c-w> src/**<cr>
 
 " open a junk file for quick experimenting
