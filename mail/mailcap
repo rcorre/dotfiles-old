@@ -1,11 +1,16 @@
 # Images
 image/*; sxiv %s;
+
 # HTML
 text/html; lynx -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput
 
-#Documents
+# Documents
 application/pdf; xdg-open %s;
 application/msword; abiword %s;
 
 # Video
 video/*; mplayer %s;
+
+# Text
+text/plain; vim %s
+text/x-csrc; vim %s
