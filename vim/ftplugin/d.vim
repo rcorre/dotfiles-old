@@ -17,10 +17,9 @@ nnoremap <leader>db dt{da{
 
 " makefile build/test/run
 map <f1> :wa<cr>:!clear<cr>:Dispatch dub run --quiet<cr>
-map <f2> :wa<cr>:!clear<cr>:Dispatch dub build --quiet --build=ddox<cr>
+map <f2> :wa<cr>:!clear<cr>:Dispatch dub build --quiet<cr>
 map <f3> :wa<cr>:!clear<cr>:Dispatch dub test --quiet<cr>
-map <f4> :wa<cr>:!clear<cr>:Dispatch dub build --quiet<cr>
-map <f5> :wa<cr>:!clear<cr>:Dispatch dub run --quiet<cr>
+map <f4> :wa<cr>:!clear<cr>:Dispatch dub build --quiet --build=ddox<cr>
 
 " search source files
 map <leader>f :vimgrep  src/**<left><left><left><left><left><left><left>
