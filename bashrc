@@ -13,9 +13,9 @@ export BROWSER=qutebrowser
 export DC=dmd
 
 alias ls='ls --color=auto'
-alias sthere='st . & disown'
 #color ls
-eval `dircolors ~/.dircolors`
+
+eval `dircolors /usr/share/dircolors/dircolors.256dark`
 PS1='[\u@\h \W]\$ '
 
 set -o vi                # vi command line editing
