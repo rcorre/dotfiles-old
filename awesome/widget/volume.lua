@@ -14,13 +14,15 @@ volume_control = function (mode)
     local status = fd:read("*all")
     fd:close()
     local volume = tonumber(string.match(status, "(%d?%d?%d)%%"))
-    volume = string.format("% 3d", volume)
-    if string.find(status, "[on]", 1, true) then
-        volume = volume .. "%"
-    else
-        volume = volume .. "M"
+    if (volume ~= nil) then
+		volume = string.format("% 3d", volume)
+		if string.find(status, "[on]", 1, true) then
+			volume = volume .. "%"
+		else
+			volume = volume .. "M"
+		end
+		volume_widget:set_text("VOL:" .. volume)
     end
-    volume_widget:set_text("VOL:" .. volume)
 end
 
 volume_widget = wibox.widget.textbox()
