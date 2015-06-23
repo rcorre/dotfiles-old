@@ -48,7 +48,7 @@ if [ -f "{$HOME}/.gpg-agent-info" ]; then
 fi
 
 alias op="xdg-open"
-alias make="colormake"
+#alias make="colormake"
 alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
 # top level of git project
 alias gitop='cd "$(git rev-parse --show-toplevel)"'
