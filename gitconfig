@@ -26,3 +26,5 @@
 	email = ryan@rcorre.net
 [push]
 	default = upstream
+[merge]
+	tool = vimdiff
