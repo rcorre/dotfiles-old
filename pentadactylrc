@@ -1,8 +1,0 @@
-"3.7.1 (created: 2013/05/22 20:32:57)
-
-map -builtin k 8k
-map -builtin j 8j
-map -builtin h 3h
-map -builtin l 3l
-
-" vim: set ft=vimperator:
