@@ -1,0 +1,3 @@
+[submodule "mail/mutt-colors-solarized"]
+	path = mail/mutt-colors-solarized
+	url = https://github.com/altercation/mutt-colors-solarized

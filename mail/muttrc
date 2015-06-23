@@ -114,7 +114,7 @@ bind compose p postpone-message
 bind index p recall-message
 
 # Colorscheme
-source '~/.mutt/colors/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc'
+source '~/dotfiles/mail/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc'
 
 source '~/dotfiles/mail/muttrc-fastmail'
 source '~/.mutt/alias'
