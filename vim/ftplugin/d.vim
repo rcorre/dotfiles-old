@@ -8,8 +8,7 @@ nmap <leader>t :w <bar> !rdmd -Isrc --compiler=dmd -main -unittest -debug -g %<c
 nnoremap <leader>b o//**<esc>80a*/<esc>
 
 " align comments and member assignments
-map <leader>ac :Tabularize /\/\/<cr>
-map <leader>aC :Tabularize /\/\/\/<cr>
+map <leader>ac :Tabularize /\/\/\+<cr>
 map <leader>am :Tabularize /\s_.*/<cr>
 
 " delete text leading up to a block as well as the block itself
