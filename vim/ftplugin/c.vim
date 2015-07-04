@@ -9,3 +9,7 @@ set foldmethod=syntax
 set foldnestmax=1
 set foldlevel=1
 let c_no_comment_fold=1
+
+" make
+map <f1> :wa<cr>:!clear<cr>:Make run<cr>
+map <f2> :wa<cr>:!clear<cr>:Make<cr>
