@@ -32,8 +32,8 @@ set foldmethod=syntax
 set foldnestmax=4
 
 " text width
-set tw=100
-set colorcolumn=101
+set tw=80
+set colorcolumn=81
 
 " allow jumping to unittest assert failures from quickfix
 set errorformat^=%m@%f(%l):\ unittest\ failure
