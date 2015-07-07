@@ -9,7 +9,7 @@ nnoremap <leader>b o//**<esc>80a*/<esc>
 
 " align comments and member assignments
 map <leader>ac :Tabularize /\/\/\+<cr>
-map <leader>am :Tabularize /\s_.*/<cr>
+map <leader>am :Tabularize /\w\+;<cr>
 
 " delete text leading up to a block as well as the block itself
 nnoremap <leader>db dt{da{
