@@ -4,7 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " let vundle managle vundle - required!
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 " Bundles
 " Run :BundleInstall after adding
