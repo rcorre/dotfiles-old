@@ -46,3 +46,6 @@ setlocal comments-=:// comments+=f://
 
 " surround with /++ ++/ comments (use S+ to surround selection)
 let b:surround_43 = "/++ \r ++/"
+
+" DCD
+nnoremap gd :DUjump<cr>
