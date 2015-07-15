@@ -7,9 +7,11 @@ nmap <leader>t :w <bar> !rdmd -Isrc --compiler=dmd -main -unittest -debug -g %<c
 " comment line
 nnoremap <leader>b o//**<esc>80a*/<esc>
 
-" align comments and member assignments
+" align comments (// or ///)
 map <leader>ac :Tabularize /\/\/\+<cr>
-map <leader>am :Tabularize /\w\+;<cr>
+
+" align member names, accounting for default value assignments
+map <leader>am :Tabularize /\v\w+\s*[;=].*<cr>
 
 " delete text leading up to a block as well as the block itself
 nnoremap <leader>db dt{da{
