@@ -23,7 +23,7 @@ Bundle 'Matt-Stevens/vim-systemd-syntax'
 Bundle 'SirVer/ultisnips'
 Bundle 'majutsushi/tagbar'
 Bundle 'elzr/vim-json'
-Bundle 'JesseKPhillips/d.vim'
+Bundle 'rcorre/d.vim'
 Bundle 'idanarye/vim-dutyl'
 " End of Bundles
 call vundle#end()
