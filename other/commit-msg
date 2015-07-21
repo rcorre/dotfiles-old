@@ -8,7 +8,7 @@
 # Use `git commit --no-verify` if such a commit is intentional.
 
 $tags = %w{
-  awesome bash git mail pianobar qutebrowser vim task zathura aseprite setup ack
+  awesome bash git mail pianobar qutebrowser vim task zathura aseprite setup windows
 }
            
 def get_commit_tag filename
