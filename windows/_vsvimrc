@@ -1,0 +1,40 @@
+let mapleader=","
+
+" Tab movement
+nnoremap gt :vsc Window.NextTab<cr>
+nnoremap gT :vsc Window.PreviousTab<cr>
+
+" Error movement
+nnoremap gn :vsc View.NextError<cr>
+nnoremap gp :vsc View.PreviousError<cr>
+
+" goto definition
+nnoremap gd :vsc Edit.GoToDefinition<cr>
+
+" Tests
+nnoremap <leader>t :vsc EditorContextMenus.CodeWindow.RunTests<cr>
+" nnoremap <leader>ts :vsc TestExplorer.ShowTestExplorer<cr>
+" nnoremap <leader>tr :vsc TestExplorer.RunSelectedTests<cr>
+" nnoremap <leader>td :vsc TestExplorer.DebugSelectedTests<cr>
+
+" View Navigation
+nnoremap <leader>vs :vsc View.SolutionExplorer<cr>
+nnoremap <leader>vt :vsc View.TestResults<cr>
+nnoremap <leader>vv :vsc View.TfsTeamExplorer<cr>
+nnoremap <leader>vc :vsc View.ViewCode<cr>
+nnoremap <leader>ve :vsc View.ErrorList<cr>
+
+" Diff
+nnoremap ]c :vsc Diff.NextDifference<cr>
+nnoremap [c :vsc Diff.PreviousDifference<cr>
+
+" Git stuff
+nnoremap <leader>gd :vsc Team.Git.CompareWithUnmodified<cr>
+nnoremap <leader>ga :vsc Team.Git.Annotate<cr>
+
+" delete trailing whitespace
+nnoremap <leader>dt :%s/\s+$//g<cr>
+
+set ignorecase
+set smartcase
+set incsearch
