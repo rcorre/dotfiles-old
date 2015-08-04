@@ -28,6 +28,10 @@ noremap sl :s/<c-r><c-w>//g<left><left>
 noremap sg :%s/<c-r><c-w>//g<left><left>
 noremap sc :%s/<c-r><c-w>//gc<left><left><left>
 
+" find symbol in current directory
+map <leader>f :vimgrep  ./**<left><left><left><left><left>
+map <leader>F :vimgrep <c-r><c-w> src/**<cr>
+
 " delete trailing whitespace
 nmap <leader>dt :%s/\s\+$//g<cr>
 
