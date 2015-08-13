@@ -13,6 +13,9 @@ map <leader>ac :Tabularize /\/\/\+<cr>
 " align member names, accounting for default value assignments
 map <leader>am :Tabularize /\v\w+\s*[;=].*<cr>
 
+" align commas (g for 'grouping'? I know, not a great mnemonic)
+map <leader>ag :Tabularize /,/l0l1<cr>
+
 " delete text leading up to a block as well as the block itself
 nnoremap <leader>db dt{da{
 
