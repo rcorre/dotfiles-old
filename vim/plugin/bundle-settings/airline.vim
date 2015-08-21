@@ -12,3 +12,5 @@ let g:airline_detect_iminsert=0
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts=1
 set guifont="Inconsolata for Powerline"
+
+let g:airline#extensions#branch#enabled = 0

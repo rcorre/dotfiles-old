@@ -16,7 +16,8 @@ set tw=80 	        " wrap text at 80 chars
 set colorcolumn=81	" show where text should wrap
 
 " wild menu
-set wildmenu        " Command line completion
+set wildmenu              " Command line completion
+set wildmode=longest,list " Complete up to longest common string, then list
 set wildignore+=*.swp,*.bak,*.pyc,Session.vim
 set completeopt="menu"
 
