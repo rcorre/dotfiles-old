@@ -279,7 +279,7 @@ globalkeys = awful.util.table.join(
     --awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end),
     --awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
     -- Lock screen
-    awful.key({ modkey,           }, "i",     function () awful.util.spawn("slimlock")  end),
+    awful.key({ modkey,           }, "i",     function () awful.util.spawn("sxlock")  end),
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
