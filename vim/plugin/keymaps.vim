@@ -24,9 +24,9 @@ nnoremap gc :cclose<cr>
 command! Bye :mksession! | :wqall
 
 " substitution (line, global, confirm)
-noremap sl :s/<c-r><c-w>//g<left><left>
-noremap sg :%s/<c-r><c-w>//g<left><left>
-noremap sc :%s/<c-r><c-w>//gc<left><left><left>
+noremap sl :s/\<<c-r><c-w>\>//g<left><left>
+noremap sg :%s/\<<c-r><c-w>\>//g<left><left>
+noremap sc :%s/\<<c-r><c-w>\>//gc<left><left><left>
 
 " find symbol in current directory
 map <leader>f :vimgrep  ./**<left><left><left><left><left>
