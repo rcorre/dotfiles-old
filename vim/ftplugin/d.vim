@@ -40,8 +40,11 @@ set foldnestmax=4
 set tw=80
 set colorcolumn=81
 
-" allow jumping to unittest assert failures from quickfix
-set errorformat^=%m@%f(%l):\ unittest\ failure
+" detect assert errors and extract filename and linenumber
+" some.module.ErrorType@some/file.d(123): some message
+set errorformat^=%m@%f(%l)%.%#
+
+" discard non-matching lines
 set errorformat+=%-G%.%#
 
 " comment continuation
