@@ -42,10 +42,10 @@ set colorcolumn=81
 
 " detect assert errors and extract filename and linenumber
 " some.module.ErrorType@some/file.d(123): some message
-set errorformat^=%m@%f(%l)%.%#
+set errorformat=%f(%l\\,%c):%m
+set errorformat+=%-G%.%#
 
 " discard non-matching lines
-set errorformat+=%-G%.%#
 
 " comment continuation
 setlocal formatoptions+=c,r,o
