@@ -8,13 +8,9 @@
 	cmend   = "commit --amend"
 	cmendr  = "commit --amend --reuse-message=HEAD"
 	co      = checkout
-  unstage = "reset HEAD"
 	adda    = "add --all"
 	dif     = diff --name-only
-	pom     = push origin master
 	diffc   = diff --cached
-	logm    = log master..HEAD
-	last    = log -1
   graph   = log --graph --decorate=full --oneline --all
 [color]
 	ui = auto
