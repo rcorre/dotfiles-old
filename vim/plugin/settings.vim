@@ -1,20 +1,20 @@
 " general, non-filetype specific settings
 
 " appearance and information
-set rnu	            " Relative numbering
-set nu	            " full line number on current line
-set showmatch	      " show matching brackets
+set rnu             " Relative numbering
+set nu              " full line number on current line
+set showmatch       " show matching brackets
 set scrolloff=3     " number of screen lines to show around cursor
 set colorcolumn=+1  " highlight the column after textwidth
 
 
 " tab handling
-set expandtab	      " tabs = spaces
+set expandtab       " tabs = spaces
 set smarttab
 set smartindent
-set tabstop=2	      " 2 space tabs
+set tabstop=2       " 2 space tabs
 set shiftwidth=2
-set tw=80 	        " wrap text at 80 chars
+set tw=80           " wrap text at 80 chars
 
 " wild menu
 set wildmenu              " Command line completion
@@ -24,7 +24,7 @@ set completeopt="menu"
 
 " searching
 set hlsearch        " highlight search results
-set incsearch 	    " jump to result during search input
+set incsearch       " jump to result during search input
 set ignorecase      " case insensitive searching
 set smartcase       " unless a capital letter given in search term
 
@@ -33,7 +33,7 @@ set foldnestmax=1
 set foldlevelstart=99
 
 " other behavior
-set splitbelow	    " open splits (including preview) in lower portion of window
+set splitbelow      " open splits (including preview) in lower portion of window
 set noerrorbells    " no annoying noise on error
 set nostartofline   " keep cursor in same column for long range moves
 
