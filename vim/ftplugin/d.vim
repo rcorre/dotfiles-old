@@ -52,6 +52,17 @@ setlocal formatoptions+=c,r,o
 " only continue block comments
 setlocal comments-=:// comments+=f://
 
+" cino=(0 causes alignment with the '(' when text follows the '('
+" void foo(int i,
+"          string s,
+"          float f);
+" cino=(0,Ws causes normal indentation when no text follows the '('
+" void foo(
+"     int i,
+"     string s,
+"     float f);
+set cino=(0,Ws
+
 " surround with /++ ++/ comments (use S+ to surround selection)
 let b:surround_43 = "/++ \r ++/"
 
