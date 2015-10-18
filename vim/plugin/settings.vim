@@ -45,6 +45,8 @@ set lazyredraw
 au FileType * if filereadable(".vim.local") | so .vim.local | endif
 au BufRead,BufNewFile .vim.local set filetype=vim
 
-" Use old regex engine (avoid syntax highlighting performance issues)
-"set re=1
-" not sure if still necessary, was only a problem with ruby
+" GUI Options
+" a: visual mode sets clipboard selection (* register)
+" e: show tab pages
+" i: use a vim icon
+set guioptions=aei
