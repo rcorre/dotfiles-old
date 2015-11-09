@@ -8,7 +8,7 @@
 	cmend   = "commit --amend"
 	cmendr  = "commit --amend --reuse-message=HEAD"
 	co      = checkout
-	adda    = "add --all"
+	sho     = show --name-only
 	dif     = diff --name-only
 	diffc   = diff --cached
   graph   = log --graph --decorate=full --oneline --all
