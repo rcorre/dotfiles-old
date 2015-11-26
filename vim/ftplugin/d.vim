@@ -19,6 +19,9 @@ map <leader>ag :Tabularize /,/l0l1<cr>
 " delete text leading up to a block as well as the block itself
 nnoremap <leader>db dt{da{
 
+" open a std library file ("Edit D")
+nnoremap <leader>ed :CtrlP /usr/include/dlang/dmd/std/<cr>
+
 " makefile build/test/run
 map <f1> :wa<cr>:!clear<cr>:Dispatch dub run --quiet<cr>
 map <f2> :wa<cr>:!clear<cr>:Dispatch dub build --quiet<cr>
