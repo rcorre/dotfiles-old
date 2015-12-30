@@ -59,5 +59,11 @@ return {
             awful.util.spawn_with_shell("gnucash")
         end,
         info = "gnucash"
+    },
+    p = {
+        func = function()
+            awful.util.spawn_with_shell("passmenu")
+        end,
+        info = "passmenu"
     }
 }
