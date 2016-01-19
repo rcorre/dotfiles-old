@@ -17,3 +17,6 @@ map <leader>ag :Tabularize /,/l0l1<cr>
 "     string s,
 "     float f);
 set cino=(0,Ws
+
+" use 100char width for c#
+set tw=100
