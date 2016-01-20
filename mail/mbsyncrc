@@ -4,7 +4,7 @@ Create Slave
 IMAPAccount fastmail
 Host mail.messagingengine.com
 User rcore@fastmail.fm
-PassCmd "pass mail/fastmail"
+PassCmd "pass web/fastmail.fm"
 UseIMAPS yes
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
