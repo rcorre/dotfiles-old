@@ -7,14 +7,14 @@ set showmatch       " show matching brackets
 set scrolloff=3     " number of screen lines to show around cursor
 set colorcolumn=+1  " highlight the column after textwidth
 
-
 " tab handling
 set expandtab       " tabs = spaces
 set smarttab
 set smartindent
-set tabstop=2       " 2 space tabs
-set shiftwidth=2
+set tabstop=4       " 4 space tabs
+set shiftwidth=4
 set tw=80           " wrap text at 80 chars
+set cino=(1s        " only indent one shiftwidth continuing an open paren
 
 " wild menu
 set wildmenu              " Command line completion
