@@ -40,7 +40,7 @@ set foldmethod=syntax
 set foldnestmax=4
 
 " text width
-set tw=80
+set tw=100
 set colorcolumn=81
 
 " detect assert errors and extract filename and linenumber
