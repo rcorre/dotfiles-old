@@ -340,7 +340,11 @@ globalkeys = awful.util.table.join(
 
     -- Screenshot
     awful.key({}, "Print", function()
-      awful.util.spawn("scrot -e 'mv $f ~/screenshots 2>/dev/null'")
+        awful.util.spawn("scrot -e 'mv $f ~/screenshots'")
+    end),
+    awful.key({ modkey }, "g", function()
+        -- sleep is needed to get this working
+        awful.util.spawn_with_shell("sleep 0.2 && scrot -s -e 'mv $f ~/screenshots'")
     end)
 )
 
