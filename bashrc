@@ -50,16 +50,8 @@ fi
 alias op="xdg-open"
 #alias make="colormake"
 alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
-# top level of git project
-alias gitop='cd "$(git rev-parse --show-toplevel)"'
-# clipboard paste
-alias cpaste='xclip -out -sel clip'
 # backup password store
 alias oldpass='PASSWORD_STORE_DIR=~/.password-store.old/ pass'
 
-# rbenv
-if hash rbenv 2>/dev/null; then
-  eval "$(rbenv init -)"
-fi
 # system gems
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"   #system gems
