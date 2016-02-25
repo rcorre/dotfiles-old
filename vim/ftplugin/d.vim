@@ -22,6 +22,9 @@ nnoremap <leader>db dt{da{
 " open a std library file ("Edit D")
 nnoremap <leader>ed :CtrlP /usr/include/dlang/dmd/std/<cr>
 
+" open the dub cache ("Edit Package")
+nnoremap <leader>ep :CtrlP ~/.dub/packages<cr>
+
 " makefile build/test/run
 map <f1> :wa<cr>:!clear<cr>:Dispatch dub run --quiet<cr>
 map <f2> :wa<cr>:!clear<cr>:Dispatch dub build --quiet<cr>
