@@ -11,8 +11,9 @@
 	sho     = show --name-only
 	dif     = diff --name-only
 	diffc   = diff --cached
-  graph   = log --graph --decorate=full --oneline --all
-  fetcha  = fetch --all
+	lo   	= log --oneline
+	graph   = log --graph --decorate=full --oneline --all
+	fetcha  = fetch --all
 [color]
 	ui = auto
 [core]
