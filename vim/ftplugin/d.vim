@@ -55,8 +55,6 @@ set errorformat+=%-G%.%#
 
 " comment continuation
 setlocal formatoptions+=c,r,o
-" only continue block comments
-setlocal comments-=:// comments+=f://
 
 " cino=(0 causes alignment with the '(' when text follows the '('
 " void foo(int i,
