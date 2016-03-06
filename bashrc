@@ -67,3 +67,6 @@ export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"   #system gems
 
 # home bin folder
 [[ -d "$HOME/bin" ]] && export PATH="$PATH:$HOME/bin"
+
+# use `j` to jump to commonly used directories
+[ -f /etc/profile.d/autojump.bash ] && . /etc/profile.d/autojump.bash
