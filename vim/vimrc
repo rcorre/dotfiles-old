@@ -1,6 +1,4 @@
-" ==============================================================================
-" Vundle
-" ==============================================================================
+" Vundle {{{
 
 set nocompatible
 filetype off
@@ -35,9 +33,9 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 
-" ==============================================================================
-" General Settings
-" ==============================================================================
+" }}}
+
+" General Settings {{{
 
 " appearance and information
 set rnu             " Relative numbering
@@ -89,10 +87,9 @@ au BufRead,BufNewFile .vim.local set filetype=vim
 " e: show tab pages
 " i: use a vim icon
 set guioptions=aei
+" }}}
 
-" ==============================================================================
-" General Keymaps
-" ==============================================================================
+" General Keymaps {{{
 
 " set mapleader here so it applies to all future keymaps
 let mapleader = "," " use , as leader character
@@ -140,10 +137,9 @@ nmap <leader>es :UltiSnipsEdit<CR>
 nmap <leader>ev :EditVimFolder<CR>
 nmap <leader>el :EditVimLocal<CR>
 nmap <leader>ef :EditFtp<CR>
+" }}}
 
-"================================================================================
-" airline
-"================================================================================
+" airline {{{
 
 " always show last status
 set laststatus=2
@@ -160,16 +156,16 @@ set guifont="Inconsolata for Powerline"
 
 let g:airline#extensions#branch#enabled = 0
 
-"================================================================================
-" ctrlp
-"================================================================================
+" }}}
+
+" ctrlp {{{
 
 " ignore certain files I don't want to open in vim
 let g:ctrlp_custom_ignore = { 'file': '\v\.(wav|png|ogg|o|a)$' }
 
-"================================================================================
-" dutyl
-"================================================================================
+" }}}
+
+" dutyl {{{
 
 " Dutyl
 " tell dutyl where to look for std imports
@@ -177,25 +173,25 @@ let g:dutyl_stdImportPaths=['/usr/include/dlang/dmd', '/usr/include/dlang/dmd/co
 
 "let g:dcd_path=resolve(expand("~/.vim/bundle/DCD"))
 
-"================================================================================
-" fugitive
-"================================================================================
+" }}}
+
+" fugitive {{{
 
 noremap <leader>gs :Gstatus<cr>
 noremap <leader>gd :Gdiff<cr>
 noremap <leader>gp :Gpush<cr>
 
-"================================================================================
-" latex
-"================================================================================
+" }}}
+
+" latex {{{
 
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 let g:LatexBox_Folding=1
 
-"================================================================================
-" solarized
-"================================================================================
+" }}}
+
+" solarized {{{
 
 " enable 256 colors
 set t_Co=16
@@ -209,18 +205,18 @@ colorscheme solarized
 " f1 toggles light/dark (defaults to f5)
 call togglebg#map("<F1>")
 
-"================================================================================
-" tabular
-"================================================================================
+" }}}
+
+" tabular {{{
 
 " Tabularize shortcut
 
 " shortcut to enter tabularize command and wait for pattern
 map <leader>a :Tabularize /
 
-"================================================================================
-" ultisnips
-"================================================================================
+" }}}
+
+" ultisnips {{{
 
 " snippets lookup
 let g:UltiSnipsSnippetsDir         = "~/dotfiles/vim/CustomSnips"
@@ -235,9 +231,9 @@ let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 let g:UltiSnipsListSnippets        = "<c-i>"
 
-"================================================================================
-" ycm
-"================================================================================
+" }}}
+
+" ycm {{{
 
 " show confirmation message for loading config file
 let g:ycm_confirm_extra_conf = 1
@@ -262,3 +258,7 @@ let g:ycm_global_ycm_extra_conf = '~/dotfiles/vim/ycm_global_conf.py'
 
 " trigger scoped import completions in D (import std.algorithm : |)
 let g:ycm_semantic_triggers = { 'd' : [': '] }
+
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0
