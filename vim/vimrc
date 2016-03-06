@@ -1,3 +1,7 @@
+" ==============================================================================
+" Vundle
+" ==============================================================================
+
 set nocompatible
 filetype off
 
@@ -31,7 +35,230 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 
+" ==============================================================================
+" General Settings
+" ==============================================================================
+
+" appearance and information
+set rnu             " Relative numbering
+set nu              " full line number on current line
+set showmatch       " show matching brackets
+set scrolloff=3     " number of screen lines to show around cursor
+set colorcolumn=+1  " highlight the column after textwidth
+
+" tab handling
+set expandtab       " tabs = spaces
+set smarttab
+set smartindent
+set tabstop=4       " 4 space tabs
+set shiftwidth=4
+set tw=80           " wrap text at 80 chars
+set cino=(1s        " only indent one shiftwidth continuing an open paren
+
+" wild menu
+set wildmenu              " Command line completion
+set wildmode=longest,list " Complete up to longest common string, then list
+set wildignore+=*.swp,*.bak,*.pyc,Session.vim
+set completeopt="menu"
+
+" searching
+set hlsearch        " highlight search results
+set incsearch       " jump to result during search input
+set ignorecase      " case insensitive searching
+set smartcase       " unless a capital letter given in search term
+
+" Folding
+set foldnestmax=1
+set foldlevelstart=99
+
+" other behavior
+set splitbelow      " open splits (including preview) in lower portion of window
+set noerrorbells    " no annoying noise on error
+set nostartofline   " keep cursor in same column for long range moves
+
+" terminal speed up
+set ttyfast
+set lazyredraw
+
+" load project-local vimrc if it exists (after ftplugin)
+au FileType * if filereadable(".vim.local") | so .vim.local | endif
+au BufRead,BufNewFile .vim.local set filetype=vim
+
+" GUI Options
+" a: visual mode sets clipboard selection (* register)
+" e: show tab pages
+" i: use a vim icon
+set guioptions=aei
+
+" ==============================================================================
+" General Keymaps
+" ==============================================================================
+
 " set mapleader here so it applies to all future keymaps
 let mapleader = "," " use , as leader character
 
-" remaining configuration settings are in plugin/**/*.vim
+" Y yanks to end of line instead of whole line -- more like D and C
+nnoremap Y y$
+
+" format entire file
+nnoremap <leader>= mzgg=G`z<cr>
+
+" jump to previous tab
+let g:lasttab = 1
+nmap gl :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
+
+" clipboard paste
+noremap <leader>v :read !xclip -out -sel clip<cr>
+
+" error jumping (first, next, previous)
+nnoremap ge :cf<cr>
+nnoremap gn :cn<cr>
+nnoremap gp :cp<cr>
+nnoremap gc :cclose<cr>
+
+" command to save and exit while creating a session file
+command! Bye :mksession! | :wqall
+
+" substitution (line, global, confirm)
+noremap sl :s/\<<c-r><c-w>\>//g<left><left>
+noremap sg :%s/\<<c-r><c-w>\>//g<left><left>
+noremap sc :%s/\<<c-r><c-w>\>//gc<left><left><left>
+
+" find symbol in current directory
+map <leader>f :vimgrep  ./**<left><left><left><left><left>
+map <leader>F :vimgrep <c-r><c-w> src/**<cr>
+
+" delete trailing whitespace
+nmap <leader>dt :%s/\s\+$//g<cr>
+
+" quickly open a tab to edit important files
+command! EditFtp exe "tabnew" resolve("$HOME/.vim/ftplugin/" . &ft . ".vim")
+command! EditVimFolder exe "tabnew" resolve("$HOME/.vim")
+command! EditVimLocal exe "tabnew" resolve(".vim.local")
+nmap <leader>es :UltiSnipsEdit<CR>
+nmap <leader>ev :EditVimFolder<CR>
+nmap <leader>el :EditVimLocal<CR>
+nmap <leader>ef :EditFtp<CR>
+
+"================================================================================
+" airline
+"================================================================================
+
+" always show last status
+set laststatus=2
+
+" response to various events
+let g:airline_detect_modified=1
+let g:airline_detect_paste=1
+let g:airline_detect_iminsert=0
+
+" theming
+let g:airline_theme='solarized'
+let g:airline_powerline_fonts=1
+set guifont="Inconsolata for Powerline"
+
+let g:airline#extensions#branch#enabled = 0
+
+"================================================================================
+" ctrlp
+"================================================================================
+
+" ignore certain files I don't want to open in vim
+let g:ctrlp_custom_ignore = { 'file': '\v\.(wav|png|ogg|o|a)$' }
+
+"================================================================================
+" dutyl
+"================================================================================
+
+" Dutyl
+" tell dutyl where to look for std imports
+let g:dutyl_stdImportPaths=['/usr/include/dlang/dmd', '/usr/include/dlang/dmd/core']
+
+"let g:dcd_path=resolve(expand("~/.vim/bundle/DCD"))
+
+"================================================================================
+" fugitive
+"================================================================================
+
+noremap <leader>gs :Gstatus<cr>
+noremap <leader>gd :Gdiff<cr>
+noremap <leader>gp :Gpush<cr>
+
+"================================================================================
+" latex
+"================================================================================
+
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+let g:LatexBox_Folding=1
+
+"================================================================================
+" solarized
+"================================================================================
+
+" enable 256 colors
+set t_Co=16
+set t_AB=[48;5;%dm
+set t_AF=[38;5;%dm
+
+" set colorscheme, dark bg
+set bg=dark
+colorscheme solarized
+
+" f1 toggles light/dark (defaults to f5)
+call togglebg#map("<F1>")
+
+"================================================================================
+" tabular
+"================================================================================
+
+" Tabularize shortcut
+
+" shortcut to enter tabularize command and wait for pattern
+map <leader>a :Tabularize /
+
+"================================================================================
+" ultisnips
+"================================================================================
+
+" snippets lookup
+let g:UltiSnipsSnippetsDir         = "~/dotfiles/vim/CustomSnips"
+let g:UltiSnipsSnippetDirectories  = ["CustomSnips", "UltiSnips"]
+
+" split horizontally to edit snippets file
+let g:UltiSnipsEditSplit           = "horizontal"
+
+" keymaps
+let g:UltiSnipsExpandTrigger       = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+let g:UltiSnipsListSnippets        = "<c-i>"
+
+"================================================================================
+" ycm
+"================================================================================
+
+" show confirmation message for loading config file
+let g:ycm_confirm_extra_conf = 1
+
+" don't keep preview window open
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+
+" include language syntax elements in identifier completions
+let g:ycm_seed_identifiers_with_syntax = 1
+
+" complete strings in comment text
+let g:ycm_complete_in_comments = 1
+
+" complete filenames relative to vim's pwd
+let g:ycm_filepath_completion_use_working_dir = 1
+
+" don't show diagnostics
+let g:ycm_enable_diagnostic_signs = 0
+
+let g:ycm_global_ycm_extra_conf = '~/dotfiles/vim/ycm_global_conf.py'
+
+" trigger scoped import completions in D (import std.algorithm : |)
+let g:ycm_semantic_triggers = { 'd' : [': '] }
