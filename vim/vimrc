@@ -131,10 +131,10 @@ nmap <leader>dt :%s/\s\+$//g<cr>
 
 " quickly open a tab to edit important files
 command! EditFtp exe "tabnew" resolve("$HOME/.vim/ftplugin/" . &ft . ".vim")
-command! EditVimFolder exe "tabnew" resolve("$HOME/.vim")
+command! EditVimrc exe "tabnew" resolve("$HOME/.vim/vimrc")
 command! EditVimLocal exe "tabnew" resolve(".vim.local")
 nmap <leader>es :UltiSnipsEdit<CR>
-nmap <leader>ev :EditVimFolder<CR>
+nmap <leader>ev :EditVimrc<CR>
 nmap <leader>el :EditVimLocal<CR>
 nmap <leader>ef :EditFtp<CR>
 " }}}
