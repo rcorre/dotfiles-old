@@ -64,3 +64,6 @@ alias oldpass='PASSWORD_STORE_DIR=~/.password-store.old/ pass'
 
 # system gems
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"   #system gems
+
+# home bin folder
+[[ -d "$HOME/bin" ]] && export PATH="$PATH:$HOME/bin"
