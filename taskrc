@@ -56,3 +56,6 @@ urgency.annotations.coefficient=0.0
 urgency.age.coefficient=1.0
 #maximum age to contribute to urgency
 urgency.age.max=365
+
+# Sync credentials/settings stored separately
+include ~/.taskrc.sync
