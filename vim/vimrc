@@ -95,6 +95,9 @@ set guioptions=aei
 " set mapleader here so it applies to all future keymaps
 let mapleader = "," " use , as leader character
 
+" tap jk to exit intert mode (should be uncommon in normal typing)
+inoremap jk <esc>
+
 " Y yanks to end of line instead of whole line -- more like D and C
 nnoremap Y y$
 
