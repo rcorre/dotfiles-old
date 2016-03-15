@@ -6,7 +6,6 @@
 [[ $- != *i* ]] && return
 [[ -f "$HOME/.profile" ]] && source "$HOME/.profile"
 
-export TERM=xterm-256color
 export TERMINAL=st
 export EDITOR=vim
 export BROWSER=qutebrowser
