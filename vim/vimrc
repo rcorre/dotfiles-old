@@ -29,6 +29,7 @@ Bundle 'elzr/vim-json'
 Bundle 'rcorre/d.vim'
 Bundle 'idanarye/vim-dutyl'
 Bundle 'glsl.vim'
+Bundle 'rdnetto/YCM-Generator'
 " End of Bundles
 call vundle#end()
 filetype plugin indent on
