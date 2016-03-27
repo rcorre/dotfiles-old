@@ -82,3 +82,7 @@ Slave :fastmail-local:"fitness"
 Channel fastmail-school
 Master :fastmail-remote:"INBOX/school"
 Slave :fastmail-local:"school"
+
+Channel fastmail-suckless
+Master :fastmail-remote:"INBOX/suckless"
+Slave :fastmail-local:"suckless"
