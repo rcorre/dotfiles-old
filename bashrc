@@ -61,6 +61,15 @@ alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
 # backup password store
 alias oldpass='PASSWORD_STORE_DIR=~/.password-store.old/ pass'
 
+up() {
+    local p=
+    for i in $(seq 1 $1)
+    do
+        p+=../
+    done
+    cd "$p"
+}
+
 # system gems
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"   #system gems
 
