@@ -14,6 +14,7 @@
 	lo   	= log --oneline
 	graph   = log --graph --decorate=full --oneline --all
 	fetcha  = fetch --all
+	cp      = cherry-pick
 [color]
 	ui = auto
 [core]
