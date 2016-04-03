@@ -68,7 +68,7 @@ set ignorecase      " case insensitive searching
 set smartcase       " unless a capital letter given in search term
 
 " Folding
-set foldnestmax=1
+set foldnestmax=4
 set foldlevelstart=99
 
 " other behavior
