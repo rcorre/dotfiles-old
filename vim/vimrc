@@ -208,7 +208,7 @@ set bg=dark
 colorscheme solarized
 
 " f1 toggles light/dark (defaults to f5)
-call togglebg#map("<F1>")
+call togglebg#map("<F7>")
 
 " }}}
 
