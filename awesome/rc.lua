@@ -465,6 +465,8 @@ awful.rules.rules = {
       properties = { tag = tags[1][4] } },
     { rule = { class = "Steam" },
       properties = { tag = tags[1][5] } },
+    { rule = { instance = "qutebrowser-test" },
+      properties = { tag = tags[1][6] } },
 }
 -- }}}
 
