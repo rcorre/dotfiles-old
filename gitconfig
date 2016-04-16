@@ -11,10 +11,11 @@
 	sho     = show --name-only
 	dif     = diff --name-only
 	diffc   = diff --cached
-	lo   	= log --oneline
+	lo      = log --oneline
 	graph   = log --graph --decorate=full --oneline --all
 	fetcha  = fetch --all
 	cp      = cherry-pick
+	msg     = log -1 --format=msg
 [color]
 	ui = auto
 [core]
@@ -33,3 +34,7 @@
 	required = true
 [rebase]
 	autosquash = true
+[pretty]
+	msg = format:%s%n%n%b
+
+# vim: noexpandtab
