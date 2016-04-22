@@ -17,6 +17,7 @@ macro index gd "<change-folder> =fastmail/Drafts<enter>" "go to drafts"
 
 ## Deletion
 macro index d "<save-message>+fastmail/Trash<enter>" "move message to trash"
+macro index \cd "<tag-thread><tag-prefix><save-message>+fastmail/Trash<enter>" "move thread to trash"
 
 #source '~/.mutt/cis4301-alias' TODO: alias file for fastmail
 source '~/dotfiles/mail/smtp-fastmail'
