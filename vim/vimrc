@@ -13,7 +13,7 @@ Bundle 'gmarik/Vundle.vim'
 " Run :BundleUpdate to update
 " Run :BundleClean after removing
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
