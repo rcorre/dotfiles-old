@@ -12,7 +12,6 @@ Bundle 'gmarik/Vundle.vim'
 " Run :BundleInstall after adding
 " Run :BundleUpdate to update
 " Run :BundleClean after removing
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-airline/vim-airline'
@@ -207,9 +206,6 @@ set t_AF=[38;5;%dm
 " set colorscheme, dark bg
 set bg=dark
 colorscheme solarized
-
-" f1 toggles light/dark (defaults to f5)
-call togglebg#map("<F7>")
 
 " }}}
 
