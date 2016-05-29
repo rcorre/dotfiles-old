@@ -16,6 +16,7 @@
 	fetcha  = fetch --all
 	cp      = cherry-pick
 	msg     = log -1 --format=msg
+	vim     = !vim -p $(git diff HEAD~ --name-only)
 [color]
 	ui = auto
 [core]
