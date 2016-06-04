@@ -26,7 +26,7 @@
 	name = Ryan Roden-Corrent
 	email = ryan@rcorre.net
 [push]
-	default = upstream
+	default = current
 [merge]
 	tool = vimdiff
 [filter "lfs"]
