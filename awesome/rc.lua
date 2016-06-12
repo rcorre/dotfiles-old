@@ -96,7 +96,7 @@ end
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
-tags = { "main", "work", "web", "mail", "game", 6 }
+tags = { "main", "work", "web", "mail", "chat", "game" }
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
     tags[s] = awful.tag(tags, s, layouts[1])
@@ -463,8 +463,10 @@ awful.rules.rules = {
       } },
     { rule = { class = "mutt" },
       properties = { tag = tags[1][4] } },
-    { rule = { class = "Steam" },
+    { rule = { class = "weechat" },
       properties = { tag = tags[1][5] } },
+    { rule = { class = "Steam" },
+      properties = { tag = tags[1][6] } },
     { rule = { instance = "qutebrowser-test" },
       properties = { tag = tags[1][6] } },
 }

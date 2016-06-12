@@ -65,5 +65,12 @@ return {
             awful.util.spawn_with_shell("passmenu")
         end,
         info = "passmenu"
-    }
+    },
+    w = {
+        func = function()
+            awful.util.spawn_with_shell(terminal ..
+              " -c weechat -t weechat weechat")
+        end,
+        info = "weechat"
+    },
 }
