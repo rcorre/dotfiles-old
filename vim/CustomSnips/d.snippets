@@ -16,10 +16,17 @@ final switch ($1) with ($2) {
 }$0
 endsnippet
 
+snippet pr "print something"
+debug {
+	import std.stdio : writeln;
+	writeln(__FUNCTION__, ": ${1:${VISUAL}}");
+}$0
+endsnippet
+
 snippet tr "trace the value of an expression"
 debug {
 	import std.stdio : writeln;
-	writeln(__FUNCTION__, ": ", "$1 = ", $1);
+	writeln(__FUNCTION__, ": ${1:${VISUAL}} = ", $1);
 }$0
 endsnippet
 
