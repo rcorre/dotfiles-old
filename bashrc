@@ -73,6 +73,9 @@ up() {
 # system gems
 export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"   #system gems
 
+# rbenv
+eval "$(rbenv init -)"
+
 # home bin folder
 [[ -d "$HOME/bin" ]] && export PATH="$PATH:$HOME/bin"
 
