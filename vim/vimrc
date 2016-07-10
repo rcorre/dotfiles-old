@@ -13,6 +13,7 @@ Bundle 'gmarik/Vundle.vim'
 " Run :BundleUpdate to update
 " Run :BundleClean after removing
 Bundle 'ctrlpvim/ctrlp.vim'
+Bundle 'tacahiroy/ctrlp-funky'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
