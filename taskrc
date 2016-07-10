@@ -59,3 +59,7 @@ urgency.age.max=365
 
 # Sync credentials/settings stored separately
 include ~/.taskrc.sync
+
+# url uda for qutebrowser userscripts taskadd and taskopen
+uda.url.type=string
+uda.url.label=URL
