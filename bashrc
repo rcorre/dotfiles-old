@@ -60,6 +60,7 @@ alias op="xdg-open"
 alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
 # backup password store
 alias oldpass='PASSWORD_STORE_DIR=~/.password-store.old/ pass'
+alias vims='vim -S'
 
 up() {
     local p=
