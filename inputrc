@@ -8,3 +8,6 @@ set completion-map-case On
 set skip-completed-text On
 
 set editing-mode vi
+
+# delete to previous path segment
+C-k:unix-filename-rubout
