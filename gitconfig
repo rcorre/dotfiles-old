@@ -17,6 +17,7 @@
 	cp      = cherry-pick
 	msg     = log -1 --format=msg
 	vim     = !vim -p $(git diff HEAD~ --name-only)
+	getpr   = "!f() { git fetch ${2-upstream} pull/$1/head; }; f"
 [color]
 	ui = auto
 [core]
