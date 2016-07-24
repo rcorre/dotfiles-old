@@ -71,8 +71,9 @@ up() {
     cd "$p"
 }
 
-# system gems
-export PATH="$PATH:$(ruby -e 'puts Gem.user_dir')/bin"   #system gems
+# put user gems on path, and make sure bundler installs to per-user location
+export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+export PATH="$PATH:$GEM_HOME/bin"
 
 # rbenv
 eval "$(rbenv init -)"
