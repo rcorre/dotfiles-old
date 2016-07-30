@@ -17,3 +17,5 @@ set cino=(0,Ws
 nnoremap <leader>p :!python<cr>
 nnoremap <leader>j :tabnew /tmp/scratch.py<cr>
 nnoremap <leader>r :!python %<cr>
+
+set tw=79
