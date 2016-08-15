@@ -17,7 +17,13 @@
 	cp      = cherry-pick
 	msg     = log -1 --format=msg
 	vim     = !vim -p $(git diff HEAD~ --name-only)
-	getpr   = "!f() { git fetch ${2-upstream} pull/$1/head; }; f"
+
+	# identifying and removing merged branches
+	junk = "!f() { git for-each-ref refs/heads --format '%(refname:strip=2)' --merged $1; }; f"
+	deljunk = "!f() { git branch -D $(git junk $1); }; f"
+
+	thisbr = rev-parse --abbrev-ref HEAD
+	pushup = !git push -u origin $(git thisbr)
 [color]
 	ui = auto
 [core]
