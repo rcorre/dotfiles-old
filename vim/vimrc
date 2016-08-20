@@ -73,6 +73,7 @@ set foldnestmax=4
 set foldlevelstart=99
 
 " other behavior
+set splitright      " open new vertical splits to the right
 set splitbelow      " open splits (including preview) in lower portion of window
 set noerrorbells    " no annoying noise on error
 set nostartofline   " keep cursor in same column for long range moves
