@@ -10,6 +10,7 @@ nnoremap gp :vsc View.PreviousError<cr>
 
 " goto definition
 nnoremap gd :vsc Edit.GoToDefinition<cr>
+nnoremap gr :vsc Edit.FindAllReferences<cr>
 
 " Tests
 nnoremap <leader>t :vsc EditorContextMenus.CodeWindow.RunTests<cr>
