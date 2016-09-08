@@ -1,4 +1,5 @@
-let mapleader=","
+" Edit _vsvimrc
+nnoremap <leader>ev :!gvim ~/_vsvimrc<cr>
 
 " Tab movement
 nnoremap gt :vsc Window.NextTab<cr>
@@ -29,13 +30,13 @@ nnoremap <leader>ve :vsc View.ErrorList<cr>
 nnoremap ]c :vsc Diff.NextDifference<cr>
 nnoremap [c :vsc Diff.PreviousDifference<cr>
 
-" Git stuff
+" Team Explorer
 nnoremap <leader>gd :vsc Team.Git.CompareWithUnmodified<cr>
 nnoremap <leader>ga :vsc Team.Git.Annotate<cr>
+nnoremap <leader>gb :vsc Team.Git.ShowBranches<cr>
+nnoremap <leader>gB :vsc Team.Git.ManageBranches<cr>
+nnoremap <leader>gc :vsc Team.Git.GoToGitChanges<cr>
+nnoremap <leader>gh :vsc Team.Git.ViewHistory<cr>
 
 " delete trailing whitespace
-nnoremap <leader>dt :%s/\s+$//g<cr>
-
-set ignorecase
-set smartcase
-set incsearch
+nnoremap <leader>dt :vsc Edit.DeleteHorizontalWhiteSpace<cr>
