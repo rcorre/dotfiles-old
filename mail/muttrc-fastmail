@@ -11,9 +11,10 @@ set postponed = "+fastmail/Drafts"
 # Mailbox shortcuts
 macro index gi "<change-folder> =fastmail/Inbox<enter>" "go to inbox"
 macro index gs "<change-folder> =fastmail/Sent<enter>" "go to sent mail"
-macro index gj "<change-folder> =fastmail/Junk<enter>" "go to sent mail"
+macro index gj "<change-folder> =fastmail/Junk<enter>" "go to junk mail"
 macro index gt "<change-folder> =fastmail/Trash<enter>" "go to trash"
 macro index gd "<change-folder> =fastmail/Drafts<enter>" "go to drafts"
+macro index ga "<change-folder> =fastmail/Archive<enter>" "go to archive"
 
 ## Deletion
 macro index d "<save-message>+fastmail/Trash<enter>" "move message to trash"
