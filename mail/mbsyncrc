@@ -39,50 +39,6 @@ Channel fastmail-trash
 Master :fastmail-remote:"INBOX/Trash"
 Slave :fastmail-local:"Trash"
 
-Channel fastmail-commerce
-Master :fastmail-remote:"INBOX/commerce"
-Slave :fastmail-local:"commerce"
-
-Channel fastmail-finance
-Master :fastmail-remote:"INBOX/finance"
-Slave :fastmail-local:"finance"
-
-Channel fastmail-coding
-Master :fastmail-remote:"INBOX/coding"
-Slave :fastmail-local:"coding"
-
-Channel fastmail-gaming
-Master :fastmail-remote:"INBOX/gaming"
-Slave :fastmail-local:"gaming"
-
-Channel fastmail-housing
-Master :fastmail-remote:"INBOX/housing"
-Slave :fastmail-local:"housing"
-
-Channel fastmail-personal
-Master :fastmail-remote:"INBOX/personal"
-Slave :fastmail-local:"personal"
-
-Channel fastmail-health
-Master :fastmail-remote:"INBOX/health"
-Slave :fastmail-local:"health"
-
-Channel fastmail-domain
-Master :fastmail-remote:"INBOX/domain"
-Slave :fastmail-local:"domain"
-
-Channel fastmail-work
-Master :fastmail-remote:"INBOX/work"
-Slave :fastmail-local:"work"
-
-Channel fastmail-fitness
-Master :fastmail-remote:"INBOX/fitness"
-Slave :fastmail-local:"fitness"
-
-Channel fastmail-school
-Master :fastmail-remote:"INBOX/school"
-Slave :fastmail-local:"school"
-
 Channel fastmail-suckless
 Master :fastmail-remote:"INBOX/suckless"
 Slave :fastmail-local:"suckless"
