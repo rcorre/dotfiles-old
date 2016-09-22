@@ -1,3 +1,5 @@
+source C:\users\ryrode\_vimrc
+
 " Edit _vsvimrc
 nnoremap <leader>ev :!gvim ~/_vsvimrc<cr>
 
