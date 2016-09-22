@@ -87,6 +87,11 @@ macro index C "<copy-message>?<toggle-mailboxes><search>" "copy a message to a m
 macro index,pager M "<save-message>?<toggle-mailboxes><search>" "move a message to a mailbox"
 macro index y "<change-folder>?<toggle-mailboxes><search>" "change mailbox"
 
+# Thread management
+macro index z "<collapse-thread>" "toggle fold on current"
+macro index Z "<collapse-all>" "toggle fold all threads"
+
+
 #content viewing
 auto_view text/html     # automatically open viewer for html
 
