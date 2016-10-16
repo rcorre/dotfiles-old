@@ -17,5 +17,6 @@ set cino=(0,Ws
 nnoremap <leader>p :!python<cr>
 nnoremap <leader>j :tabnew /tmp/scratch.py<cr>
 nnoremap <leader>r :!python %<cr>
+nnoremap <leader>ep :CtrlP /usr/share/sip/
 
 set tw=79
