@@ -23,11 +23,12 @@ debug {
 }$0
 endsnippet
 
-snippet tr "trace the value of an expression"
-debug {
-	import std.stdio : writeln;
-	writeln(__FUNCTION__, ": ${1:${VISUAL}} = ", $1);
-}$0
+snippet tl "trace a line"
+import std.stdio : writefln; writefln("%s:%s (%s)", __FILE__, __LINE__, __FUNCTION__); // TODO: remove
+endsnippet
+
+snippet tv "trace the value of an expression"
+import std.stdio : writeln; writeln(__FUNCTION__, ": ${1:${VISUAL}} = ", $1); // TODO: remove
 endsnippet
 
 snippet tern "ternary operator"
