@@ -4,17 +4,15 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-[[ -f "$HOME/.profile" ]] && source "$HOME/.profile"
 
 export TERMINAL=st
 export EDITOR=vim
 export BROWSER=qutebrowser
 export DC=dmd
 
+# colors and prompt
 alias ls='ls --color=auto'
-#color ls
-
-eval `dircolors /usr/share/dircolors/dircolors.256dark`
+[[ -f /usr/share/dircolors/dircolors.256dark ]] && eval `dircolors /usr/share/dircolors/dircolors.256dark`
 PS1='[\u@\h \W]\$ '
 
 set -o vi                # vi command line editing
@@ -23,7 +21,7 @@ export GREP_COLOR='1;32' # green grep result highlight
 stty -ixon               # don't let <c-s> stop vim
 
 #pass tab completion
-source /usr/share/bash-completion/completions/pass
+[[ -f /usr/share/bash-completion/completions/pass ]] && source /usr/share/bash-completion/completions/pass
 
 # colored man pages
 man () {
@@ -48,9 +46,7 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
 fi
 
 alias op="xdg-open"
-#alias make="colormake"
 alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
-# backup password store
 alias oldpass='PASSWORD_STORE_DIR=~/.password-store.old/ pass'
 alias vims='vim -S'
 
@@ -63,15 +59,12 @@ up() {
     cd "$p"
 }
 
-# put user gems on path, and make sure bundler installs to per-user location
-export GEM_HOME=$(ruby -e 'print Gem.user_dir')
-export PATH="$PATH:$GEM_HOME/bin"
+if hash rbenv 2>/dev/null; then
+    eval "$(rbenv init -)"
+    export GEM_HOME=$(ruby -e 'print Gem.user_dir')
+    export PATH="$PATH:$GEM_HOME/bin"
+fi
 
-# rbenv
-eval "$(rbenv init -)"
-
-# home bin folder
 [[ -d "$HOME/bin" ]] && export PATH="$PATH:$HOME/bin"
 
-# use `j` to jump to commonly used directories
 [ -f /etc/profile.d/autojump.bash ] && . /etc/profile.d/autojump.bash
