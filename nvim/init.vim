@@ -16,6 +16,7 @@ Plug 'majutsushi/tagbar'
 Plug 'elzr/vim-json'
 Plug 'rcorre/d.vim'
 Plug 'idanarye/vim-dutyl'
+Plug '/usr/share/myrddin/vim/'
 
 function! DoRemote(arg)
   UpdateRemotePlugins
