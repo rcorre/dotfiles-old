@@ -1,3 +1,5 @@
 pianobar/state
 pianobar/out
 *.pyc
+nvim/plugged/
+nvim/.netrwhist

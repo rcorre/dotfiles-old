@@ -3,39 +3,20 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-eunuch'
+Plug 'elzr/vim-json'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'godlygeek/tabular'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-dispatch'
-Plug 'Matt-Stevens/vim-systemd-syntax'
-Plug 'SirVer/ultisnips'
-Plug 'majutsushi/tagbar'
-Plug 'elzr/vim-json'
-Plug 'rcorre/d.vim'
-Plug 'idanarye/vim-dutyl'
-Plug '/usr/share/myrddin/vim/'
-
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
-
-" deoplete sources
-Plug 'zchee/deoplete-jedi'
-Plug 'zchee/deoplete-clang'
-Plug 'SevereOverfl0w/deoplete-github'
-Plug 'landaire/deoplete-d'
-Plug 'SirVer/ultisnips'
-Plug 'Shougo/neco-vim'
 
 call plug#end()
 
 " }}}
 
 " General Settings {{{
+
+filetype plugin indent on
 
 " appearance and information
 colorscheme solarized
@@ -60,35 +41,32 @@ set cino=(1s        " only indent one shiftwidth continuing an open paren
 set wildmenu              " Command line completion
 set wildmode=longest,list " Complete up to longest common string, then list
 set wildignore+=*.swp,*.bak,*.pyc,Session.vim
+set wildignorecase
 set completeopt="menu"
 
 " searching
-set hlsearch        " highlight search results
-set incsearch       " jump to result during search input
-set ignorecase      " case insensitive searching
-set smartcase       " unless a capital letter given in search term
+set ignorecase
+set smartcase
 
 " Folding
 set foldnestmax=4
 set foldlevelstart=99
 
+" Completion
+set completeopt=menu
+
 " other behavior
-set splitbelow      " open splits (including preview) in lower portion of window
-set noerrorbells    " no annoying noise on error
-set nostartofline   " keep cursor in same column for long range moves
+set splitbelow
+set nostartofline
+set autoread
 
 " don't redraw when executing things like macros
 set lazyredraw
 
 " load project-local vimrc if it exists (after ftplugin)
-au FileType * if filereadable(".vim.local") | so .vim.local | endif
+if filereadable(".vim.local") | so .vim.local | endif
 au BufRead,BufNewFile .vim.local set filetype=vim
 
-" GUI Options
-" a: visual mode sets clipboard selection (* register)
-" e: show tab pages
-" i: use a vim icon
-set guioptions=aei
 " }}}
 
 " General Keymaps {{{
@@ -143,53 +121,11 @@ nmap <leader>el :EditVimLocal<CR>
 nmap <leader>ef :EditFtp<CR>
 " }}}
 
-" airline {{{
-
-" always show last status
-set laststatus=2
-
-" response to various events
-let g:airline_detect_modified=1
-let g:airline_detect_paste=1
-let g:airline_detect_iminsert=0
-
-" theming
-let g:airline_theme='solarized'
-let g:airline_powerline_fonts=1
-set guifont="Inconsolata for Powerline"
-
-let g:airline#extensions#branch#enabled = 0
-
-" }}}
-
 " ctrlp {{{
 
-" ignore certain files I don't want to open in vim
 let g:ctrlp_custom_ignore = { 'file': '\v\.(wav|png|ogg|o|a)$' }
-
-" }}}
-
-" deoplete {{{
-"call deoplete#enable()
-
-"inoremap <expr><tab> pumvisible() ? "\<c-n>" : deoplete#manual_complete()
-
-" clang {{{
-
-let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'
-let g:deoplete#sources#clang#clang_header='/usr/lib/clang/3.8.0/include'
-
-" }}}
-
-" }}}
-
-" dutyl {{{
-
-" Dutyl
-" tell dutyl where to look for std imports
-let g:dutyl_stdImportPaths=['/usr/include/dlang/dmd', '/usr/include/dlang/dmd/core']
-
-"let g:dcd_path=resolve(expand("~/.vim/bundle/DCD"))
+let g:ctrlp_max_files = 50000
+let g:ctrlp_extensions = ['autoignore']
 
 " }}}
 
@@ -197,15 +133,8 @@ let g:dutyl_stdImportPaths=['/usr/include/dlang/dmd', '/usr/include/dlang/dmd/co
 
 noremap <leader>gs :Gstatus<cr>
 noremap <leader>gd :Gdiff<cr>
+noremap <leader>gD :Gdiff HEAD~<cr>
 noremap <leader>gp :Gpush<cr>
-
-" }}}
-
-" latex {{{
-
-set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
-let g:LatexBox_Folding=1
 
 " }}}
 
@@ -222,29 +151,15 @@ colorscheme solarized
 
 " }}}
 
-" tabular {{{
+" airline {{{
 
-" Tabularize shortcut
+let g:airline_theme='solarized'
+let g:airline_powerline_fonts=1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#whitespace#enabled = 1
 
-" shortcut to enter tabularize command and wait for pattern
-map <leader>a :Tabularize /
-
-" }}}
-
-" ultisnips {{{
-
-" snippets lookup
-let g:UltiSnipsSnippetsDir         = "~/dotfiles/vim/CustomSnips"
-let g:UltiSnipsSnippetDirectories  = ["CustomSnips", "UltiSnips"]
-
-" split horizontally to edit snippets file
-let g:UltiSnipsEditSplit           = "horizontal"
-
-" keymaps
-let g:UltiSnipsExpandTrigger       = "<c-j>"
-let g:UltiSnipsJumpForwardTrigger  = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
-let g:UltiSnipsListSnippets        = "<c-i>"
+" Disable missing characters
+let g:airline_symbols = {'maxlinenr': '', 'whitespace': ''}
 
 " }}}
 
