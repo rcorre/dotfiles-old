@@ -76,6 +76,7 @@ set foldlevelstart=99
 set splitbelow      " open splits (including preview) in lower portion of window
 set noerrorbells    " no annoying noise on error
 set nostartofline   " keep cursor in same column for long range moves
+set autoread        " always reload if file changed outside but not inside vim
 
 " don't redraw when executing things like macros
 set lazyredraw
