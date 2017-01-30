@@ -1,2 +1,3 @@
 --type-set=hpp:ext:hpp
 --type-set=dd:ext:d
+--type-set=myr:ext:myr
