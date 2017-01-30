@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 export TERMINAL=st
-export EDITOR=vim
+export EDITOR=nvim
 export BROWSER=qutebrowser
 export DC=dmd
 
@@ -48,7 +48,9 @@ fi
 alias op="xdg-open"
 alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
 alias oldpass='PASSWORD_STORE_DIR=~/.password-store.old/ pass'
-alias vims='vim -S'
+alias vim=nvim
+alias vims='nvim -S'
+alias lack="ack --pager='less -r'"
 
 up() {
     local p=
