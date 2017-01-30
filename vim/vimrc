@@ -4,6 +4,7 @@ set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/usr/share/myrddin/vim
 call vundle#begin()
 " let vundle managle vundle - required!
 Bundle 'gmarik/Vundle.vim'
@@ -169,7 +170,7 @@ let g:airline#extensions#branch#enabled = 0
 " ctrlp {{{
 
 " ignore certain files I don't want to open in vim
-let g:ctrlp_custom_ignore = { 'file': '\v\.(wav|png|ogg|o|a)$' }
+let g:ctrlp_custom_ignore = { 'file': '\v\.(wav|png|ogg|o|a|use)$' }
 
 " }}}
 
