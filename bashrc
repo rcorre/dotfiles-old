@@ -49,6 +49,7 @@ alias op="xdg-open"
 alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
 alias oldpass='PASSWORD_STORE_DIR=~/.password-store.old/ pass'
 alias vims='vim -S'
+alias ldg='ledger -f ~/ledger/accounts.dat'
 
 up() {
     local p=
