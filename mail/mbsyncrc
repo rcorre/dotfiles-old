@@ -42,3 +42,7 @@ Slave :fastmail-local:"Trash"
 Channel fastmail-suckless
 Master :fastmail-remote:"INBOX/suckless"
 Slave :fastmail-local:"suckless"
+
+Channel fastmail-suckless
+Master :fastmail-remote:"INBOX/visa"
+Slave :fastmail-local:"visa"
