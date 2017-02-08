@@ -48,6 +48,7 @@ fi
 alias op="xdg-open"
 alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
 alias oldpass='PASSWORD_STORE_DIR=~/.password-store.old/ pass'
+alias ldg='ledger -f ~/ledger/accounts.dat'
 alias vim=nvim
 alias vims='nvim -S'
 alias lack="ack --pager='less -r'"
