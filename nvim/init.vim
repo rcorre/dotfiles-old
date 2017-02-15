@@ -49,6 +49,7 @@ set ignorecase
 set smartcase
 
 " Folding
+set foldmethod=indent
 set foldnestmax=4
 set foldlevelstart=99
 
