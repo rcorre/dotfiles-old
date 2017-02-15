@@ -12,7 +12,7 @@ export DC=dmd
 
 # colors and prompt
 alias ls='ls --color=auto'
-[[ -f /usr/share/dircolors/dircolors.256dark ]] && eval `dircolors /usr/share/dircolors/dircolors.256dark`
+[[ -f ~/dotfiles/dircolors.256dark ]] && eval `dircolors ~/dotfiles/dircolors.256dark`
 PS1='[\u@\h \W]\$ '
 
 set -o vi                # vi command line editing
