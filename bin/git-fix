@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# find the n'th previous non-fixup commit (default n=1)
+[ -n "$1" ] && n=$1 || n=1
+
+# grab the sha of the n'th previous commit not starting with 'fixup!'
+sha=$(git log --grep='^fixup!' --invert-grep --oneline | sed "${n}q;d" | cut -d' ' -f1)
+
+# create a new fixup commit with that sha, use -e to allow adding extra comments
+git commit --fixup=$sha -e
