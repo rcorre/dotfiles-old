@@ -9,6 +9,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'elzr/vim-json'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'alfredodeza/pytest.vim'
 
 call plug#end()
 
@@ -30,7 +31,6 @@ set colorcolumn=+1  " highlight the column after textwidth
 " tab handling
 set expandtab       " tabs = spaces
 set smarttab
-set smartindent
 set tabstop=4       " 4 space tabs
 set shiftwidth=4
 set tw=79           " wrap text at 79 chars
@@ -64,6 +64,9 @@ set autoread
 " don't redraw when executing things like macros
 set lazyredraw
 
+" set mapleader here so it applies to all future keymaps
+let mapleader = "," " use , as leader character
+
 " load project-local vimrc if it exists (after ftplugin)
 if filereadable(".vim.local") | so .vim.local | endif
 au BufRead,BufNewFile .vim.local set filetype=vim
@@ -71,9 +74,6 @@ au BufRead,BufNewFile .vim.local set filetype=vim
 " }}}
 
 " General Keymaps {{{
-
-" set mapleader here so it applies to all future keymaps
-let mapleader = "," " use , as leader character
 
 " tap jk to exit intert mode (should be uncommon in normal typing)
 inoremap jk <esc>
