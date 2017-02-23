@@ -1,12 +1,12 @@
 [alias]
 	st      = status
 	br      = branch
-	ci      = commit
-	ca      = "commit -a"
-	cm      = "commit -m"
-	cma     = "commit -am"
-	cmend   = "commit --amend"
-	cmendr  = "commit --amend --reuse-message=HEAD"
+	ci      = commit -v
+	ca      = commit -va
+	cm      = commit -m
+	cma     = commit -am
+	cmend   = commit -v --amend
+	cmendr  = commit --amend --reuse-message=HEAD
 	co      = checkout
 	sho     = show --name-only
 	dif     = diff --name-only
