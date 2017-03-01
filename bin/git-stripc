@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# strip trailing whitespace from staged files
+
+for file in `git diff --name-only --cached` 
+do 
+    sed -i -r 's/\s+$//' $file;
+done

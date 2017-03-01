@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ $# -eq 1 ]
+then
+    dir='.'
+    name=$1
+else
+    dir=$1
+    name=$2
+fi
+
+echo $dir  --  $name
+    
+vim -p $(find $dir -name "*$name*")
