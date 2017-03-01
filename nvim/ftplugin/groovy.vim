@@ -1,1 +1,1 @@
-let groovy_space_errors = 1
+nnoremap <leader>s :vs <bar> term groovysh<cr>
