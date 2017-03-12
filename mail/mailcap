@@ -2,6 +2,7 @@
 image/*; sxiv %s;
 
 # HTML
+text/html; qutebrowser %s; nametemplate=%s.html; needsterminal
 text/html; lynx -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput
 
 # Documents
