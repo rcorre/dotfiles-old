@@ -13,6 +13,10 @@ Plug 'alfredodeza/pytest.vim'
 
 call plug#end()
 
+if filereadable('/usr/share/vim/vimfiles/plugin/fzf.vim')
+    so /usr/share/vim/vimfiles/plugin/fzf.vim
+endif
+
 " }}}
 
 " General Settings {{{
