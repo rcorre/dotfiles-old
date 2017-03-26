@@ -2,7 +2,6 @@
 
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
@@ -124,14 +123,8 @@ command! EditVimLocal exe "tabnew" resolve(".vim.local")
 nmap <leader>ev :EditVimrc<CR>
 nmap <leader>el :EditVimLocal<CR>
 nmap <leader>ef :EditFtp<CR>
-" }}}
 
-" ctrlp {{{
-
-let g:ctrlp_custom_ignore = { 'file': '\v\.(wav|png|ogg|o|a)$' }
-let g:ctrlp_max_files = 50000
-let g:ctrlp_extensions = ['autoignore']
-
+nnoremap <c-p> :FZF<cr>
 " }}}
 
 " fugitive {{{
@@ -165,6 +158,13 @@ let g:airline#extensions#whitespace#enabled = 1
 
 " Disable missing characters
 let g:airline_symbols = {'maxlinenr': '', 'whitespace': ''}
+
+" }}}
+"
+" fzf {{{
+
+let g:fzf_action['ctrl-s']='split'
+let g:fzf_history_dir='~/.local/share/fzf-history'
 
 " }}}
 
