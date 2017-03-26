@@ -160,10 +160,14 @@ let g:airline#extensions#whitespace#enabled = 1
 let g:airline_symbols = {'maxlinenr': '', 'whitespace': ''}
 
 " }}}
-"
+
 " fzf {{{
 
-let g:fzf_action['ctrl-s']='split'
+let g:fzf_action = {
+    \ 'ctrl-s': 'split',
+    \ 'ctrl-v': 'vsplit',
+    \ 'ctrl-t': 'tab-split' }
+
 let g:fzf_history_dir='~/.local/share/fzf-history'
 
 " }}}
