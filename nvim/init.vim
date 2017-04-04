@@ -134,6 +134,8 @@ noremap <leader>gd :Gdiff<cr>
 noremap <leader>gD :Gdiff HEAD~<cr>
 noremap <leader>gp :Gpush<cr>
 
+set diffopt="filler,vertical"
+
 " }}}
 
 " solarized {{{
