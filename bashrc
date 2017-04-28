@@ -23,6 +23,10 @@ stty -ixon               # don't let <c-s> stop vim
 #pass tab completion
 [[ -f /usr/share/bash-completion/completions/pass ]] && source /usr/share/bash-completion/completions/pass
 
+# fzf
+. /usr/share/fzf/completion.bash
+. /usr/share/fzf/key-bindings.bash
+
 # colored man pages
 man () {
   env LESS_TERMCAP_mb=$'\E[01;31m' \
