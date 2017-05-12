@@ -55,7 +55,6 @@ alias oldpass='PASSWORD_STORE_DIR=~/.password-store.old/ pass'
 alias ldg='ledger -f ~/ledger/accounts.dat'
 alias vim=nvim
 alias vims='nvim -S'
-alias fe='nvim `fzf`'
 alias lack="ack --pager='less -r'"
 
 up() {
