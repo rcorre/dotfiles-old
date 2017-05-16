@@ -1,7 +1,7 @@
 # dwm statusbar loop
 while true; do
-   /usr/bin/xsetroot -name "$( date +"%F %R" )"
-   sleep 1m    # Update time every minute
+    bash ~/dotfiles/dwmstatus
+    sleep 1s
 done &
 
 /usr/bin/numlockx on

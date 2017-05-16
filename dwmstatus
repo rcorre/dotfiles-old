@@ -1,0 +1,31 @@
+#!/bin/bash
+
+str=""
+
+# audio
+if hash ponymix 2>/dev/null; then
+    str+="$(ponymix get-volume)"
+    if ponymix is-muted; then
+        str+="M"
+    fi
+    str+=" |"
+fi
+
+# battery
+if hash acpi 2>/dev/null; then
+    str+="$(acpi | cut -d, -f2)"
+    if acpi | grep Charging >/dev/null; then
+        str+="+ | "
+    elif acpi | grep Discharging >/dev/null; then
+        str+="- | "
+    elif acpi | grep Full >/dev/null; then
+        str+=" | "
+    else
+        str+="? | "
+    fi
+fi
+
+# date
+str+="$( date +"%F %R" )"
+
+/usr/bin/xsetroot -name "$str"
