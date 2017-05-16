@@ -8,8 +8,8 @@
 	cmend   = commit -v --amend
 	cmendr  = commit --amend --reuse-message=HEAD
 	co      = checkout
-	sho     = show --name-only
-	dif     = diff --name-only
+	sho     = show --name-status
+	dif     = diff --name-status
 	diffc   = diff --cached
 	lo      = log --oneline
 	graph   = log --graph --decorate=full --oneline --all
