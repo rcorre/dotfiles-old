@@ -3,3 +3,5 @@ pianobar/out
 *.pyc
 nvim/plugged/
 nvim/.netrwhist
+weechat/*
+!weechat/*.conf
