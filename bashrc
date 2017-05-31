@@ -24,8 +24,8 @@ stty -ixon               # don't let <c-s> stop vim
 [[ -f /usr/share/bash-completion/completions/pass ]] && source /usr/share/bash-completion/completions/pass
 
 # fzf
-. /usr/share/fzf/completion.bash
-. /usr/share/fzf/key-bindings.bash
+[[ -f /usr/share/fzf/completion.bash ]] && . /usr/share/fzf/completion.bash
+[[ -f /usr/share/fzf/key-bindings.bash ]] && . /usr/share/fzf/key-bindings.bash
 
 # colored man pages
 man () {
@@ -55,7 +55,6 @@ alias oldpass='PASSWORD_STORE_DIR=~/.password-store.old/ pass'
 alias ldg='ledger -f ~/ledger/accounts.dat'
 alias vim=nvim
 alias vims='nvim -S'
-alias fe='nvim `fzf`'
 alias lack="ack --pager='less -r'"
 
 up() {

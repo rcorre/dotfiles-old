@@ -9,6 +9,7 @@ Plug 'elzr/vim-json'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'alfredodeza/pytest.vim'
+Plug 'fatih/vim-go'
 Plug 'mileszs/ack.vim'
 
 call plug#end()
