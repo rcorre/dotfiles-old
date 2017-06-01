@@ -1,10 +1,14 @@
 " Plugins {{{
+"
+
+set rtp+=/usr/share/myrddin/vim
 
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-speeddating'
 Plug 'elzr/vim-json'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
