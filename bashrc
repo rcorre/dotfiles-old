@@ -72,6 +72,10 @@ if hash rbenv 2>/dev/null; then
     export PATH="$PATH:$GEM_HOME/bin"
 fi
 
+if hash kubectl 2>/dev/null; then
+    source <(kubectl completion bash)
+fi
+
 [[ -d "$HOME/bin" ]] && export PATH="$PATH:$HOME/bin"
 
 [ -f /etc/profile.d/autojump.bash ] && . /etc/profile.d/autojump.bash
