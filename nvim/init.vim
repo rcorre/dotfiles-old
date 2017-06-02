@@ -15,6 +15,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'alfredodeza/pytest.vim'
 Plug 'fatih/vim-go'
 Plug 'mileszs/ack.vim'
+Plug 'neomake/neomake'
 
 call plug#end()
 
