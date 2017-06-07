@@ -2,6 +2,7 @@
 "
 
 set rtp+=/usr/share/myrddin/vim
+set rtp+=/usr/share/vim/vimfiles
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -16,12 +17,9 @@ Plug 'alfredodeza/pytest.vim'
 Plug 'fatih/vim-go'
 Plug 'mileszs/ack.vim'
 Plug 'neomake/neomake'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
-
-if filereadable('/usr/share/vim/vimfiles/plugin/fzf.vim')
-    so /usr/share/vim/vimfiles/plugin/fzf.vim
-endif
 
 " }}}
 
