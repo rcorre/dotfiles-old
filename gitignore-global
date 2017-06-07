@@ -8,3 +8,7 @@ tags
 .ackrc
 .sift.conf
 .ctrlpignore
+*.a
+*.o
+*.use
+*.so
