@@ -179,4 +179,10 @@ let g:fzf_history_dir='~/.local/share/fzf-history'
 
 " }}}
 
+" neomake {{{
+
+let g:neomake_logfile='/tmp/neomake.log'
+
+" }}}
+
 " vim:foldmethod=marker:foldlevel=0
