@@ -9,6 +9,7 @@ export TERMINAL=st
 export EDITOR=nvim
 export BROWSER=qutebrowser
 export DC=dmd
+export GOPATH=$HOME/go
 
 # colors and prompt
 alias ls='ls --color=auto'
