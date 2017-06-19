@@ -1,2 +1,2 @@
 " Don't break lines
-set tw=0
+setlocal tw=0
