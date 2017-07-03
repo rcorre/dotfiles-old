@@ -68,6 +68,7 @@ set completeopt=menu
 set splitbelow
 set nostartofline
 set autoread
+set inccommand=nosplit
 
 " don't redraw when executing things like macros
 set lazyredraw
