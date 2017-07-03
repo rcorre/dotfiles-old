@@ -101,10 +101,10 @@ au TabLeave * let g:lasttab = tabpagenr()
 noremap <leader>v :read !xclip -out -sel clip<cr>
 
 " error jumping (first, next, previous)
-nnoremap ge :cf<cr>
-nnoremap gn :cn<cr>
-nnoremap gp :cp<cr>
-nnoremap gc :cclose<cr>
+nnoremap ge :lfirst<cr>
+nnoremap gn :lnext<cr>
+nnoremap gp :lprevious<cr>
+nnoremap gc :lclose<cr>
 
 " command to save and exit while creating a session file
 command! Bye :mksession! | :wqall
@@ -181,6 +181,7 @@ let g:fzf_history_dir='~/.local/share/fzf-history'
 
 " neomake {{{
 
+autocmd! BufWritePost * Neomake
 let g:neomake_logfile='/tmp/neomake.log'
 
 " }}}
