@@ -5,3 +5,8 @@ setlocal omnifunc=pythoncomplete#Complete
 nnoremap <c-p> :FZF -q !__pycache__ <cr><space>
 nnoremap <c-q> :FZF -q py$ /usr/lib/<cr><space>
 nnoremap <leader>up :FZF -q py$ ~/.local/lib<cr><space>
+
+if getline(1) =~# '^#!.*python2.*'
+	let g:neomake_python_python_exe='python2'
+	let g:neomake_python_pylint_exe='pylint2'
+endif
