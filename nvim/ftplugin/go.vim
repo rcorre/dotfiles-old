@@ -13,3 +13,4 @@ nnoremap <leader>t :GoTest<cr>
 nnoremap <leader>j :tabnew /tmp/scratch.go<cr>
 
 nnoremap <c-q> :FZF -q go$ /usr/lib/go<cr><space>
+nnoremap <c-s> :FZF -q go$ ./vendor<cr><space>
