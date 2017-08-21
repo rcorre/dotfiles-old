@@ -9,6 +9,7 @@ text/html; lynx -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousou
 application/pdf; xdg-open %s;
 application/msword; soffice %s;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document; soffice %s;
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; soffice %s;
 
 # Video
 video/*; mplayer %s;
