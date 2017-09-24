@@ -18,6 +18,7 @@
 	msg     = log -1 --format=msg
 	vim     = !nvim -p $(git diff HEAD~ --name-only)
 	sync    = !git pull && git push
+	wip     = !git add . && git cm wip && git push origin HEAD:wip -f
 
 	# identifying and removing merged branches
 	junk = "!f() { git for-each-ref refs/heads --format '%(refname:strip=2)' --merged $1; }; f"
