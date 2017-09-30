@@ -1,12 +1,11 @@
 # Account
 set spoolfile = "+fastmail/Inbox"
+set postponed = "+fastmail/Drafts"
+set trash = "+fastmail/Trash"
 
 # clear any mailboxes previously set up
 unmailboxes
 mailboxes `echo ~/Mail/fastmail/*`
-
-# Select all subdirs as mailboxes
-set postponed = "+fastmail/Drafts"
 
 # Mailbox shortcuts
 macro index gi "<change-folder> =fastmail/Inbox<enter>" "go to inbox"
@@ -19,8 +18,6 @@ macro index ga "<change-folder> =fastmail/Archive<enter>" "go to archive"
 ## Deletion
 macro index a "<save-message>+fastmail/Archive<enter>" "move message to archive"
 macro index \ca "<tag-thread><tag-prefix><save-message>+fastmail/Archive<enter>" "move thread to archive"
-macro index d "<save-message>+fastmail/Trash<enter>" "move message to trash"
-macro index \cd "<tag-thread><tag-prefix><save-message>+fastmail/Trash<enter>" "move thread to trash"
 
 source '~/dotfiles/mail/smtp-fastmail'
 unhook send-hook
