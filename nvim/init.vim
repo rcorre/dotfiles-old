@@ -131,6 +131,14 @@ nmap <leader>el :EditVimLocal<CR>
 nmap <leader>ef :EditFtp<CR>
 
 nnoremap <c-p> :FZF<cr>
+
+augroup improved_autoread
+  autocmd!
+  autocmd FocusGained * silent! checktime
+  autocmd BufEnter * silent! checktime
+augroup end
+noremap <c-z> :suspend<cr>:silent! checktime<cr>
+
 " }}}
 
 " fugitive {{{
