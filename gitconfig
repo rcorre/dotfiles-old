@@ -17,7 +17,7 @@
 	cp      = cherry-pick
 	msg     = log -1 --format=msg
 	vim     = !nvim -p $(git diff HEAD~ --name-only)
-	sync    = !git pull && git push
+	sync    = !git pull --no-edit && git push
 	wip     = !git add . && git cm wip && git push origin HEAD:wip -f
 
 	# identifying and removing merged branches
