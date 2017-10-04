@@ -13,16 +13,25 @@ fi
 
 # battery
 if hash acpi 2>/dev/null; then
-    str+="$(acpi | cut -d, -f2)"
-    if acpi | grep Charging >/dev/null; then
-        str+="+ | "
-    elif acpi | grep Discharging >/dev/null; then
-        str+="- | "
-    elif acpi | grep Full >/dev/null; then
-        str+=" | "
-    else
-        str+="? | "
-    fi
+    output=$(acpi 2>&1)
+    bat="$(echo "$output" | cut -d, -f2)"
+    case $output in
+        *Charging*)
+            str+="$bat+ | "
+            ;;
+        *Discharging*)
+            str+="$bat- | "
+            ;;
+        *Full*)
+            str+="$bat | "
+            ;;
+        *"No support"*)
+            str+=" "
+            ;;
+        *)
+            str+="? | "
+            ;;
+    esac
 fi
 
 # date
