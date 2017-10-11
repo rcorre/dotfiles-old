@@ -80,6 +80,14 @@ let mapleader = "," " use , as leader character
 if filereadable(".vim.local") | so .vim.local | endif
 au BufRead,BufNewFile .vim.local set filetype=vim
 
+" Make autoread pick up changes after resuming from suspend
+augroup improved_autoread
+  autocmd!
+  autocmd FocusGained * silent! checktime
+  autocmd BufEnter * silent! checktime
+augroup end
+noremap <c-z> :suspend<cr>:silent! checktime<cr>
+
 " }}}
 
 " General Keymaps {{{
@@ -131,13 +139,6 @@ nmap <leader>el :EditVimLocal<CR>
 nmap <leader>ef :EditFtp<CR>
 
 nnoremap <c-p> :FZF<cr>
-
-augroup improved_autoread
-  autocmd!
-  autocmd FocusGained * silent! checktime
-  autocmd BufEnter * silent! checktime
-augroup end
-noremap <c-z> :suspend<cr>:silent! checktime<cr>
 
 " }}}
 
