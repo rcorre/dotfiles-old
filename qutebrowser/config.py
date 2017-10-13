@@ -1,3 +1,4 @@
+# pylint: disable=missing-docstring
 c = c  # noqa: F821 pylint: disable=invalid-name,undefined-variable
 config = config  # noqa: F821 pylint: disable=invalid-name,undefined-variable
 
@@ -11,7 +12,7 @@ c.downloads.location.directory = '~/downloads'
 c.content.plugins = True
 c.hints.uppercase = True
 # c.hints.find_implementation = 'python' # change to javascript if bad results
-c.fonts.monospace = '"Hack", "xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+c.fonts.monospace = '"Hack", ' + c.fonts.monospace
 
 config.bind('zi', 'zoom-in')
 config.bind('zo', 'zoom-out')
