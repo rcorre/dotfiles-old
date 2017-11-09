@@ -1,5 +1,5 @@
 # Paths
-set editor           = "vim -c 'set spell'"
+set editor           = "nvim -c 'set spell'"
 set my_name          = "Ryan"
 set folder           = ~/Mail
 set alias_file       = ~/.mutt/alias
