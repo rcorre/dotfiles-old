@@ -44,5 +44,8 @@
 	autosquash = true
 [pretty]
 	msg = format:%s%n%n%b
+[gitreview]
+    remote = origin
+    rebase = false
 
 # vim: noexpandtab
