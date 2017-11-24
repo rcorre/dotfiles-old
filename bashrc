@@ -10,6 +10,7 @@ export EDITOR=nvim
 export BROWSER=qutebrowser
 export DC=dmd
 export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 # colors and prompt
 alias ls='ls --color=auto'
