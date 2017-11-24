@@ -141,6 +141,7 @@ nmap <leader>el :EditVimLocal<CR>
 nmap <leader>ef :EditFtp<CR>
 
 nnoremap <c-p> :FZF<cr>
+nnoremap <c-l> :set spell! spell?<cr>
 
 " }}}
 
