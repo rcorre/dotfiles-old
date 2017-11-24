@@ -18,6 +18,8 @@ Plug 'fatih/vim-go'
 Plug 'mileszs/ack.vim'
 Plug 'neomake/neomake'
 Plug 'junegunn/fzf.vim'
+Plug 'lifepillar/vim-mucomplete'
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
@@ -62,7 +64,7 @@ set foldnestmax=4
 set foldlevelstart=99
 
 " Completion
-set completeopt=menu
+set completeopt=longest,menuone,noinsert
 
 " other behavior
 set splitbelow
@@ -193,6 +195,18 @@ let g:fzf_history_dir='~/.local/share/fzf-history'
 
 autocmd! BufWritePost * Neomake
 let g:neomake_logfile='/tmp/neomake.log'
+
+" }}}
+
+" mucomplete {{{
+"
+set shortmess+=c   " Shut off completion messages
+set belloff+=ctrlg " If Vim beeps during completion
+
+inoremap <expr> <c-e> mucomplete#popup_exit("\<c-e>")
+inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
+inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
+let g:mucomplete#enable_auto_at_startup=1
 
 " }}}
 
