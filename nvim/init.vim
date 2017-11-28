@@ -143,6 +143,9 @@ nmap <leader>ef :EditFtp<CR>
 nnoremap <c-p> :FZF<cr>
 nnoremap <c-l> :set spell! spell?<cr>
 
+" insert a uuid
+inoremap <c-u> <c-r>=system("uuidgen \| tr -d '\n'")<cr>
+
 " }}}
 
 " fugitive {{{
