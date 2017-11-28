@@ -140,7 +140,6 @@ nmap <leader>ev :EditVimrc<CR>
 nmap <leader>el :EditVimLocal<CR>
 nmap <leader>ef :EditFtp<CR>
 
-nnoremap <c-p> :FZF<cr>
 nnoremap <c-l> :set spell! spell?<cr>
 
 " insert a uuid
@@ -210,6 +209,14 @@ let g:fzf_action = {
     \ 'ctrl-t': 'tab-split' }
 
 let g:fzf_history_dir='~/.local/share/fzf-history'
+
+nnoremap <c-p> :Files<cr>
+nnoremap <c-g> :Ag<space>
+
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
 
 " }}}
 
