@@ -18,6 +18,8 @@ Plug 'fatih/vim-go'
 Plug 'mileszs/ack.vim'
 Plug 'neomake/neomake'
 Plug 'junegunn/fzf.vim'
+Plug 'lifepillar/vim-mucomplete'
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
@@ -62,7 +64,7 @@ set foldnestmax=4
 set foldlevelstart=99
 
 " Completion
-set completeopt=menu
+set completeopt=longest,menuone,noinsert
 
 " other behavior
 set splitbelow
@@ -138,7 +140,10 @@ nmap <leader>ev :EditVimrc<CR>
 nmap <leader>el :EditVimLocal<CR>
 nmap <leader>ef :EditFtp<CR>
 
-nnoremap <c-p> :FZF<cr>
+nnoremap <c-l> :set spell! spell?<cr>
+
+" insert a uuid
+inoremap <c-u> <c-r>=system("uuidgen \| tr -d '\n'")<cr>
 
 " }}}
 
@@ -170,11 +175,26 @@ colorscheme solarized
 
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts=1
-let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#branch#enabled = 0
 let g:airline#extensions#whitespace#enabled = 1
 
-" Disable missing characters
-let g:airline_symbols = {'maxlinenr': '', 'whitespace': ''}
+" Get rid of encoding/format to make more space for file name
+let g:airline_section_y = ''
+
+" Short-form mode symbols
+let g:airline_mode_map = {
+  \ '__' : '-',
+  \ 'n'  : 'N',
+  \ 'i'  : 'I',
+  \ 'R'  : 'R',
+  \ 'c'  : 'C',
+  \ 'v'  : 'V',
+  \ 'V'  : 'V',
+  \ '' : 'V',
+  \ 's'  : 'S',
+  \ 'S'  : 'S',
+  \ '' : 'S',
+  \ }
 
 " }}}
 
@@ -187,12 +207,32 @@ let g:fzf_action = {
 
 let g:fzf_history_dir='~/.local/share/fzf-history'
 
+nnoremap <c-p> :Files<cr>
+nnoremap <c-g> :Ag<space>
+
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
 " }}}
 
 " neomake {{{
 
 autocmd! BufWritePost * Neomake
 let g:neomake_logfile='/tmp/neomake.log'
+
+" }}}
+
+" mucomplete {{{
+"
+set shortmess+=c   " Shut off completion messages
+set belloff+=ctrlg " If Vim beeps during completion
+
+inoremap <expr> <c-e> mucomplete#popup_exit("\<c-e>")
+inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
+inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
+let g:mucomplete#enable_auto_at_startup=1
 
 " }}}
 

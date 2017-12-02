@@ -8,6 +8,8 @@ c.new_instance_open_target = 'window'
 c.completion.shrink = True
 c.tabs.background = True
 c.tabs.last_close = 'blank'
+c.tabs.new_position.related = 'next'
+c.tabs.new_position.unrelated = 'next'
 c.downloads.location.directory = '~/downloads'
 c.content.plugins = True
 c.hints.uppercase = True
@@ -24,3 +26,4 @@ config.bind('gh', 'back -t')
 config.bind('ao', 'download-open')
 config.bind('td', 'tab-detach')
 config.bind('M', 'bookmark-add --toggle')
+config.bind('<ctrl+e>', 'edit-url')
