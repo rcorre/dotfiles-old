@@ -44,6 +44,8 @@
 	autosquash = true
 [pretty]
 	msg = format:%s%n%n%b
+[fetch]
+	prune = true
 [gitreview]
     remote = origin
     rebase = false
