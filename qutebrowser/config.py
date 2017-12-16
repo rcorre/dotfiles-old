@@ -27,3 +27,7 @@ config.bind('ao', 'download-open')
 config.bind('td', 'tab-detach')
 config.bind('M', 'bookmark-add --toggle')
 config.bind('<ctrl+e>', 'edit-url')
+config.bind(',ev', 'config-edit')
+config.bind(';r', 'hint all --rapid')
+
+config.bind('<ctrl+k>', 'rl-backward-kill-word', mode='command')
