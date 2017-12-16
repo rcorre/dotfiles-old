@@ -210,11 +210,6 @@ let g:fzf_history_dir='~/.local/share/fzf-history'
 nnoremap <c-p> :Files<cr>
 nnoremap <c-g> :Ag<space>
 
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
 " }}}
 
 " neomake {{{
