@@ -2,7 +2,7 @@
 set my_smtp_server=mail.messagingengine.com
 set my_sender=`pass user/fastmail-sender`
 set my_user=`pass user/fastmail`
-set my_pass=`pass web/fastmail.fm`
+set my_pass=`pass mail/fastmail-app`
 
 #set smtp_pass=$my_pass
 set smtp_url="smtps://$my_user:$my_pass@$my_smtp_server:465/"
