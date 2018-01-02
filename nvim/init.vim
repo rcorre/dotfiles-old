@@ -50,7 +50,6 @@ set wildmenu              " Command line completion
 set wildmode=longest,list " Complete up to longest common string, then list
 set wildignore+=*.swp,*.bak,*.pyc,Session.vim
 set wildignorecase
-set completeopt="menu"
 
 " searching
 set ignorecase
@@ -62,7 +61,7 @@ set foldnestmax=4
 set foldlevelstart=99
 
 " Completion
-set completeopt=longest,menuone,noinsert
+set completeopt=menuone,noselect
 
 " other behavior
 set splitbelow
@@ -207,11 +206,7 @@ let g:fzf_history_dir='~/.local/share/fzf-history'
 
 nnoremap <c-p> :Files<cr>
 nnoremap <c-g> :Ag<space>
-
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
+nnoremap <c-h> :Help<cr>
 
 " }}}
 

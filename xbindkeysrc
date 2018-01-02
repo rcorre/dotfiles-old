@@ -2,3 +2,9 @@
     XF86AudioRaiseVolume
 "ponymix dec 5 && ~/dotfiles/dwmstatus"
     XF86AudioLowerVolume
+"ponymix toggle && ~/dotfiles/dwmstatus"
+    XF86AudioMute
+"xbacklight -inc 20"
+    XF86MonBrightnessUp
+"xbacklight -dec 20"
+    XF86MonBrightnessDown
