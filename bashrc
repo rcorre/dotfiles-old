@@ -8,7 +8,8 @@
 export TERMINAL=st
 export EDITOR=nvim
 export BROWSER=qutebrowser
-export DC=dmd
+export HISTSIZE=10000
+export HISTCONTROL=erasedups
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
