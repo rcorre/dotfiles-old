@@ -1,3 +1,3 @@
 {
-  "Enable": ["megacheck", "golint", "deadcode", "unconvert"]
+  "Enable": ["golint", "vet"]
 }
