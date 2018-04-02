@@ -32,3 +32,4 @@ config.bind(',ev', 'config-edit')
 config.bind(';r', 'hint all --rapid')
 
 config.bind('<ctrl+k>', 'rl-backward-kill-word', mode='command')
+config.bind('<ctrl+e>', 'edit-command', mode='command')
