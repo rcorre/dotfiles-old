@@ -12,6 +12,7 @@ export HISTSIZE=10000
 export HISTCONTROL=erasedups
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export XDG_DESKTOP_DIR="$HOME"
 
 # colors and prompt
 alias ls='ls --color=auto'
