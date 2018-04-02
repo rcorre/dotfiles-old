@@ -15,6 +15,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'alfredodeza/pytest.vim'
 Plug 'fatih/vim-go'
+Plug 'sebdah/vim-delve'
 Plug 'mileszs/ack.vim'
 Plug 'neomake/neomake'
 Plug 'junegunn/fzf.vim'
@@ -62,6 +63,9 @@ set foldlevelstart=99
 
 " Completion
 set completeopt=menuone,noselect
+
+" diff
+set diffopt=vertical
 
 " other behavior
 set splitbelow
