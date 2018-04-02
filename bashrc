@@ -16,6 +16,7 @@ export XDG_DESKTOP_DIR="$HOME"
 
 # colors and prompt
 alias ls='ls --color=auto'
+alias l='ls -ltr'
 [[ -f ~/dotfiles/dircolors.256dark ]] && eval `dircolors ~/dotfiles/dircolors.256dark`
 PS1='[\u@\h \W]\$ '
 
