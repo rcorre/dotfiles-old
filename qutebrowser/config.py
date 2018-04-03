@@ -30,6 +30,7 @@ config.bind('<ctrl+e>', 'edit-url')
 config.bind('<ctrl+shift+e>', 'edit-url -t')
 config.bind('zz', 'zoom')
 config.bind(',ev', 'config-edit')
-config.bind(';r', 'hint all --rapid')
+config.bind(';r', 'hint --rapid all tab-bg')
+config.bind('ta', 'set-cmd-text -s :spawn --userscript taskadd')
 
 config.bind('<ctrl+k>', 'rl-backward-kill-word', mode='command')
