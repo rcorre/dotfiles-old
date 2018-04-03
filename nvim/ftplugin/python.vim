@@ -1,3 +1,4 @@
+set tw=79
 setlocal foldmethod=indent
 nnoremap <leader>r :!python %<cr>
 nnoremap <leader>p :vs <bar> term python<cr>

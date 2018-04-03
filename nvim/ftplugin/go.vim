@@ -16,3 +16,5 @@ nnoremap <leader>j :tabnew /tmp/scratch.go<cr>
 nnoremap <c-q> :FZF -q go$ /usr/lib/go<cr><space>
 nnoremap <c-s> :FZF -q go$ ./vendor<cr><space>
 inoremap <c-e> if err != nil {<cr>return err<cr>}<cr>
+
+let g:neomake_go_gometalinter_args=['--config=~/dotfiles/gometalinter.json', '--vendor', '--tests', '--deadline=10s']

@@ -34,3 +34,4 @@ config.bind(';r', 'hint --rapid all tab-bg')
 config.bind('ta', 'set-cmd-text -s :spawn --userscript taskadd')
 
 config.bind('<ctrl+k>', 'rl-backward-kill-word', mode='command')
+config.bind('<ctrl+e>', 'edit-command', mode='command')
