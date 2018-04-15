@@ -8,12 +8,15 @@
 export TERMINAL=st
 export EDITOR=nvim
 export BROWSER=qutebrowser
-export DC=dmd
+export HISTSIZE=10000
+export HISTCONTROL=erasedups
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export XDG_DESKTOP_DIR="$HOME"
 
 # colors and prompt
 alias ls='ls --color=auto'
+alias l='ls -ltr'
 [[ -f ~/dotfiles/dircolors.256dark ]] && eval `dircolors ~/dotfiles/dircolors.256dark`
 PS1='[\u@\h \W]\$ '
 

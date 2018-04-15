@@ -15,6 +15,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'alfredodeza/pytest.vim'
 Plug 'fatih/vim-go'
+Plug 'sebdah/vim-delve'
 Plug 'mileszs/ack.vim'
 Plug 'neomake/neomake'
 Plug 'junegunn/fzf.vim'
@@ -36,16 +37,14 @@ set rnu             " Relative numbering
 set nu              " full line number on current line
 set showmatch       " show matching brackets
 set scrolloff=3     " number of screen lines to show around cursor
-set colorcolumn=+1  " highlight the column after textwidth
 
 " tab handling
 set expandtab       " tabs = spaces
 set smarttab
 set tabstop=4       " 4 space tabs
 set shiftwidth=4
-set tw=79           " wrap text at 79 chars
-set cc=+1           " show a column at 80 chars
 set cino=(1s        " only indent one shiftwidth continuing an open paren
+set cc=+1
 
 " wild menu
 set wildmenu              " Command line completion
@@ -64,6 +63,9 @@ set foldlevelstart=99
 
 " Completion
 set completeopt=menuone,noselect
+
+" diff
+set diffopt=vertical
 
 " other behavior
 set splitbelow
