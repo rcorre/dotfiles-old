@@ -25,9 +25,6 @@ shopt -s direxpand       # expand directory variables with <TAB> after /
 export GREP_COLOR='1;32' # green grep result highlight
 stty -ixon               # don't let <c-s> stop vim
 
-#pass tab completion
-[[ -f /usr/share/bash-completion/completions/pass ]] && source /usr/share/bash-completion/completions/pass
-
 # fzf
 [[ -f /usr/share/fzf/completion.bash ]] && . /usr/share/fzf/completion.bash
 [[ -f /usr/share/fzf/key-bindings.bash ]] && . /usr/share/fzf/key-bindings.bash

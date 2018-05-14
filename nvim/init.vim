@@ -210,7 +210,7 @@ let g:fzf_history_dir='~/.local/share/fzf-history'
 
 nnoremap <c-p> :Files<cr>
 nnoremap <c-e> :GFiles<cr>
-nnoremap <c-g> :Ag<space>
+nnoremap <c-g> :Ag<cr>
 nnoremap <c-h> :Help<cr>
 
 " }}}
