@@ -13,6 +13,7 @@ export HISTCONTROL=erasedups
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export XDG_DESKTOP_DIR="$HOME"
+export FZF_DEFAULT_COMMAND='fd --no-ignore-vcs --type l --type f --ignore-file ~/dotfiles/fdignore'
 
 # colors and prompt
 alias ls='ls --color=auto'
