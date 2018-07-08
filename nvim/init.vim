@@ -21,6 +21,7 @@ Plug 'neomake/neomake'
 Plug 'junegunn/fzf.vim'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'davidhalter/jedi-vim'
+Plug 'calviken/vim-gdscript3'
 
 call plug#end()
 
