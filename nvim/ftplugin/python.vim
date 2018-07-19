@@ -1,4 +1,5 @@
 set tw=79
+set expandtab
 setlocal foldmethod=indent
 nnoremap <leader>r :!python %<cr>
 nnoremap <leader>p :vs <bar> term python<cr>

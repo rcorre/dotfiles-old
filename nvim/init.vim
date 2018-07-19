@@ -13,14 +13,13 @@ Plug 'tpope/vim-speeddating'
 Plug 'elzr/vim-json'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'alfredodeza/pytest.vim'
 Plug 'fatih/vim-go'
 Plug 'sebdah/vim-delve'
 Plug 'mileszs/ack.vim'
 Plug 'neomake/neomake'
 Plug 'junegunn/fzf.vim'
 Plug 'lifepillar/vim-mucomplete'
-Plug 'davidhalter/jedi-vim'
+Plug 'python-mode/python-mode', { 'branch': 'develop' }
 
 call plug#end()
 
