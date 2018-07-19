@@ -18,4 +18,4 @@ nnoremap <c-s> :FZF -q go$ ./vendor<cr><space>
 inoremap <c-e> if err != nil {<cr>return err<cr>}<cr>
 inoremap <c-p> if err != nil {<cr>panic(err)<cr>}<cr>
 
-let g:neomake_go_gometalinter_args=['--config=~/dotfiles/gometalinter.json', '--vendor', '--tests', '--deadline=10s']
+let g:neomake_go_gometalinter_args=['--disable-all', '-E', 'golint', '-E', 'vet', '--vendor', '--tests', '--deadline=10s']
