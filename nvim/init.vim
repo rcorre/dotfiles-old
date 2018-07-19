@@ -20,6 +20,7 @@ Plug 'neomake/neomake'
 Plug 'junegunn/fzf.vim'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
+Plug 'calviken/vim-gdscript3'
 
 call plug#end()
 
@@ -208,6 +209,7 @@ let g:fzf_action = {
 let g:fzf_history_dir='~/.local/share/fzf-history'
 
 nnoremap <c-p> :Files<cr>
+nnoremap <c-e> :GFiles<cr>
 nnoremap <c-g> :Ag<cr>
 nnoremap <c-h> :Help<cr>
 
