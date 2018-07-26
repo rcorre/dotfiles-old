@@ -105,7 +105,7 @@ set edit_headers
 set fast_reply
 set askcc
 set fcc_attach      #save attachments with body
-unset mime_forward  #forward attachments as part of bodyj
+unset mime_forward  #forward attachments as part of body
 set forward_format = "Fwd: %s"
 set forward_decode
 set attribution = "On %d, %n wrote:"
