@@ -17,6 +17,8 @@ c.hints.uppercase = True
 # c.hints.find_implementation = 'python' # change to javascript if bad results
 c.fonts.monospace = '"Hack", ' + c.fonts.monospace
 
+c.url.searchengines['gd'] = 'https://godot.readthedocs.io/en/latest/classes/class_{}.html'
+
 config.bind('zi', 'zoom-in')
 config.bind('zo', 'zoom-out')
 config.bind('gn', 'navigate next')
