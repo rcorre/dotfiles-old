@@ -7,7 +7,6 @@ set header_cache     = "~/.cache/mutt/headers"
 set message_cachedir = "~/.cache/mutt/bodies"
 set certificate_file = ~/.mutt/certificates
 set mailcap_path     = ~/.mutt/mailcap
-set tmpdir           = ~/.mutt/temp
 set signature        = ~/.mutt/sig
 
 # Basic options
