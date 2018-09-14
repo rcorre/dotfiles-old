@@ -227,9 +227,6 @@ let g:neomake_logfile='/tmp/neomake.log'
 set shortmess+=c   " Shut off completion messages
 set belloff+=ctrlg " If Vim beeps during completion
 
-inoremap <expr> <c-e> mucomplete#popup_exit("\<c-e>")
-inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
-inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
 let g:mucomplete#enable_auto_at_startup=1
 
 " }}}
