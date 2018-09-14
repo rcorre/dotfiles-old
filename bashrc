@@ -13,7 +13,8 @@ export HISTCONTROL=erasedups
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export XDG_DESKTOP_DIR="$HOME"
-export FZF_DEFAULT_COMMAND='fd --no-ignore-vcs --type l --type f --ignore-file ~/dotfiles/fdignore'
+export FZF_DEFAULT_COMMAND='fd --hidden --no-ignore-vcs --type l --type f --ignore-file ~/dotfiles/fdignore'
+export FZF_DEFAULT_OPTS="--bind 'ctrl-y:execute(echo {} | xclip -r -sel clip)+abort'"
 
 # colors and prompt
 alias ls='ls --color=auto'
