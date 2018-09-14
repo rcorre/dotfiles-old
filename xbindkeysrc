@@ -8,3 +8,5 @@
     XF86MonBrightnessUp
 "xbacklight -dec 20"
     XF86MonBrightnessDown
+"xtrlock -b"
+    Mod4 + Shift + L
