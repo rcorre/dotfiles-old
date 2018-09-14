@@ -1,3 +1,4 @@
+import os.path
 # pylint: disable=missing-docstring
 c = c  # noqa: F821 pylint: disable=invalid-name,undefined-variable
 config = config  # noqa: F821 pylint: disable=invalid-name,undefined-variable
@@ -16,6 +17,8 @@ c.hints.uppercase = True
 # c.hints.find_implementation = 'python' # change to javascript if bad results
 c.fonts.monospace = '"Hack", ' + c.fonts.monospace
 
+c.url.searchengines['gd'] = 'https://godot.readthedocs.io/en/latest/classes/class_{}.html'
+
 config.bind('zi', 'zoom-in')
 config.bind('zo', 'zoom-out')
 config.bind('gn', 'navigate next')
@@ -31,7 +34,11 @@ config.bind('<ctrl+shift+e>', 'edit-url -t')
 config.bind('zz', 'zoom')
 config.bind(',ev', 'config-edit')
 config.bind(';r', 'hint --rapid all tab-bg')
+config.bind(';m', 'hint links run :bookmark-add {hint-url} ""')
 config.bind('ta', 'set-cmd-text -s :spawn --userscript taskadd')
 
 config.bind('<ctrl+k>', 'rl-backward-kill-word', mode='command')
 config.bind('<ctrl+e>', 'edit-command', mode='command')
+
+if os.path.exists('local_config.py'):
+    config.source('local_config.py')

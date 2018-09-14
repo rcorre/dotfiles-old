@@ -13,3 +13,5 @@ if getline(1) =~# '^#!.*python2.*'
 	let g:neomake_python_python_exe='python2'
 	let g:neomake_python_pylint_exe='pylint2'
 endif
+
+MUcompleteAutoOff

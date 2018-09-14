@@ -15,5 +15,6 @@ application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; soffice %s;
 video/*; mplayer %s;
 
 # Text
-text/plain; vim %s
-text/x-csrc; vim %s
+text/plain; nvim %s
+text/x-csrc; nvim %s
+text/x-patch; nvim %s

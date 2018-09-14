@@ -1,12 +1,12 @@
-"ponymix inc 5 && ~/dotfiles/dwmstatus"
+"ponymix inc 5 --max 150 && ~/dotfiles/dwmstatus"
     XF86AudioRaiseVolume
-"ponymix dec 5 && ~/dotfiles/dwmstatus"
+"ponymix dec 5 --max 150 && ~/dotfiles/dwmstatus"
     XF86AudioLowerVolume
 "ponymix toggle && ~/dotfiles/dwmstatus"
     XF86AudioMute
-"xbacklight -inc 20"
+"xbacklight -inc 10"
     XF86MonBrightnessUp
-"xbacklight -dec 20"
+"xbacklight -dec 10"
     XF86MonBrightnessDown
 "xtrlock -b"
     Mod4 + Shift + L
