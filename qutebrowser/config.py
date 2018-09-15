@@ -13,6 +13,7 @@ c.tabs.new_position.related = 'next'
 c.tabs.new_position.unrelated = 'next'
 c.downloads.location.directory = '/tmp'
 c.content.plugins = True
+c.content.autoplay = False
 c.hints.uppercase = True
 # c.hints.find_implementation = 'python' # change to javascript if bad results
 c.fonts.monospace = '"Hack", ' + c.fonts.monospace
