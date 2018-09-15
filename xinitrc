@@ -10,4 +10,5 @@ done &
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
+xss-lock -- xtrlock -b &
 exec dwm
