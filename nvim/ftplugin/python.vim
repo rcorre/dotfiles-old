@@ -14,4 +14,4 @@ if getline(1) =~# '^#!.*python2.*'
 	let g:neomake_python_pylint_exe='pylint2'
 endif
 
-MUcompleteAutoOff
+let g:pymode_lint=0
