@@ -1,9 +1,6 @@
 # case-insensitive tab comlpetion
 set completion-ignore-case On
 
-# tab comlpetion treats - and _ as equivalent
-set completion-map-case On
-
 # don't overwrite end of word when completing from the middle
 set skip-completed-text On
 
