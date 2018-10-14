@@ -6,7 +6,7 @@ text/html; mv %s /tmp/mutt-attach.html && qutebrowser /tmp/mutt-attach.html; nee
 text/html; lynx -display_charset=utf-8 -dump %s; nametemplate=%s.html; copiousoutput
 
 # Documents
-application/pdf; xdg-open %s;
+application/pdf; zathura %s;
 application/msword; soffice %s;
 application/vnd.openxmlformats-officedocument.wordprocessingml.document; soffice %s;
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; soffice %s;
