@@ -40,7 +40,7 @@ config.bind(';m', 'hint links run :bookmark-add {hint-url} ""')
 config.bind('ta', 'set-cmd-text -s :spawn --userscript taskadd')
 
 config.bind('<ctrl+k>', 'rl-backward-kill-word', mode='command')
-config.bind('<ctrl+e>', 'edit-command', mode='command')
+config.bind('<ctrl+e>', 'edit-command -r', mode='command')
 
 if (config.configdir / 'local_config.py').exists():
     config.source('local_config.py')
