@@ -11,4 +11,5 @@ done &
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
 xss-lock -- xtrlock -b &
+feh --bg-center archlinux-logo-dark-90dpi.png
 exec dwm
