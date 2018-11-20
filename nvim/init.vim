@@ -21,6 +21,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'lifepillar/vim-mucomplete'
 Plug 'python-mode/python-mode', { 'branch': 'develop' }
 Plug 'calviken/vim-gdscript3'
+Plug 'godlygeek/tabular'
 
 call plug#end()
 
@@ -228,6 +229,12 @@ set shortmess+=c   " Shut off completion messages
 set belloff+=ctrlg " If Vim beeps during completion
 
 let g:mucomplete#enable_auto_at_startup=1
+
+" }}}
+"
+" tabular {{{
+"
+nnoremap <leader>a :Tabularize /
 
 " }}}
 
