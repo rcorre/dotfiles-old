@@ -8,6 +8,7 @@
 	cmend   = commit -v --amend
 	cmendr  = commit --amend --reuse-message=HEAD
 	co      = checkout
+	fo      = !git fetch && git checkout origin/master
 	sho     = show --name-status
 	dif     = diff --name-status
 	diffc   = diff --cached
