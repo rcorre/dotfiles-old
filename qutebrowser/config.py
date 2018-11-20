@@ -18,6 +18,8 @@ c.hints.uppercase = True
 # c.hints.find_implementation = 'python' # change to javascript if bad results
 c.fonts.monospace = '"Hack", ' + c.fonts.monospace
 
+config.set('content.register_protocol_handler', True, 'calendar.google.com')
+
 c.url.searchengines['gd'] = \
     'https://godot.readthedocs.io/en/latest/classes/class_{}.html'
 
