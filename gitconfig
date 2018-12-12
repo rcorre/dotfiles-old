@@ -28,6 +28,8 @@
 
 	thisbr = rev-parse --abbrev-ref HEAD
 	pushup = !git push -u origin $(git thisbr)
+
+	all = "!f() { fd -t d -H .git | xargs dirname | sort | uniq | xargs -i git -C {} $@; }; f"
 [color]
 	ui = auto
 [core]
