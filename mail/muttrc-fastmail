@@ -16,7 +16,7 @@ macro index gd "<change-folder> =fastmail/Drafts<enter>" "go to drafts"
 macro index ga "<change-folder> =fastmail/Archive<enter>" "go to archive"
 
 ## Deletion
-macro index a "<save-message>+fastmail/Archive<enter>" "move message to archive"
+macro index A "<save-message>+fastmail/Archive<enter>" "move message to archive"
 macro index \ca "<tag-thread><tag-prefix><save-message>+fastmail/Archive<enter>" "move thread to archive"
 
 source '~/dotfiles/mail/smtp-fastmail'
