@@ -12,3 +12,4 @@ tags
 *.o
 *.use
 *.so
+.venv/
