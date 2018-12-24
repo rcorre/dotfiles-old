@@ -10,3 +10,5 @@
     XF86MonBrightnessDown
 "xtrlock -b"
     Mod4 + Shift + L
+"keybase-gui"
+    Mod4 + Shift + K
