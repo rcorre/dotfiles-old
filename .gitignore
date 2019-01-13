@@ -5,3 +5,4 @@ nvim/plugged/
 nvim/.netrwhist
 weechat/*
 !weechat/*.conf
+qutebrowser/qsettings/
