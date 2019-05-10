@@ -17,6 +17,7 @@ c.content.autoplay = False
 c.hints.uppercase = True
 # c.hints.find_implementation = 'python' # change to javascript if bad results
 c.fonts.monospace = '"Hack", ' + c.fonts.monospace
+c.completion.open_categories = ['quickmarks', 'bookmarks', 'history']
 
 config.set('content.register_protocol_handler', True, 'calendar.google.com')
 
