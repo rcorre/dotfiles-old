@@ -22,7 +22,11 @@ c.completion.open_categories = ['quickmarks', 'bookmarks', 'history']
 config.set('content.register_protocol_handler', True, 'calendar.google.com')
 
 c.url.searchengines['gd'] = \
-    'https://godot.readthedocs.io/en/latest/classes/class_{}.html'
+    'https://docs.godotengine.org/en/latest/search.html?q={}&check_keywords=yes&area=default'
+
+c.url.searchengines['texture'] = 'https://3dtextures.me/?s={}'
+c.url.searchengines['bapi'] = \
+    'https://docs.blender.org/api/2.79b/search.html?q={}'
 
 config.bind('zi', 'zoom-in')
 config.bind('zo', 'zoom-out')

@@ -10,6 +10,7 @@
 	cmendra = commit -a --amend --reuse-message=HEAD
 	co      = checkout
 	fo      = !git fetch && git checkout origin/master
+	fu      = !git fetch upstream && git checkout upstream/master
 	rebo    = rebase origin/master
 	sho     = show --name-status
 	dif     = diff --name-status
@@ -59,3 +60,8 @@
 # vim: noexpandtab
 [commit]
 	gpgsign = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
