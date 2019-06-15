@@ -23,6 +23,9 @@ config.set('content.register_protocol_handler', True, 'calendar.google.com')
 c.url.searchengines['gd'] = \
     'https://docs.godotengine.org/en/latest/search.html?q={}&check_keywords=yes&area=default'
 
+c.url.searchengines['gdissue'] = \
+    'https://github.com/godotengine/godot/issues?utf8=%E2%9C%93&q=is%3Aissue+{}'
+
 c.url.searchengines['texture'] = 'https://3dtextures.me/?s={}'
 c.url.searchengines['bapi'] = \
     'https://docs.blender.org/api/2.79b/search.html?q={}'
