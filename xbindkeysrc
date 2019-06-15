@@ -14,3 +14,15 @@
     Mod4 + Shift + K
 "godot"
     Mod4 + G
+"passmenu"
+    Mod4 + Shift + P
+"qutebrowser --backend webengine"
+    Mod4 + Shift + Q
+"st -t mutt mutt"
+    Mod4 + U
+"sh -c 'maim /tmp/$(date +%s).png -s'"
+    Mod4 + S
+"sh -c 'maim /tmp/$(date +%s).png'"
+    Mod4 + Shift + S
+"sh -c 'maim /tmp/$(date +%s).png -i $(xdotool getactivewindow)'"
+    Mod4 + Control + S
