@@ -2,3 +2,4 @@
 application/pdf=org.pwmt.zathura.desktop
 image/*=sxiv.desktop
 text/html=qutebrowser.desktop
+application/x-bittorrent=transmission-qt.desktop
