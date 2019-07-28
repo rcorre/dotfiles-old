@@ -61,6 +61,8 @@ alias ldg='hledger -f ~/ledger/accounts.dat'
 alias vim=nvim
 alias vims='nvim -S'
 alias lack="ack --pager='less -r'"
+alias clin='xclip -in -sel clip'
+alias clout='xclip -out -sel clip'
 
 up() {
     local p=
