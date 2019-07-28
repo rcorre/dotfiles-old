@@ -31,6 +31,9 @@ c.url.searchengines['texture'] = 'https://3dtextures.me/?s={}'
 c.url.searchengines['bapi'] = \
     'https://docs.blender.org/api/2.79b/search.html?q={}'
 
+c.url.searchengines['gameicon'] = \
+    'https://game-icons.net/search.html?q={}&idx=icons&p=0'
+
 config.bind('zi', 'zoom-in')
 config.bind('zo', 'zoom-out')
 config.bind('gn', 'navigate next')
