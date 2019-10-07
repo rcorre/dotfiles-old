@@ -26,3 +26,7 @@
     Mod4 + Shift + S
 "sh -c 'maim /tmp/$(date +%s).png -i $(xdotool getactivewindow)'"
     Mod4 + Control + S
+"sudo ddcutil setvcp 10 + 20"
+    Mod4 + Up
+"sudo ddcutil setvcp 10 - 20"
+    Mod4 + Down
