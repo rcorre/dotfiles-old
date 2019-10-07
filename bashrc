@@ -55,12 +55,11 @@ fi
 
 alias op="xdg-open"
 alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
-alias oldpass='PASSWORD_STORE_DIR=~/.password-store.old/ pass'
 alias ledger=hledger
 alias ldg='hledger -f ~/ledger/accounts.dat'
 alias vim=nvim
 alias vims='nvim -S'
-alias lack="ack --pager='less -r'"
+alias lag="ag --pager='less -r'"
 
 up() {
     local p=
@@ -70,20 +69,6 @@ up() {
     done
     cd "$p"
 }
-
-if hash rbenv 2>/dev/null; then
-    eval "$(rbenv init -)"
-    export GEM_HOME=$(ruby -e 'print Gem.user_dir')
-    export PATH="$PATH:$GEM_HOME/bin"
-fi
-
-if hash kubectl 2>/dev/null; then
-    source <(kubectl completion bash)
-fi
-
-if hash helm 2>/dev/null; then
-    source <(helm completion bash)
-fi
 
 [[ -d "$HOME/bin" ]] && export PATH="$PATH:$HOME/bin"
 
