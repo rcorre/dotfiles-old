@@ -10,6 +10,6 @@ done &
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
-/usr/bin/feh --bg-center wallpaper.png
+[ -f wallpaper.png ] && /usr/bin/feh --bg-center wallpaper.png || xsetroot -solid black
 /usr/bin/xss-lock -- xtrlock -b &
 exec dwm
