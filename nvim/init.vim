@@ -92,6 +92,10 @@ augroup improved_autoread
 augroup end
 noremap <c-z> :suspend<cr>:silent! checktime<cr>
 
+augroup templates
+  autocmd BufNewFile *.gd exec '0r ' . stdpath('config') . '/skel/skel.gd'
+augroup END
+
 " }}}
 
 " General Keymaps {{{
