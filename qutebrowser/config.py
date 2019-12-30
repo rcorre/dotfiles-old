@@ -33,6 +33,8 @@ c.url.searchengines['bapi'] = \
 
 c.url.searchengines['gameicon'] = \
     'https://game-icons.net/search.html?q={}&idx=icons&p=0'
+c.url.searchengines['library'] = \
+    'https://catalog.wakegov.com/Union/Search?type=Keyword&lookfor={}'
 
 config.bind('zi', 'zoom-in')
 config.bind('zo', 'zoom-out')
