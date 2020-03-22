@@ -15,7 +15,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
-Plug 'calviken/vim-gdscript3'
+Plug 'rafaeldelboni/vim-gdscript3'
 Plug 'dense-analysis/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'puremourning/vimspector'
