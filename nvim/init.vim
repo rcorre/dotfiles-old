@@ -56,7 +56,7 @@ set smartcase
 
 " Folding
 set foldmethod=indent
-set foldnestmax=4
+set foldnestmax=12
 set foldlevelstart=99
 
 " Completion
@@ -212,7 +212,7 @@ let g:fzf_history_dir='~/.local/share/fzf-history'
 
 nnoremap <c-p> :Files<cr>
 nnoremap <c-e> :GFiles<cr>
-nnoremap <c-g> :Rg<cr>
+nnoremap <c-g> :Rg<space>
 nnoremap <c-k> :Rg <c-r><c-w><cr>
 nnoremap <c-h> :Help<cr>
 
