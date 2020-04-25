@@ -1,11 +1,5 @@
 pianobar/state
 pianobar/out
 *.pyc
-nvim/plugged/
-nvim/.netrwhist
 weechat/*
 !weechat/*.conf
-qutebrowser/qsettings/
-nvim/spell/en.utf-8.add.spl
-qutebrowser/autoconfig.yml
-qutebrowser/.mypy_cache/
