@@ -19,7 +19,7 @@ export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc"
 
 # colors and prompt
 alias ls='ls --color=auto'
-alias l='ls -ltr'
+alias l='ls -ltrh'
 [[ -f ~/dotfiles/dircolors.256dark ]] && eval `dircolors ~/dotfiles/dircolors.256dark`
 PS1='[\u@\h \W]\$ '
 
