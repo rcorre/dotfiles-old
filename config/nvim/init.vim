@@ -8,6 +8,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-speeddating'
 Plug 'elzr/vim-json'
@@ -19,6 +20,7 @@ Plug 'rafaeldelboni/vim-gdscript3'
 Plug 'dense-analysis/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'puremourning/vimspector'
+Plug 'thalesmello/webcomplete.vim'
 
 call plug#end()
 
@@ -229,7 +231,7 @@ call ale#linter#Define('gdscript3', {
 \   'name': 'gdscript3',
 \   'lsp': 'socket',
 \   'address': 'localhost:6008',
-\   'project_root': '/tmp/example',
+\   'project_root': '/home/rcore/gamedev/quest',
 \})
 " }}}
 
@@ -239,6 +241,7 @@ call deoplete#custom#option('sources', {
 \})
 
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#sources#webcomplete#script = "~/.config/nvim/plugged/webcomplete.vim/sh/qutebrowser/webcomplete"
 
 inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" :
 \ <SID>check_back_space() ? "\<TAB>" :
