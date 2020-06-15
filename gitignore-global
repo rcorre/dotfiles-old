@@ -13,3 +13,5 @@ tags
 *.use
 *.so
 .venv/
+.ignore
+.mypy_cache/
