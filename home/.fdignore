@@ -3,3 +3,5 @@
 *.use
 *.pyc
 .git/
+.mypy_cache/
+.venv
