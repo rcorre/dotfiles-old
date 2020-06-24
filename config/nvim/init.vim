@@ -213,6 +213,7 @@ nnoremap <c-e> :GFiles<cr>
 nnoremap <c-g> :Rg<space>
 nnoremap <c-k> :Rg <c-r><c-w><cr>
 nnoremap <c-h> :Help<cr>
+nnoremap <c-l> :Lines<cr>
 
 " }}}
 
