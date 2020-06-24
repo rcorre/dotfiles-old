@@ -3,3 +3,7 @@
 *.use
 *.pyc
 .git/
+.clangd/
+CMakeFiles/
+Session.vim
+.tox/
