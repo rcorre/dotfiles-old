@@ -40,7 +40,7 @@
 [user]
 	name = Ryan Roden-Corrent
 	email = ryan@rcorre.net
-	signingkey = 6FD525E9779792EA3B05D6DE4E5072F68872BC04
+	signingkey = "Ryan Roden-Corrent"
 [push]
 	default = current
 [merge]
