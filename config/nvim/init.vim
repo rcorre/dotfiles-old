@@ -105,16 +105,10 @@ inoremap jk <esc>
 " Y yanks to end of line instead of whole line -- more like D and C
 nnoremap Y y$
 
-" format entire file
-nnoremap <leader>= mzgg=G`z<cr>
-
 " jump to previous tab
 let g:lasttab = 1
 nmap gl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
-
-" clipboard paste
-noremap <leader>v :read !xclip -out -sel clip<cr>
 
 " error jumping (first, next, previous)
 nnoremap ge :lfirst<cr>
@@ -130,10 +124,6 @@ noremap sl :s/\<<c-r><c-w>\>//g<left><left>
 noremap sg :%s/\<<c-r><c-w>\>//g<left><left>
 noremap sc :%s/\<<c-r><c-w>\>//gc<left><left><left>
 
-" find symbol in current directory
-map <leader>f :vimgrep  ./**<left><left><left><left><left>
-map <leader>F :vimgrep <c-r><c-w> src/**<cr>
-
 " delete trailing whitespace
 nmap <leader>dt :%s/\s\+$//g<cr>
 
@@ -148,7 +138,7 @@ nmap <leader>ef :EditFtp<CR>
 nnoremap <c-l> :set spell! spell?<cr>
 
 " insert a uuid
-inoremap <c-u> <c-r>=system("uuidgen \| tr -d '\n'")<cr>
+inoremap <leader>u <c-r>=system("uuidgen \| tr -d '\n'")<cr>
 
 " }}}
 
