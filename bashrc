@@ -70,4 +70,7 @@ up() {
 
 [[ -d "$HOME/bin" ]] && export PATH="$PATH:$HOME/bin"
 
-[ -f /etc/profile.d/autojump.bash ] && . /etc/profile.d/autojump.bash
+eval "$(fasd --init auto)"
+alias j=z
+export TERM=xterm-256color
+[ -f /opt/asdf-vm/asdf.sh ] && . /opt/asdf-vm/asdf.sh
