@@ -12,6 +12,7 @@ export HISTSIZE=50000
 export HISTCONTROL=erasedups
 export XDG_DESKTOP_DIR="$HOME"
 export FZF_DEFAULT_COMMAND='fd --hidden --no-ignore-vcs --type l --type f --ignore-file ~/dotfiles/fdignore'
+export RIPGREP_CONFIG_PATH=~/.ripgreprc
 
 # colors and prompt
 alias ls='ls --color=auto'
