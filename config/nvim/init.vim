@@ -153,6 +153,7 @@ noremap <leader>gs :Gstatus<cr>
 noremap <leader>gd :Gdiff<cr>
 noremap <leader>gD :Gdiff HEAD~<cr>
 noremap <leader>gp :Gpush<cr>
+noremap <leader>gb :Gblame<cr>
 
 set diffopt="filler,vertical"
 
