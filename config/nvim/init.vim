@@ -118,6 +118,8 @@ nnoremap ge :lfirst<cr>
 nnoremap gn :lnext<cr>
 nnoremap gp :lprevious<cr>
 nnoremap gc :lclose<cr>
+nnoremap g] :cnext<cr>
+nnoremap g[ :cprevious<cr>
 
 " command to save and exit while creating a session file
 command! Bye :mksession! | :wqall
