@@ -10,11 +10,8 @@ export EDITOR=nvim
 export BROWSER=qutebrowser
 export HISTSIZE=50000
 export HISTCONTROL=erasedups
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
 export XDG_DESKTOP_DIR="$HOME"
 export FZF_DEFAULT_COMMAND='fd --hidden --no-ignore-vcs --type l --type f --ignore-file ~/dotfiles/fdignore'
-export FZF_DEFAULT_OPTS="--bind 'ctrl-y:execute(echo {} | xclip -r -sel clip)+abort'"
 
 # colors and prompt
 alias ls='ls --color=auto'
@@ -55,14 +52,11 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
 fi
 
 alias op="xdg-open"
-alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
-alias ledger=hledger
-alias ldg='hledger -f ~/ledger/accounts.dat'
 alias vim=nvim
 alias vims='nvim -S'
-alias lag="ag --pager='less -r'"
-alias clin='xclip -in -sel clip'
-alias clout='xclip -out -sel clip'
+alias ag="rg"
+alias ci='xclip -in -sel clip'
+alias co='xclip -out -sel clip'
 
 up() {
     local p=
