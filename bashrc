@@ -8,7 +8,7 @@
 export TERMINAL=st
 export EDITOR=nvim
 export BROWSER=qutebrowser
-export HISTSIZE=10000
+export HISTSIZE=50000
 export HISTCONTROL=erasedups
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
@@ -24,6 +24,7 @@ PS1='[\u@\h \W]\$ '
 
 set -o vi                # vi command line editing
 shopt -s direxpand       # expand directory variables with <TAB> after /
+shopt -s histappend      # append to history, dont overwrite
 export GREP_COLOR='1;32' # green grep result highlight
 stty -ixon               # don't let <c-s> stop vim
 
