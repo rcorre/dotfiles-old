@@ -58,7 +58,7 @@ urgency.age.coefficient=1.0
 urgency.age.max=365
 
 # Sync credentials/settings stored separately
-include ~/.taskrc.sync
+# include ~/.taskrc.sync
 
 # url uda for qutebrowser userscripts taskadd and taskopen
 uda.url.type=string

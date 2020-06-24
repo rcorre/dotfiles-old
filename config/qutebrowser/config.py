@@ -16,7 +16,7 @@ c.content.plugins = True
 c.content.autoplay = False
 c.hints.uppercase = True
 # c.hints.find_implementation = 'python' # change to javascript if bad results
-c.fonts.monospace = '"Hack", ' + c.fonts.monospace
+c.fonts.default_family = "Hack"
 c.completion.open_categories = ['quickmarks', 'bookmarks', 'history']
 
 config.set('content.register_protocol_handler', True, 'calendar.google.com')
@@ -59,3 +59,7 @@ config.bind('<ctrl+e>', 'edit-command -r', mode='command')
 
 if (config.configdir / 'local_config.py').exists():
     config.source('local_config.py')
+
+c.content.javascript.enabled = False
+if (config.configdir / 'js_whitelist.py').exists():
+    config.source('js_whitelist.py')

@@ -1,0 +1,32 @@
+XF86AudioRaiseVolume
+    ponymix inc 5 --max 150 && ~/dotfiles/dwmstatus
+XF86AudioLowerVolume
+    ponymix dec 5 --max 150 && ~/dotfiles/dwmstatus
+XF86AudioMute
+    ponymix toggle && ~/dotfiles/dwmstatus
+XF86MonBrightnessUp
+    xbacklight -inc 10
+XF86MonBrightnessDown
+    xbacklight -dec 10
+super + shift + l
+    xtrlock -b
+super + shift + k
+    keybase-gui
+super + g
+    godot
+super + shift + p
+    passmenu
+super + shift + q
+    qutebrowser --backend webengine
+super + u
+    st -t mutt mutt
+super + s
+    sh -c 'maim /tmp/$(date +%s).png -s'
+super + shift + s
+    sh -c 'maim /tmp/$(date +%s).png'
+super + control + s
+    sh -c 'maim /tmp/$(date +%s).png -i $(xdotool getactivewindow)'
+super + Up
+    sudo light -A 10
+super + Down
+    sudo light -U 10

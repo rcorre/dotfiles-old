@@ -12,11 +12,11 @@ export HISTSIZE=50000
 export HISTCONTROL=erasedups
 export XDG_DESKTOP_DIR="$HOME"
 export FZF_DEFAULT_COMMAND='fd --hidden --no-ignore-vcs --type l --type f --ignore-file ~/dotfiles/fdignore'
-export RIPGREP_CONFIG_PATH=~/.ripgreprc
+export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc"
 
 # colors and prompt
 alias ls='ls --color=auto'
-alias l='ls -ltr'
+alias l='ls -ltrh'
 [[ -f ~/dotfiles/dircolors.256dark ]] && eval `dircolors ~/dotfiles/dircolors.256dark`
 PS1='[\u@\h \W]\$ '
 
@@ -70,7 +70,8 @@ up() {
 
 [[ -d "$HOME/bin" ]] && export PATH="$PATH:$HOME/bin"
 
-eval "$(fasd --init auto)"
-alias j=z
-export TERM=xterm-256color
+command -v fasd >/dev/null 2>&1 && eval "$(fasd --init auto)"
 [ -f /opt/asdf-vm/asdf.sh ] && . /opt/asdf-vm/asdf.sh
+alias j=z
+alias ag=rg
+export TERM=xterm-256color

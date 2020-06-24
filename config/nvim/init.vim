@@ -13,15 +13,12 @@ Plug 'tpope/vim-speeddating'
 Plug 'elzr/vim-json'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'fatih/vim-go'
-Plug 'sebdah/vim-delve'
-Plug 'mileszs/ack.vim'
-Plug 'neomake/neomake'
 Plug 'junegunn/fzf.vim'
-Plug 'lifepillar/vim-mucomplete'
-Plug 'python-mode/python-mode', { 'branch': 'develop' }
-Plug 'calviken/vim-gdscript3'
 Plug 'godlygeek/tabular'
+Plug 'rafaeldelboni/vim-gdscript3'
+Plug 'dense-analysis/ale'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'puremourning/vimspector'
 
 call plug#end()
 
@@ -59,7 +56,7 @@ set smartcase
 
 " Folding
 set foldmethod=indent
-set foldnestmax=4
+set foldnestmax=12
 set foldlevelstart=99
 
 " Completion
@@ -215,31 +212,41 @@ let g:fzf_history_dir='~/.local/share/fzf-history'
 
 nnoremap <c-p> :Files<cr>
 nnoremap <c-e> :GFiles<cr>
-nnoremap <c-g> :Ag<cr>
+nnoremap <c-g> :Rg<space>
+nnoremap <c-k> :Rg <c-r><c-w><cr>
 nnoremap <c-h> :Help<cr>
 
 " }}}
 
-" neomake {{{
-
-autocmd! BufWritePost * Neomake
-let g:neomake_logfile='/tmp/neomake.log'
-
-" }}}
-
-" mucomplete {{{
-"
-set shortmess+=c   " Shut off completion messages
-set belloff+=ctrlg " If Vim beeps during completion
-
-let g:mucomplete#enable_auto_at_startup=1
-
-" }}}
-"
 " tabular {{{
 "
 nnoremap <leader>a :Tabularize /
 
+" }}}
+
+" ale {{{
+call ale#linter#Define('gdscript3', {
+\   'name': 'gdscript3',
+\   'lsp': 'socket',
+\   'address': 'localhost:6008',
+\   'project_root': '/tmp/example',
+\})
+" }}}
+
+" deoplete {{{
+call deoplete#custom#option('sources', {
+\ '_': ['ale'],
+\})
+
+let g:deoplete#enable_at_startup = 1
+
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" :
+\ <SID>check_back_space() ? "\<TAB>" :
+\ deoplete#mappings#manual_complete()
+function! s:check_back_space() abort "{{{
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
