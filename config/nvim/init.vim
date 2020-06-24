@@ -17,9 +17,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf.vim'
 Plug 'godlygeek/tabular'
 Plug 'rafaeldelboni/vim-gdscript3'
-Plug 'dense-analysis/ale'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'puremourning/vimspector'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -140,7 +138,7 @@ nmap <leader>ev :EditVimrc<CR>
 nmap <leader>el :EditVimLocal<CR>
 nmap <leader>ef :EditFtp<CR>
 
-nnoremap <c-l> :set spell! spell?<cr>
+nnoremap <leader>s :set spell! spell?<cr>
 
 " insert a uuid
 inoremap <leader>u <c-r>=system("uuidgen \| tr -d '\n'")<cr>
@@ -222,30 +220,41 @@ nnoremap <c-l> :Lines<cr>
 nnoremap <leader>a :Tabularize /
 
 " }}}
+"
+" coc {{{
 
-" ale {{{
-call ale#linter#Define('gdscript3', {
-\   'name': 'gdscript3',
-\   'lsp': 'socket',
-\   'address': 'localhost:6008',
-\   'project_root': '/tmp/example',
-\})
-" }}}
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+set hidden
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
 
-" deoplete {{{
-call deoplete#custom#option('sources', {
-\ '_': ['ale'],
-\})
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-let g:deoplete#enable_at_startup = 1
 
-inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" :
-\ <SID>check_back_space() ? "\<TAB>" :
-\ deoplete#mappings#manual_complete()
-function! s:check_back_space() abort "{{{
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gI <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+let g:coc_filetype_map = { 'proto': 'cpp' }
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+xmap <leader>f <Plug>(coc-format-selected)
+nmap <leader>f <Plug>(coc-format-selected)
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
