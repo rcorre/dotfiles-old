@@ -76,6 +76,9 @@ set inccommand=nosplit
 " don't redraw when executing things like macros
 set lazyredraw
 
+" yank/paste to/from system clipboard
+set clipboard=unnamed
+
 " set mapleader here so it applies to all future keymaps
 let mapleader = "," " use , as leader character
 
