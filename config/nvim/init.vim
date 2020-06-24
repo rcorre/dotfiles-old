@@ -28,6 +28,7 @@ call plug#end()
 " General Settings {{{
 
 filetype plugin indent on
+let g:python3_host_prog = '/usr/bin/python3'
 
 " appearance and information
 colorscheme solarized
