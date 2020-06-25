@@ -56,7 +56,6 @@
 [gitreview]
     remote = origin
     rebase = false
-
 # vim: noexpandtab
 [commit]
 	gpgsign = true
@@ -65,3 +64,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[includeIf "gitdir:~/ghe/"]
+    path = ~/.gitconfig-ghe
