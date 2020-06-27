@@ -8,13 +8,10 @@
 export TERMINAL=st
 export EDITOR=nvim
 export BROWSER=qutebrowser
-export HISTSIZE=10000
+export HISTSIZE=50000
 export HISTCONTROL=erasedups
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
 export XDG_DESKTOP_DIR="$HOME"
 export FZF_DEFAULT_COMMAND='fd --hidden --no-ignore-vcs --type l --type f --ignore-file ~/dotfiles/fdignore'
-export FZF_DEFAULT_OPTS="--bind 'ctrl-y:execute(echo {} | xclip -r -sel clip)+abort'"
 export RIPGREP_CONFIG_PATH="$HOME/dotfiles/ripgreprc"
 
 # colors and prompt
@@ -25,6 +22,7 @@ PS1='[\u@\h \W]\$ '
 
 set -o vi                # vi command line editing
 shopt -s direxpand       # expand directory variables with <TAB> after /
+shopt -s histappend      # append to history, dont overwrite
 export GREP_COLOR='1;32' # green grep result highlight
 stty -ixon               # don't let <c-s> stop vim
 
@@ -55,14 +53,11 @@ if [[ "$SSH_AGENT_PID" == "" ]]; then
 fi
 
 alias op="xdg-open"
-alias mntusb="sudo mount -o umask=0,uid=$USER,gid=$USER"
-alias ledger=hledger
-alias ldg='hledger -f ~/ledger/accounts.dat'
 alias vim=nvim
 alias vims='nvim -S'
-alias lag="ag --pager='less -r'"
-alias clin='xclip -in -sel clip'
-alias clout='xclip -out -sel clip'
+alias ag="rg"
+alias ci='xclip -in -sel clip'
+alias co='xclip -out -sel clip'
 
 up() {
     local p=
@@ -75,7 +70,8 @@ up() {
 
 [[ -d "$HOME/bin" ]] && export PATH="$PATH:$HOME/bin"
 
-[ -f /etc/profile.d/autojump.bash ] && . /etc/profile.d/autojump.bash
 command -v fasd >/dev/null 2>&1 && eval "$(fasd --init auto)"
+[ -f /opt/asdf-vm/asdf.sh ] && . /opt/asdf-vm/asdf.sh
 alias j=z
 alias ag=rg
+export TERM=xterm-256color

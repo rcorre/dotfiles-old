@@ -21,6 +21,9 @@ c.fonts.default_family = "Hack"
 c.completion.open_categories = ['quickmarks', 'bookmarks', 'history']
 
 config.set('content.register_protocol_handler', True, 'calendar.google.com')
+config.set('content.notifications', True, 'calendar.google.com')
+config.set('content.register_protocol_handler', False, 'mail.google.com')
+config.set('content.notifications', False, 'reddit.com')
 
 c.url.searchengines['gd'] = \
     'https://docs.godotengine.org/en/latest/search.html?q={}&check_keywords=yes&area=default'

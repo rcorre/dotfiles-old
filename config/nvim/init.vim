@@ -11,6 +11,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-rhubarb'
 Plug 'elzr/vim-json'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -29,6 +30,7 @@ call plug#end()
 " General Settings {{{
 
 filetype plugin indent on
+let g:python3_host_prog = '/usr/bin/python3'
 
 " appearance and information
 colorscheme solarized
@@ -76,6 +78,9 @@ set inccommand=nosplit
 " don't redraw when executing things like macros
 set lazyredraw
 
+" yank/paste to/from system clipboard
+set clipboard=unnamed
+
 " set mapleader here so it applies to all future keymaps
 let mapleader = "," " use , as leader character
 
@@ -105,22 +110,18 @@ inoremap jk <esc>
 " Y yanks to end of line instead of whole line -- more like D and C
 nnoremap Y y$
 
-" format entire file
-nnoremap <leader>= mzgg=G`z<cr>
-
 " jump to previous tab
 let g:lasttab = 1
 nmap gl :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
-
-" clipboard paste
-noremap <leader>v :read !xclip -out -sel clip<cr>
 
 " error jumping (first, next, previous)
 nnoremap ge :lfirst<cr>
 nnoremap gn :lnext<cr>
 nnoremap gp :lprevious<cr>
 nnoremap gc :lclose<cr>
+nnoremap g] :cnext<cr>
+nnoremap g[ :cprevious<cr>
 
 " command to save and exit while creating a session file
 command! Bye :mksession! | :wqall
@@ -129,10 +130,6 @@ command! Bye :mksession! | :wqall
 noremap sl :s/\<<c-r><c-w>\>//g<left><left>
 noremap sg :%s/\<<c-r><c-w>\>//g<left><left>
 noremap sc :%s/\<<c-r><c-w>\>//gc<left><left><left>
-
-" find symbol in current directory
-map <leader>f :vimgrep  ./**<left><left><left><left><left>
-map <leader>F :vimgrep <c-r><c-w> src/**<cr>
 
 " delete trailing whitespace
 nmap <leader>dt :%s/\s\+$//g<cr>
@@ -148,7 +145,7 @@ nmap <leader>ef :EditFtp<CR>
 nnoremap <c-l> :set spell! spell?<cr>
 
 " insert a uuid
-inoremap <c-u> <c-r>=system("uuidgen \| tr -d '\n'")<cr>
+inoremap <leader>u <c-r>=system("uuidgen \| tr -d '\n'")<cr>
 
 " }}}
 
@@ -158,6 +155,7 @@ noremap <leader>gs :Gstatus<cr>
 noremap <leader>gd :Gdiff<cr>
 noremap <leader>gD :Gdiff HEAD~<cr>
 noremap <leader>gp :Gpush<cr>
+noremap <leader>gb :Gblame<cr>
 
 set diffopt="filler,vertical"
 
@@ -217,6 +215,7 @@ nnoremap <c-e> :GFiles<cr>
 nnoremap <c-g> :Rg<space>
 nnoremap <c-k> :Rg <c-r><c-w><cr>
 nnoremap <c-h> :Help<cr>
+nnoremap <c-l> :Lines<cr>
 
 " }}}
 

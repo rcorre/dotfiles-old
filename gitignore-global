@@ -16,3 +16,5 @@ tags
 .ignore
 .mypy_cache/
 .clangd/
+.vim/
+*.orig
