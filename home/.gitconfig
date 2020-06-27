@@ -23,13 +23,11 @@
 	vim     = !nvim -p $(git diff HEAD~ --name-only)
 	sync    = !git pull --no-edit && git push
 	wip     = !git add . && git cm wip && git push origin HEAD:wip -f
+	pu      = !git push -u
 
 	# identifying and removing merged branches
 	junk = "!f() { git for-each-ref refs/heads --format '%(refname:strip=2)' --merged $1; }; f"
 	deljunk = "!f() { git branch -D $(git junk HEAD); }; f"
-
-	thisbr = rev-parse --abbrev-ref HEAD
-	pushup = !git push -u origin $(git thisbr)
 
 	all = "!f() { fd -t d -H .git | xargs dirname | sort | uniq | while read d; do echo ---$d--- && git -C $d $@; done; }; f"
 [color]
