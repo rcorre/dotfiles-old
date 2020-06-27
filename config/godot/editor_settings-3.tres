@@ -1,25 +1,25 @@
-[gd_resource type="EditorSettings" load_steps=9 format=2]
+[gd_resource type="EditorSettings" load_steps=11 format=2]
 
 [sub_resource type="InputEventKey" id=1]
 control = true
 command = true
-scancode = 82
+scancode = 87
 
 [sub_resource type="InputEventKey" id=2]
-shift = true
 control = true
 command = true
 scancode = 82
 
 [sub_resource type="InputEventKey" id=3]
+shift = true
 control = true
 command = true
-scancode = 80
+scancode = 82
 
 [sub_resource type="InputEventKey" id=4]
 control = true
 command = true
-scancode = 88
+scancode = 80
 
 [sub_resource type="InputEventKey" id=5]
 control = true
@@ -34,12 +34,20 @@ scancode = 88
 [sub_resource type="InputEventKey" id=7]
 control = true
 command = true
-scancode = 73
+scancode = 88
 
 [sub_resource type="InputEventKey" id=8]
 control = true
 command = true
+scancode = 73
+
+[sub_resource type="InputEventKey" id=9]
+control = true
+command = true
 scancode = 84
+
+[sub_resource type="InputEventKey" id=10]
+scancode = 16777350
 
 [resource]
 interface/editor/code_font_size = 15.0
@@ -176,4 +184,5 @@ network/language_server/enable_smart_resolve = true
 network/language_server/show_native_symbols_in_editor = true
 network/language_server/use_thread = false
 projects/::home::rcorre::gamedev::quest = "/home/rcorre/gamedev/quest"
-shortcuts = [ "editor/play", SubResource( 1 ), "editor/play_scene", SubResource( 2 ), "editor/quick_open_scene", SubResource( 3 ), "file_dialog/delete", SubResource( 4 ), "filesystem_dock/delete", SubResource( 5 ), "scene_tree/delete_no_confirm", SubResource( 6 ), "scene_tree/instance_scene", SubResource( 7 ), "spatial_editor/transform_dialog", SubResource( 8 ) ]
+projects/::home::rcorre::gamedev::fps = "/home/rcorre/gamedev/fps"
+shortcuts = [ "editor/close_scene", SubResource( 1 ), "editor/play", SubResource( 2 ), "editor/play_scene", SubResource( 3 ), "editor/quick_open_scene", SubResource( 4 ), "file_dialog/delete", SubResource( 5 ), "filesystem_dock/delete", SubResource( 6 ), "scene_tree/delete_no_confirm", SubResource( 7 ), "scene_tree/instance_scene", SubResource( 8 ), "spatial_editor/transform_dialog", SubResource( 9 ), "spatial_editor/view_cinematic_preview", SubResource( 10 ) ]
