@@ -12,11 +12,13 @@ super + shift + l
     xtrlock -b
 super + shift + k
     keybase-gui
+super + Return
+    st
 super + g
-    godot
+    godot ~/gamedev/quest/project.godot
 super + shift + p
     passmenu
-super + shift + q
+super + q
     qutebrowser --backend webengine
 super + u
     st -t mutt mutt
