@@ -19,6 +19,7 @@ Plug 'rafaeldelboni/vim-gdscript3'
 Plug 'dense-analysis/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'puremourning/vimspector'
+Plug 'vim-test/vim-test'
 
 call plug#end()
 
@@ -247,6 +248,11 @@ function! s:check_back_space() abort "{{{
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction"}}}
+" }}}
+
+" vim-test {{{
+nnoremap <leader>t :TestNearest<cr>
+nnoremap <leader>T :TestFile<cr>
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
