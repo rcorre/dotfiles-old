@@ -14,6 +14,9 @@
 	rebo    = rebase origin/master
 	sho     = show --name-status
 	dif     = diff --name-status
+	difo    = diff --name-only
+	difc    = diff --cached --name-status
+	difco   = diff --cached --name-only
 	diffc   = diff --cached
 	lo      = log --oneline
 	graph   = log --graph --decorate=full --oneline --all
