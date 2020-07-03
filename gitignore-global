@@ -13,3 +13,8 @@ tags
 *.use
 *.so
 .venv/
+.ignore
+.mypy_cache/
+.clangd/
+.vim/
+*.orig

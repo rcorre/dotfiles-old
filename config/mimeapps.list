@@ -1,1 +1,7 @@
-/home/rcorre/dotfiles/.config/mimeapps.list
+[Default Applications]
+application/pdf=org.pwmt.zathura.desktop
+image/*=sxiv.desktop
+text/html=qutebrowser.desktop
+application/x-bittorrent=transmission-qt.desktop
+x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop

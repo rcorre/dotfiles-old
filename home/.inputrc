@@ -10,3 +10,5 @@ set enable-bracketed-paste On
 
 # delete to previous path segment
 C-k:unix-filename-rubout
+
+set bell-style none

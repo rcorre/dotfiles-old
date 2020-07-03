@@ -14,12 +14,16 @@ c.tabs.new_position.unrelated = 'next'
 c.downloads.location.directory = '/tmp'
 c.content.plugins = True
 c.content.autoplay = False
+c.content.geolocation = False
 c.hints.uppercase = True
 # c.hints.find_implementation = 'python' # change to javascript if bad results
 c.fonts.default_family = "Hack"
 c.completion.open_categories = ['quickmarks', 'bookmarks', 'history']
 
 config.set('content.register_protocol_handler', True, 'calendar.google.com')
+config.set('content.notifications', True, 'calendar.google.com')
+config.set('content.register_protocol_handler', False, 'mail.google.com')
+config.set('content.notifications', False, 'reddit.com')
 
 c.url.searchengines['gd'] = \
     'https://docs.godotengine.org/en/latest/search.html?q={}&check_keywords=yes&area=default'
@@ -36,30 +40,39 @@ c.url.searchengines['gameicon'] = \
 c.url.searchengines['library'] = \
     'https://catalog.wakegov.com/Union/Search?type=Keyword&lookfor={}'
 
-config.bind('zi', 'zoom-in')
-config.bind('zo', 'zoom-out')
-config.bind('gn', 'navigate next')
-config.bind('>', 'navigate next')
-config.bind('gp', 'navigate prev')
-config.bind('<', 'navigate prev')
-config.bind('gh', 'back -t')
-config.bind('ao', 'download-open')
-config.bind('td', 'tab-give')
-config.bind('M', 'bookmark-add --toggle')
-config.bind('<ctrl+e>', 'edit-url')
-config.bind('<ctrl+shift+e>', 'edit-url -t')
-config.bind('zz', 'zoom')
-config.bind(',ev', 'config-edit')
-config.bind(';r', 'hint --rapid all tab-bg')
-config.bind(';m', 'hint links run :bookmark-add {hint-url} ""')
-config.bind('ta', 'set-cmd-text -s :spawn --userscript taskadd')
+js_whitelist = config.configdir / 'js_whitelist.py'
 
-config.bind('<ctrl+k>', 'rl-backward-kill-word', mode='command')
-config.bind('<ctrl+e>', 'edit-command -r', mode='command')
+c.bindings.commands = {
+    'normal': {
+        'zi': 'zoom-in',
+        'zo': 'zoom-out',
+        'gn': 'navigate next',
+        '>': 'navigate next',
+        'gp': 'navigate prev',
+        '<': 'navigate prev',
+        'gh': 'back -t',
+        'ao': 'download-open',
+        'td': 'tab-give',
+        'M': 'bookmark-add --toggle',
+        '<ctrl+e>': 'edit-url',
+        '<ctrl+shift+e>': 'edit-url -t',
+        'zz': 'zoom',
+        ',ev': 'config-edit',
+        ',ej': 'spawn st -e nvim {}'.format(js_whitelist),
+        ';r': 'hint --rapid all tab-bg',
+        ';m': 'hint links run :bookmark-add {hint-url} ""',
+        'ta': 'set-cmd-text -s :spawn --userscript taskadd',
+    },
+    'command': {
+        '<ctrl+k>': 'rl-backward-kill-word',
+        '<ctrl+e>': 'edit-command -r',
+    }
+}
+
 
 if (config.configdir / 'local_config.py').exists():
     config.source('local_config.py')
 
 c.content.javascript.enabled = False
-if (config.configdir / 'js_whitelist.py').exists():
+if js_whitelist.exists():
     config.source('js_whitelist.py')
