@@ -4,7 +4,7 @@ while true; do
     sleep 1s
 done &
 
-exec /usr/bin/sxhkd &
+/usr/bin/xbindkeys
 /usr/bin/numlockx on
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
