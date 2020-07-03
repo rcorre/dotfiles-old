@@ -1,4 +1,4 @@
-[gd_resource type="EditorSettings" load_steps=11 format=2]
+[gd_resource type="EditorSettings" load_steps=13 format=2]
 
 [sub_resource type="InputEventKey" id=1]
 control = true
@@ -48,6 +48,13 @@ scancode = 84
 
 [sub_resource type="InputEventKey" id=10]
 scancode = 16777350
+
+[sub_resource type="InputEventKey" id=11]
+scancode = 90
+
+[sub_resource type="InputEventKey" id=12]
+shift = true
+scancode = 90
 
 [resource]
 interface/editor/code_font_size = 15.0
@@ -185,4 +192,4 @@ network/language_server/show_native_symbols_in_editor = true
 network/language_server/use_thread = false
 projects/::home::rcorre::gamedev::quest = "/home/rcorre/gamedev/quest"
 projects/::home::rcorre::gamedev::fps = "/home/rcorre/gamedev/fps"
-shortcuts = [ "editor/close_scene", SubResource( 1 ), "editor/play", SubResource( 2 ), "editor/play_scene", SubResource( 3 ), "editor/quick_open_scene", SubResource( 4 ), "file_dialog/delete", SubResource( 5 ), "filesystem_dock/delete", SubResource( 6 ), "scene_tree/delete_no_confirm", SubResource( 7 ), "scene_tree/instance_scene", SubResource( 8 ), "spatial_editor/transform_dialog", SubResource( 9 ), "spatial_editor/view_cinematic_preview", SubResource( 10 ) ]
+shortcuts = [ "editor/close_scene", SubResource( 1 ), "editor/play", SubResource( 2 ), "editor/play_scene", SubResource( 3 ), "editor/quick_open_scene", SubResource( 4 ), "file_dialog/delete", SubResource( 5 ), "filesystem_dock/delete", SubResource( 6 ), "scene_tree/delete_no_confirm", SubResource( 7 ), "scene_tree/instance_scene", SubResource( 8 ), "spatial_editor/transform_dialog", SubResource( 9 ), "spatial_editor/view_cinematic_preview", SubResource( 10 ), "spatial_editor/view_display_normal", SubResource( 11 ), "spatial_editor/view_display_wireframe", SubResource( 12 ) ]
