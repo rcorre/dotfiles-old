@@ -232,6 +232,7 @@ call ale#linter#Define('gdscript3', {
 \   'address': 'localhost:6008',
 \   'project_root': '/tmp/example',
 \})
+let g:ale_linters={'rust': ['rls']}
 " }}}
 
 " deoplete {{{
