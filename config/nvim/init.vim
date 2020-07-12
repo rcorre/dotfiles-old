@@ -79,7 +79,7 @@ set inccommand=nosplit
 set lazyredraw
 
 " yank/paste to/from system clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " set mapleader here so it applies to all future keymaps
 let mapleader = "," " use , as leader character
