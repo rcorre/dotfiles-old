@@ -58,6 +58,7 @@ alias vims='nvim -S'
 alias ag="rg"
 alias ci='xclip -in -sel clip'
 alias co='xclip -out -sel clip'
+alias cg='cd $(git rev-parse --show-toplevel)'
 
 up() {
     local p=
