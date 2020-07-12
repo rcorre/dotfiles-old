@@ -1,4 +1,4 @@
-[gd_resource type="EditorSettings" load_steps=13 format=2]
+[gd_resource type="EditorSettings" load_steps=15 format=2]
 
 [sub_resource type="InputEventKey" id=1]
 control = true
@@ -6,30 +6,31 @@ command = true
 scancode = 87
 
 [sub_resource type="InputEventKey" id=2]
+shift = true
+control = true
+command = true
+scancode = 78
+
+[sub_resource type="InputEventKey" id=3]
+control = true
+command = true
+scancode = 78
+
+[sub_resource type="InputEventKey" id=4]
 control = true
 command = true
 scancode = 82
 
-[sub_resource type="InputEventKey" id=3]
+[sub_resource type="InputEventKey" id=5]
 shift = true
 control = true
 command = true
 scancode = 82
 
-[sub_resource type="InputEventKey" id=4]
-control = true
-command = true
-scancode = 80
-
-[sub_resource type="InputEventKey" id=5]
-control = true
-command = true
-scancode = 88
-
 [sub_resource type="InputEventKey" id=6]
 control = true
 command = true
-scancode = 88
+scancode = 80
 
 [sub_resource type="InputEventKey" id=7]
 control = true
@@ -39,20 +40,30 @@ scancode = 88
 [sub_resource type="InputEventKey" id=8]
 control = true
 command = true
-scancode = 73
+scancode = 88
 
 [sub_resource type="InputEventKey" id=9]
 control = true
 command = true
-scancode = 84
+scancode = 88
 
 [sub_resource type="InputEventKey" id=10]
-scancode = 16777350
+control = true
+command = true
+scancode = 73
 
 [sub_resource type="InputEventKey" id=11]
-scancode = 90
+control = true
+command = true
+scancode = 84
 
 [sub_resource type="InputEventKey" id=12]
+scancode = 16777350
+
+[sub_resource type="InputEventKey" id=13]
+scancode = 90
+
+[sub_resource type="InputEventKey" id=14]
 shift = true
 scancode = 90
 
@@ -192,4 +203,5 @@ network/language_server/show_native_symbols_in_editor = true
 network/language_server/use_thread = false
 projects/::home::rcorre::gamedev::quest = "/home/rcorre/gamedev/quest"
 projects/::home::rcorre::gamedev::fps = "/home/rcorre/gamedev/fps"
-shortcuts = [ "editor/close_scene", SubResource( 1 ), "editor/play", SubResource( 2 ), "editor/play_scene", SubResource( 3 ), "editor/quick_open_scene", SubResource( 4 ), "file_dialog/delete", SubResource( 5 ), "filesystem_dock/delete", SubResource( 6 ), "scene_tree/delete_no_confirm", SubResource( 7 ), "scene_tree/instance_scene", SubResource( 8 ), "spatial_editor/transform_dialog", SubResource( 9 ), "spatial_editor/view_cinematic_preview", SubResource( 10 ), "spatial_editor/view_display_normal", SubResource( 11 ), "spatial_editor/view_display_wireframe", SubResource( 12 ) ]
+editors/3d/navigation/show_viewport_rotation_gizmo = true
+shortcuts = [ "editor/close_scene", SubResource( 1 ), "editor/new_inherited_scene", SubResource( 2 ), "editor/new_scene", SubResource( 3 ), "editor/play", SubResource( 4 ), "editor/play_scene", SubResource( 5 ), "editor/quick_open_scene", SubResource( 6 ), "file_dialog/delete", SubResource( 7 ), "filesystem_dock/delete", SubResource( 8 ), "scene_tree/delete_no_confirm", SubResource( 9 ), "scene_tree/instance_scene", SubResource( 10 ), "spatial_editor/transform_dialog", SubResource( 11 ), "spatial_editor/view_cinematic_preview", SubResource( 12 ), "spatial_editor/view_display_normal", SubResource( 13 ), "spatial_editor/view_display_wireframe", SubResource( 14 ) ]
