@@ -21,6 +21,7 @@ Plug 'rafaeldelboni/vim-gdscript3'
 Plug 'dense-analysis/ale'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'puremourning/vimspector'
+Plug 'vim-test/vim-test'
 Plug 'thalesmello/webcomplete.vim'
 
 call plug#end()
@@ -232,6 +233,7 @@ call ale#linter#Define('gdscript3', {
 \   'address': 'localhost:6008',
 \   'project_root': '/home/rcore/gamedev/quest',
 \})
+let g:ale_linters={'rust': ['rls']}
 " }}}
 
 " deoplete {{{
@@ -249,6 +251,11 @@ function! s:check_back_space() abort "{{{
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction"}}}
+" }}}
+
+" vim-test {{{
+nnoremap <leader>t :TestNearest<cr>
+nnoremap <leader>T :TestSuite<cr>
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
