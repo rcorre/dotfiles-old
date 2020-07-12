@@ -255,7 +255,7 @@ endfunction"}}}
 
 " vim-test {{{
 nnoremap <leader>t :TestNearest<cr>
-nnoremap <leader>T :TestFile<cr>
+nnoremap <leader>T :TestSuite<cr>
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
