@@ -1,0 +1,38 @@
+"ponymix dec 5 --max 150 && ~/dotfiles/dwmstatus"
+    XF86AudioLowerVolume
+"ponymix dec 5 --max 150 && ~/dotfiles/dwmstatus"
+    Mod4 + Left
+"ponymix inc 5 --max 150 && ~/dotfiles/dwmstatus"
+    XF86AudioRaiseVolume
+"ponymix inc 5 --max 150 && ~/dotfiles/dwmstatus"
+    Mod4 + Right
+"ponymix toggle && ~/dotfiles/dwmstatus"
+    XF86AudioMute
+"xbacklight -inc 10"
+    XF86MonBrightnessUp
+"xbacklight -dec 10"
+    XF86MonBrightnessDown
+"xtrlock -b"
+    Mod4 + Shift + L
+"keybase-gui"
+    Mod4 + Shift + K
+"godot"
+    Mod4 + G
+"passmenu"
+    Mod4 + Shift + P
+"qutebrowser --backend webengine"
+    Mod4 + Q
+"st -t mutt mutt"
+    Mod4 + U
+"sh -c 'maim /tmp/$(date +%s).png -s'"
+    Mod4 + S
+"sh -c 'maim /tmp/$(date +%s).png'"
+    Mod4 + Shift + S
+"sh -c 'maim /tmp/$(date +%s).png -i $(xdotool getactivewindow)'"
+    Mod4 + Control + S
+"sudo ddcutil setvcp 10 + 20"
+    Mod4 + Up
+"sudo ddcutil setvcp 10 - 20"
+    Mod4 + Down
+"st"
+    Mod4 + Return
