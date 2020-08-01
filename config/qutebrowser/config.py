@@ -18,7 +18,10 @@ c.content.geolocation = False
 c.hints.uppercase = True
 # c.hints.find_implementation = 'python' # change to javascript if bad results
 c.fonts.default_family = "Hack"
+c.fonts.default_size = "12pt"
 c.completion.open_categories = ['quickmarks', 'bookmarks', 'history']
+c.logging.level.console = 'warning'
+c.logging.level.ram = 'warning'
 
 config.set('content.register_protocol_handler', True, 'calendar.google.com')
 config.set('content.notifications', True, 'calendar.google.com')
@@ -66,7 +69,11 @@ c.bindings.commands = {
     'command': {
         '<ctrl+k>': 'rl-backward-kill-word',
         '<ctrl+e>': 'edit-command -r',
-    }
+    },
+    'insert': {
+        '<ctrl+p>': 'spawn -u pass {url:host} 0',
+        '<ctrl+u>': 'spawn -u pass {url:host} 1',
+    },
 }
 
 
