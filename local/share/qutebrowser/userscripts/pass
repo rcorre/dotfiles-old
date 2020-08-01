@@ -1,0 +1,25 @@
+#!/bin/python
+
+import os
+import subprocess
+import sys
+import shlex
+
+url = sys.argv[1]
+idx = int(sys.argv[2])
+
+def lookup(domain):
+    p = subprocess.run(["pass", "web/{}".format(domain)], capture_output=True)
+    if p.returncode == 0:
+        return p.stdout
+    parts = domain.split(".", maxsplit=1)
+    return lookup(parts[1]) if len(parts) > 1 else ""
+
+with open(os.getenv("QUTE_FIFO"), "w") as f:
+    output = lookup(url).splitlines()
+    if len(output) > idx:
+        f.write("fake-key {}".format(shlex.quote(output[idx].decode())))
+    elif idx == 1:
+        f.write("fake-key ryan@rcorre.net")
+    else:
+        f.write("message-error no password")
